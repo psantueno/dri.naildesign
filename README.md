@@ -56,3 +56,14 @@ Demora respondiendo solicitudes de turnos por whatsapp, ya que las personas no c
 ACCION ITEMS:
 - Automatizar la forma de agendar un turno y mejorar sus tiempos de respuesta.
 - Expandir la oferta de sus productos y poder vender a otras regiones (además de Chaco).
+
+DESCRIPCIÓN DE LOS INTEGRANTES DEL GRUPO: 
+
+ALINE GRUBA
+Mi nombre es Aline y soy project manager. Tengo 15 años de experiencia en proyectos digitales y comunicación web, desarrollados en agencias y empresas nacionales y multinacionales. Hace 18 meses que trabajo en Tiendamia, un eCommerce crossborder, con presencia en 7 países de Latin América. Madre de Valentina de 6años. Nací en Brasil y hace más de 15 años que vivo en mi querida Argentina.
+
+DIEGO ALBA
+Soy Diego Alba, tengo 33 años, ingeniero de profesión trabajando para la industria de Oil&Gas, en búsqueda de nuevos horizontes en el mundo del desarrollo web. Me apasiona la musica y los animales, en ocasiones toco guitarra y tengo 2 perros que adoro.
+
+SEBASTIÁN ANTUENO
+Mi nombre es Sebastián, nacido en Argentina. Tengo 30 años, me desempeño como profesor en el área de matemática, trabajando en el nivel secundario y terciario (tecnicatura en Geología). Tengo como hobby tocar la guitarra y crear proyectos con madera. Casado, sin hijos. 
