@@ -1,25 +1,22 @@
-Información sobre el Proyecto!!
+Información sobre el Proyecto
 
 TEMÁTICA DEL SITIO
-Nuestro proyecto se trata de un eCommerce dedicado a ofrecer servicios y productos para al cuidado y belleza de las uñas para la empresa dri.naildesign.  
+Nuestro proyecto se trata de un e-Commerce dedicado a ofrecer servicios y productos para al cuidado y belleza de las uñas, para la empresa dri.naildesign.  
 
-dri.naildesign se encuentra en Argentina, en la ciudad de Resistencia (provincia del Chaco).
-Ofrece a sus clientes un servicio único en su región: premiun, de calidad y personalizado. Sus servicios utilizan materiales importantes y de calidad, como las herramientas artesanales y son provenientes de Ucrania. Todos sus productos, tanto los que utiliza en sus servicios como los vendidos por whatsapp o en su salón, son importados.
+dri.naildesign se encuentra en Argentina, en la ciudad de Resistencia, provincia del Chaco.
+Ofrece a sus clientes un servicio premium y de calidad, ofreciendo variedad y personalización en cada uno de sus diseños. Sus servicios utilizan materiales importados de primera calidad, disponibles en el catálogo de Whatsapp y showroom del salón; y las técnicas utilizadas son provenientes de Ucrania.
 
-Instagram: ​​https://www.instagram.com/dri.naildesign/
-
+Instagram: https://www.instagram.com/dri.naildesign/
 
 PÚBLICO OBJETIVO
-Está dirigido a mujeres con un alto poder aquisitivo, que se preocupan con la estética, tienen interés en invertir en la belleza y cuidado de sus uñas y valorizan este tipo de trabajo. Inicialmente para la región de Chaco y de Corrientes, podendo ser expandido para otras regiones de Argentina.
-
+Está dirigido a mujeres con un mediano-alto poder aquisitivo, que se preocupan por la estética de sus manos, quiénes invierten tanto su dinero como el tiempo en la belleza y cuidado de sus uñas, valorizando profundamente este tipo de trabajo. Inicialmente este emprendimiento pretende imponerse en la región provincial del Chaco y la ciudad de Corrientes capital, teniendo como objetivo expandirse a otras regiones del país.
 
 WEBS DE REFERENCIAS
-Nails&Co: Presenta una home bien estructurada y la parte de servicios tiene un buen UX, con foto y descripción
-Go Nails | We Love Nails: En la home, tiene una sesión de eCommerce que muestra de forma clara y através de un carrousel los productos.
-Wonderland Nails - Spa de manos y Pies - Bogota: La solución del cart y del checkout son claras y es fluida con la navegación del sitio.
+Nails&Co: Presenta una home bien estructurada y la parte de servicios tiene un buen UX, con fotos y descripción.
+Go Nails | We Love Nails: En la home, tiene una sesión de eCommerce que muestra de forma clara y a través de un carrusel, los productos.
+Wonderland Nails - Spa de manos y Pies - Bogota: La solución del cart y del checkout es clara y fluida con la navegación del sitio.
 4. Super Wow!!! Especialistas en Manicure, Pedicure y Diseño de uñas: Tiene una estructura de sitio sencilla, con la información justa. El design no nos agrada, pero fue una buena base para armar nuestro mapa del sitio.
-5. Wonoma | Tu belleza y bienestar online: Los forms de registro y login aparecen en la propia pantalla, no abriendo para una nueva. Por ahora nos decidimos a abrir una nueva pantalla, pero fue una buena referencia.
-
+5. Wonoma | Tu belleza y bienestar online: Los forms de registro y login aparecen en la propia pantalla, no abriendose una nueva pantalla. Por ahora nos decidimos a abrir una nueva pantalla, pero fue una buena referencia.
 
 MAPA DEL SITIO
 La estructura y páginas contemplados en este proyecto:
@@ -31,33 +28,31 @@ Servicios
 Cart (carrito)
   - Checkout
      - Thankyoupage
-Form de Registro
-Form de login
-
-
+Formulario de Registro
+Formulario de login
 
 MÁS INFO SOBRE EL NEGOCIO
-Su propietaria se llama Azul, una mujer de 25 años, en pareja y mamá de 2 bebes. Empezó a trabajar con uñas en 2015 y de a poco fue agarrando el gusto por la profesión. Dos años después fue el momento que decidió dedicarse a eso. Se fue especializando y terminó abriendo su propio negocio en 2019. Más información:
+Su propietaria se llama Azul, una mujer de 25 años, casada y mamá de 2 bebes. Empezó a trabajar con uñas en 2015 y de a poco fue llevando adelante este emprendimiento, pues, en un principio, trabajaba para otras empresas. Dos años después fue el momento en que decidió dedicarse exclusivamente a este trabajo como principal fuente de ingreso económico. Fue especializándose y terminó abriendo su propio negocio en 2019. Más información:
 
-Es enamorada de lo que hace. Siente que tiene la oportunidad de trabajar en su hoby.
+Es enamorada de lo que hace. Siente que tiene la oportunidad de trabajar de su hobby.
 dri.naildesign está en Chaco y ofrece servicio y productos para el cuidado y belleza de las uñas. 
-Hoy en día tiene un salón con dos manicuras y un espacio que ofrece productos relacionados a las uñas. Apunta tener mas mesas de manicura y a aumenta venta de insumos.
-No tiene web. Para los servicios, disponibiliza la posibilidad de agendar por su whatsapp business, donde también ofrece sus productos - tiene su catálogo en Whatsapp No quiere alargar la conversación, y ya tener el turno.
+Hoy en día tiene un salón y cuenta con dos empleadas a cargo de manicura y pedicura; y un espacio que ofrece productos relacionados al cuidado y mantenimiento de las uñas. Apunta tener mas mesas de manicura y a aumentar venta de insumos.
+No tiene sitio web. Para los servicios, disponibiliza la posibilidad de agendar por su whatsapp business los turnos, donde también ofrece sus productos a través del catálogo que ofrece Whatsapp
 Para gestior los turnos, utiliza el calendario de google, sincronizado con el calendario de las otras dos manicuras que trabajan para ella.
 Trabaja con seña para reservar turnos. 
-Se capacita constantemente, con cursos de afuera. 
-Su trabajo en las uñas se destaca pela calidad. 
+Se capacita constantemente, con cursos dictados por los mejores especialistas.
+Su trabajo en las uñas se destaca por la calidad, prolijidad y uso de materiales importados. 
 Todos los productos son importados y de primera calidad. 
 Su precio es alto en comparación a los servicios de manicura convencionales.
-Las herramientas son Ucranianas hechas a mano y todo es esterilizado luego de cada uso (Bioseguridad).
+Las técnicas utilizadas son Ucranianas, sus trabajos son hechos a mano. Todo es esterilizado luego de cada uso (Bioseguridad).
 Su idea es enseñar al cliente:
-A diferenciar su trabajo de la competencia
-A como cuidar las uñas; como hacer el mantenimiento; cuando hacer el services
-Está en Resistencia, pero le escriben del interior de la provincia del Chaco y toda la provincia de Corrientes. Le gustaría vender productos a estas regiones (no solo Resistencia). También está ofreciendo cursos. Sus participantes, en su mayoría, son mujeres del interior del Chaco. Tiene deseo de ofrecer sus cursos a otras localidades.
+A diferenciar su trabajo de la competencia, por lo anteriormente señalado.
+A cómo cuidar las uñas; el mantenimiento de las mismas y la importancia de realizar los services.
+También está ofreciendo cursos de capacitación con cupos limitados debido a la disponibilidad física y de tiempo. Sus participantes, en su mayoría, son mujeres del interior del Chaco. Tiene deseo de ofrecer sus cursos a otras localidades.
 
-Pain Points:
-Tiempo que lleva respondendo whatsapp, ya que las personas no contestan las preguntas programadas y hacen preguntas paralelas, lo que le hace necesario dedicar bastante tiempo contestanto, además hace que se demore la confirmación del turno. 
+WEAK POINTS:
+Demora respondiendo solicitudes de turnos por whatsapp, ya que las personas no contestan las preguntas programadas y no posee la información completa para saber si es posible llevar a cabo el servicio que solicita el cliente., lo que implica dedicar bastante tiempo contestando. Además, hace que se demore la confirmación del turno. 
 
-Accion Items:
+ACCION ITEMS:
 - Automatizar la forma de agendar un turno y mejorar sus tiempos de respuesta.
 - Expandir la oferta de sus productos y poder vender a otras regiones (además de Chaco).
