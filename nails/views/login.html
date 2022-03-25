@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Liebre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script src="../public/js/docs.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+
+<header>
+  <div id="brand">
+    <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+      <span class="burguer2"><i class="fa fa-bars burger"></i></span>
+      <ul class="mobile-menu">
+        <li><a href="/productos">Productos</a></li>
+        <li><a href="/servicios">Servicios</a></li>
+        <li id="login"><a href="/login" >Login</a></li>
+        <li id="cart"><a href="/cart">Carrito</a></li>
+      </ul>
+    </div>
+    <img src="/image/logo.jpeg" alt="Logo Dri.Nails"><a class="active" href="/inicio"></a>
+    <nav id="nav" class="main-nav">
+      <div class="nav-links">
+          <span class="nav-links2">
+              <a class="link-item" href="#">Productos</a>
+              <a class="link-item" href="#">Servicios</a>
+              <a class="link-item" href="#">Contacto</a>
+          </span>
+
+          <span class="nav-links3">
+              <a class="link-item" href="#">Login</a>
+              <a class="link-item" href="#">Carrito</a>
+          </span>
+      </div>
+  </nav>
+
+</header>
+
+<body>
+  <div class="container">
+    <div class="row align-items-start">
+      <div class="col">
+      </div>
+      <div class="col">
+        <form class="container">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+        </div>
+        <div class="col order-5">
+          <form class="container">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">No soy un robot</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Ingresar</button>
+        </div>
+        <div class="col order-1">
+        </div>
+      </div>
+    </div>
+
+
+</body>

@@ -1,0 +1,23 @@
+{
+  "name": "dri.nails",
+  "version": "1.0.0",
+  "description": "Clase11 - Comenzamos a trabajar en un proyecto",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aline Gruba",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "html + css"
+  },
+  "keywords": [
+    "V1",
+    "Home"
+  ]
+}
