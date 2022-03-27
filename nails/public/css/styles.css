@@ -576,7 +576,7 @@ p {
   flex-direction: column;
   align-content: center;
   align-items: center;
-  -webkit-transform: rotate(-90deg);
+  /*-webkit-transform: rotate(-90deg);*/
   width: 50%;
 }
 /*END SECCION SERVICIOS-HOME*/
