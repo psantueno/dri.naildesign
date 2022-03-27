@@ -9,9 +9,9 @@
   "author": "Aline Gruba",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "jquery": "^3.6.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "html + css"

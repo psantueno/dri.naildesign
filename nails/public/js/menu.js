@@ -1,14 +1,20 @@
-const toggleButton = document.getElementById('button-menu')
-const navWrapper = document.getElementById('nav')
+$(".navbar-toggler ").on('click', function() {
+  $navMenuCont = $($(this).data('target'));
+  $navMenuCont.animate({
+      'width': 'toggle'
+  }, 350);
+  $(".menu-overlay").fadeIn(500);
+});
+$(".menu-overlay").click(function(event) {
+  $(".navbar-toggler").trigger("click");
+  $(".menu-overlay").fadeOut(500);
+});
+$("#crossButton").click(function(event) {
+  $(".navbar-toggler").trigger("click");
+  $(".menu-overlay").fadeOut(500);
+});
 
-toggleButton.addEventListener('click',() => {
-  toggleButton.classList.toggle('close')
-  navWrapper.classList.toggle('show')
-})
-
-navWrapper.addEventListener('click',e => {
-  if(e.target.id === 'nav'){
-    navWrapper.classList.remove('show')
-    toggleButton.classList.remove('close')
-  }
-})
+$('.nav-item .nav-link').click(function(){
+$(this).siblings('.dropdown-menu').slideToggle();
+$(this).parent().siblings('li').children('.dropdown-menu').hide();
+});
