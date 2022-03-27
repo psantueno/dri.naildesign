@@ -26,3 +26,7 @@ app.get('/banner', (req, res) => {
 app.get('/registro', (req, res) => {
     res.sendFile(path.join(__dirname, './views/registro.html'));
 })
+
+app.get('/carrito', (req, res) => {
+    res.sendFile(path.join(__dirname, './views/carrito.html'));
+})
