@@ -22,3 +22,7 @@ app.get('/menu', (req, res) => {
 app.get('/banner', (req, res) => {
     res.sendFile(path.join(__dirname, './views/bannerhome.html'));
 })
+
+app.get('/registro', (req, res) => {
+    res.sendFile(path.join(__dirname, './views/registro.html'));
+})
