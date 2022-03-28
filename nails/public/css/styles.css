@@ -2,22 +2,18 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Roboto;
+      font-family: 'Roboto';
     }
 
-body{
-    font-family: 'Roboto';
+.body{  
     font-size: 12px;
     background-color: #353836;
     color: white;
 }
 
 p {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  padding: 0 90px;
+  text-align: center;
+
 }
 
 .shop-texto h1 {
@@ -25,7 +21,7 @@ p {
   color: #D36878;
 }
 
-/*START MENU MOBILE*/
+/*START MENU DESPLEGABLE MOBILE*/
 
   .btn-secondary {
     color: #565e64 !Important;
@@ -91,35 +87,30 @@ p {
   }
 
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+/*END MENU DESPLEGABLE MOBILE*/
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+body .main-header{
+  height: 100px;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  background-color: white;
+  padding: 0 1rem;
 }
 
   header a {
     text-decoration: none;
   }
-  
+  /*
   header {
     padding: 0 20px;
     background-color: #ffffff;
     display: flex;
     justify-content: space-between;
   }
+  */
   
-  #brand {
-    font-size: 18px;
-    font: "Robot";
-    display: flex;
-    align-items: center;
-  }
-
-  #brand img {
-    width: 10%;
-  }
-
+ 
   ul {
     list-style: none;
     height: 100%;
@@ -142,27 +133,8 @@ p {
     transition: 0.3s;
   }
 
-  #login,
-  #cart {
-  border-radius: 5px;
-  padding: 5px 8px;
-}
 
-#login {
-  border: 1px solid #498afb;
-}
-
-#cart {
-  border: 1px solid #ff3860;
-}
-
-#cart a {
-  color: #ff3860;
-}
-
-#login a {
-  color: #498afb;
-}
+/*
 .mobile-menu {
     display: none;
     position: absolute;
@@ -193,15 +165,37 @@ p {
 
   .fas{font-weight:200}
 
-.main-header{
-  height: 80px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: white;
-  padding: 0 3rem;
+*/
+
+/*CONFIG LOGO*/
+
+.main-logo img{
+  width: 100%; 
+  
+}
+.main-logo {
+  width: 20%; 
+  min-width: 100px;
+  max-width: 180px;  
 }
 
+.contenedor-main-nav-nav3{
+  width: 80%;
+  display: flex;
+  justify-self: right;
+  justify-items: right;
+  justify-content: space-between;
+  font-size: 16px;
+  
+}
+.contenedor-logo-burgmenu{
+  
+  display: flex;
+  justify-self: left;
+  align-items: center;
+}
+
+/*
 .main-logo{
   color: black;
   font-size:2px;
@@ -209,11 +203,21 @@ p {
   width: 40%;
   text-decoration:none;
 }
-
+*/
+/*
 .main-logo img{
-  width: 30%;
+  width: 100%;
 }
+*/
 
+.main-nav{
+  position: static;
+  margin-left: 0;
+  flex-basis: 70%;
+  height: 100%;
+  display: none;
+}
+/* ña qie estaba original por fuera main nav
 .main-nav{
   position: fixed;
   top: 0;
@@ -221,15 +225,14 @@ p {
   height: 100vh;
   width: 100%;
   margin-left: -100%;
-  transition: all .2s linear;
+ 
   background-color: rgba(0,0,0,.7);
   z-index: 100;
 }
+*/
 
-.main-nav.show{
-  margin-left: 0;
-}
 
+/*
 .nav-links{
   background-color: rgb(250,250,250);
   display: flex;
@@ -239,19 +242,43 @@ p {
   align-items: center;
   font-size: 16px;
   color: #746F6F;
-  /*justify-content: flex-start;*/
+  
 }
+*/
+
+  .nav-links{
+    width: 100%;
+    
+    justify-content: center;
+    justify-items: center;
+    background: white;
+  }
+
+  .nav-links2{
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    background: white;
+  }
+  
 
 .main-nav3 {
-  column-width: 300px;
+  width: 100%;
+
+  /*column-width: 300px;*/
   font-size: 16px;
-  position: static;
+  /*position: static;*/
+  text-align: end;
+  align-self: flex-end;
+  
+  /*
+  justify-self: end;
+  ;*/
 }
 
-.nav-links2{
-  justify-content: flex-start;
-}
-
+/*
 .nav-links3{
   width: 70%;
   flex-direction: row;
@@ -259,6 +286,7 @@ p {
   justify-content: flex-end;
   position: relative;
 }
+*/
 
 .link-item{
   /*margin-top: 2rem*/
@@ -759,17 +787,12 @@ p {
 + 1079px: desktops, telas grandes.*/
 
 @media screen /*and (min-width:320px)*/ and (max-width:480px) {
+  /*
   .main-logo img{
     width: 100%;
     padding-left: 0px;
   }
-
-  .nav-links3{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    padding-left: 80px;
-  }
+  */
 
   .nombre-producto h3 {
     margin-top: 0.9rem;
@@ -848,14 +871,13 @@ p {
 }
 
 @media screen and (min-width:481px) and (max-width:768px) {
-  p {
-    padding: 0px;
-  }
-  
+
+  /*
   .main-logo img{
     width: 45%;
   }
-
+  */
+/*
   .nav-links3{
     width: 100%;
     display: flex;
@@ -863,6 +885,7 @@ p {
     padding-left: 80px;
     text-align: end;
   }
+*/
 
   .container .item-box {
     display: flex;
@@ -952,6 +975,13 @@ p {
   .btn-group {
     display: none !Important;
   }
+  .main-nav3 {
+    width: 30%;
+  }
+  .main-nav{
+    display: block;
+  }
+  /*
   .main-logo{
     flex-basis: 30%;
   }
@@ -959,17 +989,20 @@ p {
   .main-logo img {
     width: 70%;
 }
+*/
 
+/*
   .main-nav{
     position: static;
     margin-left: 0;
     height: 100%;
   }
-
+*/
+  /*----------------------------------
   .nav-links{
     width: 100%;
     flex-direction: row;
-    /*flex-wrap: wrap;*/
+   
     align-items: center;
     justify-content: flex-start;
     background: white;
@@ -983,10 +1016,7 @@ p {
     background: white;
   }
 
-  .link-item{
-    margin-top: 0;
-    margin-right: 2rem;
-  }
+*/
 
   .container .item-box{
     width: 120px;
@@ -1075,7 +1105,13 @@ p {
   .btn-group {
     display: none !Important;
   }
-
+  .main-nav3 {
+    width: 30%;
+  }
+  .main-nav{
+    display: block;
+  }
+/*
   .main-logo{
     flex-basis: 30%;
   }
@@ -1083,7 +1119,9 @@ p {
   .main-logo img {
     width: 60%;
   }
+*/
 
+/*
   .main-nav{
     position: static;
     margin-left: 0;
@@ -1091,29 +1129,27 @@ p {
     height: 100%;
   }
 
+  */
+/*
   .nav-links{
     width: 100%;
     flex-direction: row;
-    /*flex-wrap: wrap;*/
+    
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     background: white;
   }
 
   .nav-links2{
-    width: 70%;
+    width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
     background: white;
   }
+*/
 
-  .link-item{
-    /*display: inline-block;*/
-    margin-top: 0;
-    margin-right: 2rem;
-  }
 
   .container .item-box{
     width: 120px;
@@ -1191,7 +1227,14 @@ p {
   .btn-group {
     display: none !Important;
   }
+  .main-nav3 {
+    width: 30%;
+  }
+  .main-nav{
+    display: block;
+  }
 
+/*
   .main-logo{
     flex-basis: 30%;
   }
@@ -1199,41 +1242,38 @@ p {
   .main-logo img{
     width: 25%;
   }
-
+*/
+/*
   .main-nav{
     position: static;
     margin-left: 0;
     flex-basis: 70%;
     height: 100%;
   }
-
+  */
+/*
   .nav-links{
     width: 100%;
     flex-direction: row;
-    /*flex-wrap: wrap;*/
+    
     align-items: center;
     justify-content: flex-start;
     background: white;
   }
 
   .nav-links2{
-    width: 70%;
+    width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
     background: white;
   }
-
+*/
   .card-bg h1{
     font-size: 80px;
   }
 
-  .link-item{
-    /*display: inline-block;*/
-    margin-top: 0;
-    margin-right: 2rem;
-  }
 
   .container .item-box {
     width: 90px;
