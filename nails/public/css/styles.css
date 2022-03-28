@@ -20,6 +20,12 @@ p {
   padding: 0 90px;
 }
 
+p.description-text-servicios{
+  padding: 0;
+  margin-left: 10px; 
+  margin-right: 10px;
+}
+
 .shop-texto h1 {
   margin: 0.17em 0;
   color: #D36878;
@@ -751,6 +757,66 @@ p {
 .col-md-6 {
   width: 100% !Important;
 }
+
+/*START SERVICIOS PAGE*/
+
+.container-gral-servicio {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.circular{
+  border-radius: 50%;
+}
+
+.title-servicio {
+  text-align: center;
+  font-weight: bold;
+  color: rgb(73, 69, 69);
+  background-color: #ecbebd;
+  text-transform: uppercase;
+}
+
+.divisor {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 0.5em 1.5em rgb(0 0 0 / 10%), inset 0 0.125em 0.5em rgb(0 0 0 / 15%);
+}
+
+.title-main-servicios{
+  text-align: right;
+  font-weight: bold;
+  font-style: oblique;
+  text-shadow: #595a59 ;
+}
+
+/*START STYLE BANNERHOME*/
+.servicios-banner {
+  width: 100%;
+  padding:60px 0;
+  text-align: center;
+  /*background: #D36878;*/
+  color: white;
+  background:url("../image/banner-home.jpeg");
+  background-size: cover;       /* For flexibility */
+  background-position-y: center;
+  margin-bottom: 30px;
+}
+
+/* card-bg */
+.card-bg-servicios {
+  position: relative;
+  width: 100%;
+  background: rgba(247, 248, 250, 0.8);
+  border-radius: 20px;
+  margin: 0 auto;
+  color: black;
+  padding: 20px;
+/* Note: backdrop-filter has minimal browser support */
+}
+
 
 /*START MEDIAS QUERIES*/
 /* Medidas de dispositivos:
