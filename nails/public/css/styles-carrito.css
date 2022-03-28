@@ -1,10 +1,11 @@
+/*START CARRITO*/
 .shopping-cart{
 	padding-bottom: 50px;
 	font-family: 'Roboto';
 }
 
 .shopping-cart.dark{
-	background-color: #f6f6f6;
+	background-color: #fff;
 }
 
 .shopping-cart .content{
@@ -171,4 +172,13 @@
         display: flex;
         align-items: center;
     }
+
+    @media (min-width: 1200px){}
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 3140px;
+    display: flex;
+    flex-direction: column;
 }
+}
+
+/*END CARRITO*/

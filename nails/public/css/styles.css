@@ -699,8 +699,6 @@ p {
 }
 /*END PAGINA DE LOGIN*/
 
-
-
 /*STAR FOOTER*/
 .footer-stye {
   margin-top: 100px;
@@ -1062,7 +1060,6 @@ p {
   .py-4 {
     margin-top: 400px !important;
   }
-
 }
 
 @media screen and (min-width:940px) and (max-width:1078px){
@@ -1177,8 +1174,8 @@ p {
   .py-4 {
     margin-top: 400px !important;
   }
-
 }
+
 
 
 @media screen and (min-width:1079px) {
@@ -1296,6 +1293,5 @@ p {
   .py-4 {
     margin-top: 200px !important;
   }
-
 }
 /*END MEDIAS QUERIES*/

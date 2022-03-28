@@ -30,3 +30,7 @@ app.get('/registro', (req, res) => {
 app.get('/carrito', (req, res) => {
     res.sendFile(path.join(__dirname, './views/carrito.html'));
 })
+
+app.get('/car', (req, res) => {
+    res.sendFile(path.join(__dirname, './views/carrito2.html'));
+})
