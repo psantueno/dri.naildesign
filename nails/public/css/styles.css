@@ -2,22 +2,18 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Roboto;
+      font-family: 'Roboto';
     }
 
-body{
-    font-family: 'Roboto';
+.body{  
     font-size: 12px;
     background-color: #353836;
     color: white;
 }
 
 p {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  padding: 0 90px;
+  text-align: center;
+
 }
 
 p.description-text-servicios{
@@ -31,7 +27,7 @@ p.description-text-servicios{
   color: #D36878;
 }
 
-/*START MENU MOBILE*/
+/*START MENU DESPLEGABLE MOBILE*/
 
   .btn-secondary {
     color: #565e64 !Important;
@@ -97,35 +93,21 @@ p.description-text-servicios{
   }
 
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+/*END MENU DESPLEGABLE MOBILE*/
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+body .main-header{
+  height: 100px;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  background-color: white;
+  padding: 0 1rem;
 }
 
   header a {
     text-decoration: none;
   }
-  
-  header {
-    padding: 0 20px;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  #brand {
-    font-size: 18px;
-    font: "Robot";
-    display: flex;
-    align-items: center;
-  }
-
-  #brand img {
-    width: 10%;
-  }
-
+ 
   ul {
     list-style: none;
     height: 100%;
@@ -148,94 +130,48 @@ p.description-text-servicios{
     transition: 0.3s;
   }
 
-  #login,
-  #cart {
-  border-radius: 5px;
-  padding: 5px 8px;
-}
 
-#login {
-  border: 1px solid #498afb;
-}
 
-#cart {
-  border: 1px solid #ff3860;
-}
-
-#cart a {
-  color: #ff3860;
-}
-
-#login a {
-  color: #498afb;
-}
-.mobile-menu {
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    height: calc(100vh - 50px);
-    width: 100%;
-  }
-  
-  .open .mobile-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  
-  .mobile-menu li {
-    margin-bottom: 10px;
-  }
-
-  .burguer2 {
-    color:rgb(0, 0, 0);
-    vertical-align: middle;
-    content: "";
-    background: no-repeat center center;
-    background-size: 100% 100%;
-  }
-
-  .fas{font-weight:200}
-
-.main-header{
-  height: 80px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: white;
-  padding: 0 3rem;
-}
-
-.main-logo{
-  color: black;
-  font-size:2px;
-  padding-left: 0px;
-  width: 40%;
-  text-decoration:none;
-}
+/*CONFIG LOGO*/
 
 .main-logo img{
-  width: 30%;
+  width: 100%; 
+  
 }
+.main-logo {
+  width: 20%; 
+  min-width: 100px;
+  max-width: 180px;  
+}
+
+.contenedor-main-nav-nav3{
+  width: 80%;
+  display: flex;
+  justify-self: right;
+  justify-items: right;
+  justify-content: space-between;
+  font-size: 16px;
+  
+}
+.contenedor-logo-burgmenu{
+  
+  display: flex;
+  justify-self: left;
+  align-items: center;
+}
+
+
 
 .main-nav{
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  margin-left: -100%;
-  transition: all .2s linear;
-  background-color: rgba(0,0,0,.7);
-  z-index: 100;
-}
-
-.main-nav.show{
+  position: static;
   margin-left: 0;
+  flex-basis: 70%;
+  height: 100%;
+  display: none;
 }
 
+
+/*
 .nav-links{
   background-color: rgb(250,250,250);
   display: flex;
@@ -245,26 +181,40 @@ p.description-text-servicios{
   align-items: center;
   font-size: 16px;
   color: #746F6F;
-  /*justify-content: flex-start;*/
+  
 }
+*/
+
+  .nav-links{
+    width: 100%;
+    
+    justify-content: center;
+    justify-items: center;
+    background: white;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-links2{
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    background: white;
+  }
+  
 
 .main-nav3 {
-  column-width: 300px;
+  width: 100%;
+
+  /*column-width: 300px;*/
   font-size: 16px;
-  position: static;
+  text-align: end;
+  align-self: flex-end;
+  
 }
 
-.nav-links2{
-  justify-content: flex-start;
-}
-
-.nav-links3{
-  width: 70%;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  position: relative;
-}
 
 .link-item{
   /*margin-top: 2rem*/
@@ -405,7 +355,7 @@ p.description-text-servicios{
   background-color: white;
   padding-top: 30px;
   display: flex;
-  justify-content: center;
+  justify-content:space-around;
 }
 
 .shop-home {
@@ -430,7 +380,7 @@ p.description-text-servicios{
   font-size: 16px;
   color: #746F6F;
 }
-
+/*
 .container {
   background-color: white;
   display: flex;
@@ -440,14 +390,24 @@ p.description-text-servicios{
   flex: 200px;
   margin: 20px;
 }
+*/
+.container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-around;
+}
+.container .item-box {
+  width: 95%;
+  
+}
 
 .item-box {
     position:relative;
 		display:flex;
 		text-decoration:none;
-		width:320px;
-		height:320px;
-		margin:30px;
+		/*width:320px;*/
+		/*height:320px;*/
+		margin:10px;
 		padding:0px;
 		border:1px solid #666;
 		background-color:#ffffff;
@@ -458,12 +418,13 @@ p.description-text-servicios{
     flex-direction: column;
     align-content: center;
     align-items: center;
+    justify-items: center;
 }
 
 .item-box-image {
   background: transparent 50% 50% no-repeat;
   background-size: cover;
-  height: 45%;
+
   left: 0;
   overflow: hidden;
   position: relative;
@@ -473,11 +434,14 @@ p.description-text-servicios{
   align-content: center;
   justify-content: center;
   align-items: flex-end;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
-
 .item-box-image img {
-  /*width: 50%;*/
-  height: 80%;
+  width: 15%;
+  
+  /*height: 80%;*/
   background: transparent 50% 50% no-repeat;
   background-size: cover;
   /*display: flex;
@@ -495,6 +459,16 @@ p.description-text-servicios{
   align-items: center;
   justify-content: center;
   margin-top: 10px;
+  height: 40px;
+}
+
+.nombre-producto h3 {
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
+  font-weight: 500;
+  line-height: 0;
+  font-size: 14px;
+
 }
 
 .item-box p {
@@ -513,6 +487,15 @@ p.description-text-servicios{
   margin-top: 0px;
   padding: 5px 20px;
 }
+/*
+.container .item-box {
+
+  width: 200px;
+  max-width: 200px;
+  height: 250px;
+  margin: 10px;
+}
+*/
 
 /*END SECCION ECOMMERCE-PRODUCTOS-HOME*/
 
@@ -710,8 +693,6 @@ p.description-text-servicios{
 }
 /*END PAGINA DE LOGIN*/
 
-
-
 /*STAR FOOTER*/
 .footer-stye {
   margin-top: 100px;
@@ -805,7 +786,7 @@ p.description-text-servicios{
   margin-bottom: 30px;
 }
 
-/* card-bg */
+/* card-bg de servicios */
 .card-bg-servicios {
   position: relative;
   width: 100%;
@@ -827,32 +808,7 @@ p.description-text-servicios{
 + 1079px: desktops, telas grandes.*/
 
 @media screen /*and (min-width:320px)*/ and (max-width:480px) {
-  .main-logo img{
-    width: 100%;
-    padding-left: 0px;
-  }
-
-  .nav-links3{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    padding-left: 80px;
-  }
-
-  .nombre-producto h3 {
-    margin-top: 0.9rem;
-    margin-bottom: 0.9rem;
-    font-weight: 500;
-    line-height: 0;
-    font-size: 10px;
-
-  }
-
-  .container .item-box {
-    width: 200px;
-    height: 200px;
-  }
-
+ 
   .servicios-image{
     display: none;
   }
@@ -916,41 +872,14 @@ p.description-text-servicios{
 }
 
 @media screen and (min-width:481px) and (max-width:768px) {
-  p {
-    padding: 0px;
-  }
-  
-  .main-logo img{
-    width: 45%;
-  }
-
-  .nav-links3{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    padding-left: 80px;
-    text-align: end;
-  }
-
   .container .item-box {
-    display: flex;
-    width: 30%;
-    height: 240px;
+    width: 40%;
   }
-
-  .nombre-producto {
-    padding-top: 10px;
-  }
-
-  .nombre-producto h3 {
-    font-size: 12px !Important;
-  }
-
+/*
  .item-box-image {
-    width: 50%;
-    height: 0px;
+    min-width: 80%;
   }
-
+*/
   .servicios-image{
     display: none;
   }
@@ -1020,55 +949,17 @@ p.description-text-servicios{
   .btn-group {
     display: none !Important;
   }
-  .main-logo{
-    flex-basis: 30%;
+  .main-nav3 {
+    width: 30%;
   }
-
-  .main-logo img {
-    width: 70%;
-}
-
   .main-nav{
-    position: static;
-    margin-left: 0;
-    height: 100%;
+    display: block;
+  }
+  .container .item-box {
+    width: 35%;
   }
 
-  .nav-links{
-    width: 100%;
-    flex-direction: row;
-    /*flex-wrap: wrap;*/
-    align-items: center;
-    justify-content: flex-start;
-    background: white;
-  }
-
-  .nav-links2{
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-end;
-    background: white;
-  }
-
-  .link-item{
-    margin-top: 0;
-    margin-right: 2rem;
-  }
-
-  .container .item-box{
-    width: 120px;
-    height: 320px;
-  }
-
-  .nombre-producto {
-    height: 80px;
-  }
-
-  .nombre-producto h3 {
-    padding: 0px 10px;
-  }
-
+  
   .reviews-nombre h3 {
     padding: 0px 0px;
   }
@@ -1096,11 +987,6 @@ p.description-text-servicios{
     align-items: center;
     justify-content: center;list-style: auto;
   }
-
-  .nombre-producto h3 {
-    font-size: 14px !Important;
-  }
-
   .reviews-nombre img {
     width: 45%;
 }
@@ -1133,7 +1019,6 @@ p.description-text-servicios{
   .py-4 {
     margin-top: 400px !important;
   }
-
 }
 
 @media screen and (min-width:940px) and (max-width:1078px){
@@ -1144,60 +1029,16 @@ p.description-text-servicios{
   .btn-group {
     display: none !Important;
   }
-
-  .main-logo{
-    flex-basis: 30%;
+  .main-nav3 {
+    width: 30%;
   }
-
-  .main-logo img {
-    width: 60%;
-  }
-
   .main-nav{
-    position: static;
-    margin-left: 0;
-    flex-basis: 70%;
-    height: 100%;
+    display: block;
   }
 
-  .nav-links{
-    width: 100%;
-    flex-direction: row;
-    /*flex-wrap: wrap;*/
-    align-items: center;
-    justify-content: flex-start;
-    background: white;
+  .container .item-box {
+    width: 22%;
   }
-
-  .nav-links2{
-    width: 70%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-end;
-    background: white;
-  }
-
-  .link-item{
-    /*display: inline-block;*/
-    margin-top: 0;
-    margin-right: 2rem;
-  }
-
-  .container .item-box{
-    width: 120px;
-    height: 320px;
-    flex: 18%
-  }
-
-  .nombre-producto {
-    height: 80px;
-  }
-
-  .nombre-producto h3 {
-    font-size: 14px !Important;
-  }
-
   .servicios-text {
     width:40%;
     align-content: flex-start;
@@ -1248,8 +1089,8 @@ p.description-text-servicios{
   .py-4 {
     margin-top: 400px !important;
   }
-
 }
+
 
 
 @media screen and (min-width:1079px) {
@@ -1260,65 +1101,20 @@ p.description-text-servicios{
   .btn-group {
     display: none !Important;
   }
-
-  .main-logo{
-    flex-basis: 30%;
+  .main-nav3 {
+    width: 30%;
   }
-
-  .main-logo img{
-    width: 25%;
-  }
-
   .main-nav{
-    position: static;
-    margin-left: 0;
-    flex-basis: 70%;
-    height: 100%;
-  }
-
-  .nav-links{
-    width: 100%;
-    flex-direction: row;
-    /*flex-wrap: wrap;*/
-    align-items: center;
-    justify-content: flex-start;
-    background: white;
-  }
-
-  .nav-links2{
-    width: 70%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-end;
-    background: white;
+    display: block;
   }
 
   .card-bg h1{
     font-size: 80px;
   }
 
-  .link-item{
-    /*display: inline-block;*/
-    margin-top: 0;
-    margin-right: 2rem;
-  }
-
   .container .item-box {
-    width: 90px;
-    height: 240px;
-    flex: 18%;
+    width: 20%;
   }
-
- .nombre-producto {
-    height: 40px;
-  }
-
-  .nombre-producto h3 {
-    font-size: 0.95rem;
-    margin-bottom: 0;
-  }
-  
 
   .servicios-text {
     width:40%;
@@ -1367,6 +1163,5 @@ p.description-text-servicios{
   .py-4 {
     margin-top: 200px !important;
   }
-
 }
 /*END MEDIAS QUERIES*/
