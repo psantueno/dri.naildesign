@@ -101,15 +101,6 @@ body .main-header{
   header a {
     text-decoration: none;
   }
-  /*
-  header {
-    padding: 0 20px;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-  }
-  */
-  
  
   ul {
     list-style: none;
@@ -134,38 +125,6 @@ body .main-header{
   }
 
 
-/*
-.mobile-menu {
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    height: calc(100vh - 50px);
-    width: 100%;
-  }
-  
-  .open .mobile-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  
-  .mobile-menu li {
-    margin-bottom: 10px;
-  }
-
-  .burguer2 {
-    color:rgb(0, 0, 0);
-    vertical-align: middle;
-    content: "";
-    background: no-repeat center center;
-    background-size: 100% 100%;
-  }
-
-  .fas{font-weight:200}
-
-*/
 
 /*CONFIG LOGO*/
 
@@ -195,20 +154,7 @@ body .main-header{
   align-items: center;
 }
 
-/*
-.main-logo{
-  color: black;
-  font-size:2px;
-  padding-left: 0px;
-  width: 40%;
-  text-decoration:none;
-}
-*/
-/*
-.main-logo img{
-  width: 100%;
-}
-*/
+
 
 .main-nav{
   position: static;
@@ -217,19 +163,6 @@ body .main-header{
   height: 100%;
   display: none;
 }
-/* ña qie estaba original por fuera main nav
-.main-nav{
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  margin-left: -100%;
- 
-  background-color: rgba(0,0,0,.7);
-  z-index: 100;
-}
-*/
 
 
 /*
@@ -252,6 +185,8 @@ body .main-header{
     justify-content: center;
     justify-items: center;
     background: white;
+    display: flex;
+    justify-content: center;
   }
 
   .nav-links2{
@@ -269,24 +204,11 @@ body .main-header{
 
   /*column-width: 300px;*/
   font-size: 16px;
-  /*position: static;*/
   text-align: end;
   align-self: flex-end;
   
-  /*
-  justify-self: end;
-  ;*/
 }
 
-/*
-.nav-links3{
-  width: 70%;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  position: relative;
-}
-*/
 
 .link-item{
   /*margin-top: 2rem*/
@@ -787,12 +709,7 @@ body .main-header{
 + 1079px: desktops, telas grandes.*/
 
 @media screen /*and (min-width:320px)*/ and (max-width:480px) {
-  /*
-  .main-logo img{
-    width: 100%;
-    padding-left: 0px;
-  }
-  */
+ 
 
   .nombre-producto h3 {
     margin-top: 0.9rem;
@@ -872,20 +789,7 @@ body .main-header{
 
 @media screen and (min-width:481px) and (max-width:768px) {
 
-  /*
-  .main-logo img{
-    width: 45%;
-  }
-  */
-/*
-  .nav-links3{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    padding-left: 80px;
-    text-align: end;
-  }
-*/
+  
 
   .container .item-box {
     display: flex;
@@ -981,43 +885,7 @@ body .main-header{
   .main-nav{
     display: block;
   }
-  /*
-  .main-logo{
-    flex-basis: 30%;
-  }
-
-  .main-logo img {
-    width: 70%;
-}
-*/
-
-/*
-  .main-nav{
-    position: static;
-    margin-left: 0;
-    height: 100%;
-  }
-*/
-  /*----------------------------------
-  .nav-links{
-    width: 100%;
-    flex-direction: row;
-   
-    align-items: center;
-    justify-content: flex-start;
-    background: white;
-  }
-
-  .nav-links2{
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-end;
-    background: white;
-  }
-
-*/
-
+  
   .container .item-box{
     width: 120px;
     height: 320px;
@@ -1111,44 +979,6 @@ body .main-header{
   .main-nav{
     display: block;
   }
-/*
-  .main-logo{
-    flex-basis: 30%;
-  }
-
-  .main-logo img {
-    width: 60%;
-  }
-*/
-
-/*
-  .main-nav{
-    position: static;
-    margin-left: 0;
-    flex-basis: 70%;
-    height: 100%;
-  }
-
-  */
-/*
-  .nav-links{
-    width: 100%;
-    flex-direction: row;
-    
-    align-items: center;
-    justify-content: center;
-    background: white;
-  }
-
-  .nav-links2{
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-end;
-    background: white;
-  }
-*/
 
 
   .container .item-box{
@@ -1234,42 +1064,6 @@ body .main-header{
     display: block;
   }
 
-/*
-  .main-logo{
-    flex-basis: 30%;
-  }
-
-  .main-logo img{
-    width: 25%;
-  }
-*/
-/*
-  .main-nav{
-    position: static;
-    margin-left: 0;
-    flex-basis: 70%;
-    height: 100%;
-  }
-  */
-/*
-  .nav-links{
-    width: 100%;
-    flex-direction: row;
-    
-    align-items: center;
-    justify-content: flex-start;
-    background: white;
-  }
-
-  .nav-links2{
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-end;
-    background: white;
-  }
-*/
   .card-bg h1{
     font-size: 80px;
   }
