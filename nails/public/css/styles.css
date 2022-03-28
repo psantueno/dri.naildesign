@@ -349,7 +349,7 @@ body .main-header{
   background-color: white;
   padding-top: 30px;
   display: flex;
-  justify-content: center;
+  justify-content:space-around;
 }
 
 .shop-home {
@@ -374,7 +374,7 @@ body .main-header{
   font-size: 16px;
   color: #746F6F;
 }
-
+/*
 .container {
   background-color: white;
   display: flex;
@@ -384,14 +384,24 @@ body .main-header{
   flex: 200px;
   margin: 20px;
 }
+*/
+.container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-around;
+}
+.container .item-box {
+  width: 95%;
+  
+}
 
 .item-box {
     position:relative;
 		display:flex;
 		text-decoration:none;
-		width:320px;
-		height:320px;
-		margin:30px;
+		/*width:320px;*/
+		/*height:320px;*/
+		margin:10px;
 		padding:0px;
 		border:1px solid #666;
 		background-color:#ffffff;
@@ -402,12 +412,13 @@ body .main-header{
     flex-direction: column;
     align-content: center;
     align-items: center;
+    justify-items: center;
 }
 
 .item-box-image {
   background: transparent 50% 50% no-repeat;
   background-size: cover;
-  height: 45%;
+
   left: 0;
   overflow: hidden;
   position: relative;
@@ -417,11 +428,14 @@ body .main-header{
   align-content: center;
   justify-content: center;
   align-items: flex-end;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
-
 .item-box-image img {
-  /*width: 50%;*/
-  height: 80%;
+  width: 15%;
+  
+  /*height: 80%;*/
   background: transparent 50% 50% no-repeat;
   background-size: cover;
   /*display: flex;
@@ -439,6 +453,16 @@ body .main-header{
   align-items: center;
   justify-content: center;
   margin-top: 10px;
+  height: 40px;
+}
+
+.nombre-producto h3 {
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
+  font-weight: 500;
+  line-height: 0;
+  font-size: 14px;
+
 }
 
 .item-box p {
@@ -457,6 +481,15 @@ body .main-header{
   margin-top: 0px;
   padding: 5px 20px;
 }
+/*
+.container .item-box {
+
+  width: 200px;
+  max-width: 200px;
+  height: 250px;
+  margin: 10px;
+}
+*/
 
 /*END SECCION ECOMMERCE-PRODUCTOS-HOME*/
 
@@ -700,6 +733,7 @@ body .main-header{
   width: 100% !Important;
 }
 
+
 /*START MEDIAS QUERIES*/
 /* Medidas de dispositivos:
 320px — 480px: dispositivos móveis. 
@@ -710,21 +744,6 @@ body .main-header{
 
 @media screen /*and (min-width:320px)*/ and (max-width:480px) {
  
-
-  .nombre-producto h3 {
-    margin-top: 0.9rem;
-    margin-bottom: 0.9rem;
-    font-weight: 500;
-    line-height: 0;
-    font-size: 10px;
-
-  }
-
-  .container .item-box {
-    width: 200px;
-    height: 200px;
-  }
-
   .servicios-image{
     display: none;
   }
@@ -788,28 +807,14 @@ body .main-header{
 }
 
 @media screen and (min-width:481px) and (max-width:768px) {
-
-  
-
   .container .item-box {
-    display: flex;
-    width: 30%;
-    height: 240px;
+    width: 40%;
   }
-
-  .nombre-producto {
-    padding-top: 10px;
-  }
-
-  .nombre-producto h3 {
-    font-size: 12px !Important;
-  }
-
+/*
  .item-box-image {
-    width: 50%;
-    height: 0px;
+    min-width: 80%;
   }
-
+*/
   .servicios-image{
     display: none;
   }
@@ -885,20 +890,11 @@ body .main-header{
   .main-nav{
     display: block;
   }
+  .container .item-box {
+    width: 35%;
+  }
+
   
-  .container .item-box{
-    width: 120px;
-    height: 320px;
-  }
-
-  .nombre-producto {
-    height: 80px;
-  }
-
-  .nombre-producto h3 {
-    padding: 0px 10px;
-  }
-
   .reviews-nombre h3 {
     padding: 0px 0px;
   }
@@ -926,11 +922,6 @@ body .main-header{
     align-items: center;
     justify-content: center;list-style: auto;
   }
-
-  .nombre-producto h3 {
-    font-size: 14px !Important;
-  }
-
   .reviews-nombre img {
     width: 45%;
 }
@@ -980,21 +971,9 @@ body .main-header{
     display: block;
   }
 
-
-  .container .item-box{
-    width: 120px;
-    height: 320px;
-    flex: 18%
+  .container .item-box {
+    width: 22%;
   }
-
-  .nombre-producto {
-    height: 80px;
-  }
-
-  .nombre-producto h3 {
-    font-size: 14px !Important;
-  }
-
   .servicios-text {
     width:40%;
     align-content: flex-start;
@@ -1068,22 +1047,9 @@ body .main-header{
     font-size: 80px;
   }
 
-
   .container .item-box {
-    width: 90px;
-    height: 240px;
-    flex: 18%;
+    width: 20%;
   }
-
- .nombre-producto {
-    height: 40px;
-  }
-
-  .nombre-producto h3 {
-    font-size: 0.95rem;
-    margin-bottom: 0;
-  }
-  
 
   .servicios-text {
     width:40%;
