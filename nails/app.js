@@ -34,6 +34,9 @@ app.get('/carrito', (req, res) => {
 app.get('/product', (req, res) => {
     res.sendFile(path.join(__dirname, './views/productpage.html'));
 })
+app.get('/product1', (req, res) => {
+    res.sendFile(path.join(__dirname, './views/productpageNew.html'));
+})
 
 app.get('/servicios', (req, res) => {
     res.sendFile(path.join(__dirname, './views/servicios.html'));
