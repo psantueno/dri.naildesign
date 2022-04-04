@@ -17,19 +17,37 @@
 
 <!-- START HEADER-->
 <header class="main-header">
-  <button id="button-menu" class="button-menu">
-      <span></span>
-      <span></span>
-      <span></span>
-  </button>
-  <a class="main-logo" href="/"><img src="/image/logo.jpeg" alt="Logo Dri.Nails">
-  </a>
+  <div class="contenedor-logo-burgmenu">
+
+  <!-- Start menu mobile-->
+  <div class="btn-group button-menu">
+      <!-- button type="button" class="btn btn-secondary" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" -->
+      <button class="btn btn-secondary" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+      <!-- ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" -->
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <li><a class="dropdown-item" href="#productos">Productos</a></li>
+        <li><a class="dropdown-item" href="#servicios">Servicios</a></li>
+        <li><a class="dropdown-item" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <!-- End menu mobile-->
+
+
+  <!-- Start Logo y menu desktop-->
+  <div class="main-logo">
+  <a href="/"><img src="/image/logo.jpeg" alt="Logo Dri.Nails"></a>
+  </div>
+  </div>
+
+  <div class="contenedor-main-nav-nav3">
   <nav id="nav" class="main-nav">
       <div class="nav-links">
           <span class="nav-links2">
-              <a class="link-item" href="#">Productos</a>
-              <a class="link-item" href="#">Servicios</a>
-              <a class="link-item" href="#">Contacto</a>
+              <a class="link-item" href="#productos">Productos</a>
+              <!-- a class="link-item" href="#servicios">Servicios</a -->
+              <a class="link-item" href="#contacto">Contacto</a>
           </span>
   </nav>
   <nav class="main-nav3">
@@ -39,8 +57,9 @@
       </span>
       </div>
   </nav>
+  </div>
 </header>
-<!-- END HEADER-->
+<!-- Start Logo y menu desktop-->
 
 <!-- START LOGIN-->
 <body>
@@ -83,14 +102,14 @@
 
                   <div>
                     <label class="d-flex justify-content-center">
-                      <p style="color: #746F6F">Olvidé&nbsp<a href="#!">mi email</a>&nbspo&nbsp<a href="#!">password</a></p>
+                      <p style="color: #746F6F"><a href="#!">¿Olvidaste tu contraseña?</a></p>
                     </label>
                     </label>
                   </div>
 
                   <div>
                   <label class="d-flex justify-content-center">
-                    <p class="summary" style="color: #746F6F">Quiero&nbsp<a href="/registro">registrarme</a></p>
+                    <p class="summary" style="color: #746F6F">¿No tenés cuenta?&nbsp<a href="/registro">Regístrate</a></p>
                     </label>
                   </div>
 
