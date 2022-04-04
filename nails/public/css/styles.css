@@ -696,7 +696,7 @@ font-size: 12px;
 /*END PAGINA DE LOGIN*/
 
 /*START SERVICIOS PAGE*/
-/*.container-gral-servicio {
+.container-gral-servicio {
 text-align: center;
 margin: 25px 0;
 }
@@ -735,7 +735,7 @@ text-shadow: #595a59 ;
 481px — 768px: iPads, tablets. 
 769px — 939 telas pequenas.
 940 - 1078 laptops. 
-+ 1079px: desktops, telas grandes.*/
++ 1079px: desktops, telas grandes.
 
 /*STAR FOOTER*/
 
