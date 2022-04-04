@@ -311,6 +311,8 @@ ul li:hover {
   max-width: 95%; 
   text-align: center;
   background-color: #ffffff;
+  position: relative;
+  z-index: 10;
 }
 
 .btn-bgstroke:hover {
@@ -384,6 +386,15 @@ ul li:hover {
   align-content: center;
   align-items: center;
   justify-items: center;
+}
+
+.item-box .enlace-detalle{
+  border: none;
+}
+
+.item-box .to-carrito{
+  padding: 0;
+  border: none;
 }
 
 .item-box-image {
