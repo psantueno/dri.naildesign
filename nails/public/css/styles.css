@@ -24,16 +24,18 @@ p.description-text-servicios{
 
 /*START MENU DESPLEGABLE MOBILE*/
 .btn-secondary {
-  color: #565e64 !Important;
-  background-color: #ffffff !Important;
-  border-color: #ffffff !Important;
-  border-radius: 0% !Important;
+  color: #565e64 !important;
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  border-radius: 0% !important;
+  transition: all 600ms !important; 
 }
 
 .btn-secondary:hover {
-  color: #fff !Important;;
-  background-color: #D36878 !Important;
-  border-color: #D36878 !Important;
+  color: #fff !important;
+  background-color: #D36878 !important;
+  border-color: #D36878 !important;
+  border-radius: 5px !important;
 }
 
 .btn .btn-secondary i{
@@ -129,6 +131,7 @@ ul li:hover {
 /*CONFIG LOGO*/
 .main-logo img{
   width: 100%; 
+  margin-left: 4px;
 
 }
 .main-logo {
@@ -194,6 +197,7 @@ ul li:hover {
   font-weight: bold;
   position: relative;
   padding-right: 40px;
+  transition: color 600ms;
 }
 
 .link-item::after {
@@ -203,9 +207,9 @@ ul li:hover {
   color: #D36878;
   bottom: -5px;
   left: 0;
-  width: 20%;
+  width: 15px;
   height: 3px;
-  transition: 0.3s ease all;
+  transition: all 1s ease;
 }
 
 .link-item:hover {
@@ -217,7 +221,7 @@ ul li:hover {
 }
 
 .link-item:hover::after {
-  width: auto;
+  width: 63%;
   color: #D36878;
 }
 
@@ -261,7 +265,8 @@ ul li:hover {
 }
 
 .fa-shopping-cart {
-  color: #746F6F
+  color: #746F6F;
+  transition: color 600ms;
 } 
 /*END MENU NAV*/
 
@@ -313,6 +318,7 @@ ul li:hover {
   background-color: #ffffff;
   position: relative;
   z-index: 10;
+  transition: all 700ms;
 }
 
 .btn-bgstroke:hover {
