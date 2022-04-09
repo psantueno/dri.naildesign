@@ -16,10 +16,14 @@ Está dirigido a mujeres con un mediano-alto poder aquisitivo, que se preocupan 
 WEBS DE REFERENCIAS
 
 Nails&Co: Presenta una home bien estructurada y la parte de servicios tiene un buen UX, con fotos y descripción.
+
 Go Nails | We Love Nails: En la home, tiene una sesión de eCommerce que muestra de forma clara y a través de un carrusel, los productos.
+
 Wonderland Nails - Spa de manos y Pies - Bogota: La solución del cart y del checkout es clara y fluida con la navegación del sitio.
-4. Super Wow!!! Especialistas en Manicure, Pedicure y Diseño de uñas: Tiene una estructura de sitio sencilla, con la información justa. El design no nos agrada, pero fue una buena base para armar nuestro mapa del sitio.
-5. Wonoma | Tu belleza y bienestar online: Los forms de registro y login aparecen en la propia pantalla, no abriendose una nueva pantalla. Por ahora nos decidimos a abrir una nueva pantalla, pero fue una buena referencia.
+
+Super Wow!!! Especialistas en Manicure, Pedicure y Diseño de uñas: Tiene una estructura de sitio sencilla, con la información justa. El design no nos agrada, pero fue una buena base para armar nuestro mapa del sitio.
+
+Wonoma | Tu belleza y bienestar online: Los forms de registro y login aparecen en la propia pantalla, no abriendose una nueva pantalla. Por ahora nos decidimos a abrir una nueva pantalla, pero fue una buena referencia.
 
 MAPA DEL SITIO
 
@@ -77,3 +81,10 @@ Soy Diego Alba, tengo 33 años, ingeniero de profesión trabajando para la indus
 SEBASTIÁN ANTUENO
 
 Mi nombre es Sebastián, nacido en Argentina. Tengo 30 años, me desempeño como profesor en el área de matemática, trabajando en el nivel secundario y terciario (tecnicatura en Geología). Tengo como hobby tocar la guitarra y crear proyectos con madera. Casado, sin hijos. 
+
+Figma: https://www.figma.com/files/team/1083547914191972432/Grupo-7---dri.naildesign?fuid=1083589439885057468
+
+Trello: https://trello.com/b/zhN38qvk/grupo-7-drinaildesign
+
+
+
