@@ -1,5 +1,9 @@
 Información sobre el Proyecto
 
+Figma: https://www.figma.com/files/team/1083547914191972432/Grupo-7---dri.naildesign?fuid=1083589439885057468
+
+Trello: https://trello.com/b/zhN38qvk/grupo-7-drinaildesign
+
 TEMÁTICA DEL SITIO
 
 Nuestro proyecto se trata de un e-Commerce dedicado a ofrecer servicios y productos para al cuidado y belleza de las uñas, para la empresa dri.naildesign.  
@@ -82,9 +86,6 @@ SEBASTIÁN ANTUENO
 
 Mi nombre es Sebastián, nacido en Argentina. Tengo 30 años, me desempeño como profesor en el área de matemática, trabajando en el nivel secundario y terciario (tecnicatura en Geología). Tengo como hobby tocar la guitarra y crear proyectos con madera. Casado, sin hijos. 
 
-Figma: https://www.figma.com/files/team/1083547914191972432/Grupo-7---dri.naildesign?fuid=1083589439885057468
-
-Trello: https://trello.com/b/zhN38qvk/grupo-7-drinaildesign
 
 
 
