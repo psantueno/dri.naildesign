@@ -1,23 +1,24 @@
-Retro Sprint 2:
-
+Retro Sprint 1:
 Comenzar a hacer
-COMPLETAR
+Reuniones mas cortas y puntuales. Intentar ir al punto de la reunión. 
 
 
 Hacer más
-COMPLETAR
+Una idea es hacer más reuniones, y más cortas.
 
 
 Continuar haciendo 
-COMPLETAR
+Tenemos una buena comunicación entre nosotros, y es importante seguir teniendola.
+Propuesta de ideas: seguir con el brainstorm y las críticas constructivas.
+Seguir motivados!
 
 
 Hacer menos 
-COMPLETAR
+Hacer menos reuniones largas y dejar de tratar temas que no son de la sync.
 
 
 Dejar de hacer
-COMPLETAR
+Para el diseño no teníamos muy claro como lo queríamos, y cada uno creó un diseño distinto. Hay que evitar avanzar sin un lineamiento básico.
 
 
 Participantes:
