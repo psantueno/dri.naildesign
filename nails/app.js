@@ -16,15 +16,24 @@ app.set('view engine', 'ejs');
 app.use('/', rutasUsuarios);
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/home.html'));
+    res.sendFile(path.join(__dirname, './src/views/home.html'));
 })
+
 
 app.get('/menu', (req, res) => {
     res.sendFile(path.join(__dirname, './views/menu.html'));
+
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, './src/views/users/login.html'));
 })
 
 app.get('/banner', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/bannerhome.html'));
+    res.sendFile(path.join(__dirname, './src/views/partials/bannerhome.html'));
+})
+
+
+app.get('/registro', (req, res) => {
+    res.sendFile(path.join(__dirname, './src/views/users/registro.html'));
 })
 
 app.get('/carrito', (req, res) => {
@@ -32,7 +41,15 @@ app.get('/carrito', (req, res) => {
 })
 
 app.get('/product', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/productpage.html'));
+    res.sendFile(path.join(__dirname, './src/views/products/productpage.html'));
+})
+
+app.get('/product1', (req, res) => {
+    res.sendFile(path.join(__dirname, './src/views/products/agregarproduct.html'));
+})
+
+app.get('/product2', (req, res) => {
+    res.sendFile(path.join(__dirname, './src/views/products/editarproduct.html'));
 })
 
 app.get('/servicios', (req, res) => {
