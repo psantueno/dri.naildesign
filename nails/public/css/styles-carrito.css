@@ -129,6 +129,7 @@
 .fa-trash {
 	color: #746F6F !important;
 	cursor: pointer !important;
+	transition: color 500ms !important;
 }
 
 .fa-trash:hover {
@@ -191,6 +192,7 @@
         display: flex;
         align-items: center;
     }
+
 
     @media (min-width: 1200px){}
     .container, .container-lg, .container-md, .container-sm, .container-xl {
