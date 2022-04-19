@@ -17,9 +17,12 @@ const mainController = {
     cart: (req, res) => {
         res.render("carrito");
     },
-    home1: (req, res) => {
-        res.render("home1");
-    }
+
+
+    paginaproducto: (req, res) => {
+        res.render("paginaproducto");
+    },
+
 }
 
 module.exports = mainController;
