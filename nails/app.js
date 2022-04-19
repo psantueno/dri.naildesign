@@ -26,7 +26,6 @@ app.use('/', mainRoutes);
 
 app.use('/products', productsRoutes);
 
-
 app.get('/menu', (req, res) => {
     res.sendFile(path.join(__dirname, './views/menu.html'));
     });

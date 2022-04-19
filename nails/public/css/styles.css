@@ -373,6 +373,12 @@ ul li:hover {
   color: #D36878;
 }
 
+.shop-texto h2 {
+  margin: 0.17em 0;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
 .container{
   display: flex;
   flex-flow: row wrap;
@@ -395,7 +401,7 @@ ul li:hover {
   border: #444444;
   box-shadow: 1px 3px 5px 3px rgb(182, 182, 182)/*, 8px 8px 8px 5px green*/;
   color: #747474;
-  flex-grow: 0.25;
+  /*flex-grow: 0.25;*/
   flex-direction: column;
   align-content: center;
   align-items: center;
@@ -426,8 +432,29 @@ ul li:hover {
   padding-top: 30px;
 }
 
+.maquillaje{
+  background: transparent 50% 50% no-repeat;
+  background-size: cover;
+  left: 0;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  z-index: 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top: 30px;
+}
+
 .item-box-image img {
-  width: 15%;
+  width: 35%;
+  background: transparent 50% 50% no-repeat;
+  background-size: cover;
+}
+
+.maquillaje img {
+  width: 80%;
   background: transparent 50% 50% no-repeat;
   background-size: cover;
 }
@@ -1046,6 +1073,10 @@ body .main-header {
 body .main-header {
   padding: 0px 2rem;
   padding-left: 1.5rem;
+}
+
+.nombre-producto h3 {
+  font-size: 15px;
 }
 
 }

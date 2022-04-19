@@ -16,7 +16,11 @@ const mainController = {
 
     cart: (req, res) => {
         res.render("carrito");
-    }
+    },
+
+    paginaproducto: (req, res) => {
+        res.render("paginaproducto");
+    },
 }
 
 module.exports = mainController;
