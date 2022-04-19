@@ -3,6 +3,8 @@ const router = express.Router()
 const mainController = require("../controllers/mainController")
 
 router.get('/', mainController.home);
+router.get('/home1', mainController.home1);
+
 
 router.get('/login', mainController.login);
 // Actualizaciòn de las rutas asignadas DA

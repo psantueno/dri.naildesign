@@ -16,6 +16,9 @@ const mainController = {
 
     cart: (req, res) => {
         res.render("carrito");
+    },
+    home1: (req, res) => {
+        res.render("home1");
     }
 }
 
