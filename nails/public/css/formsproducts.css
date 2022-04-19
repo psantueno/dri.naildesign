@@ -1,3 +1,6 @@
+p.text {
+  color: white;
+}
 .container2 {
     display: flex;
     flex-flow: row wrap;
@@ -12,6 +15,7 @@
     justify-content: center;
     width: 100%;
     margin: 40px 0;
+    color: #D36878;
 }
 
 

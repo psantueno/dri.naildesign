@@ -21,7 +21,7 @@ app.use(express.static(publicPath));
 //Se configura el view engine EJS
 app.set('view engine', 'ejs');
 
-// Actualizaciòn de las rutas Acceso a login y register.
+// Actualizaciòn de las rutas Acceso a login y register desde mainRoutes.
 app.use('/', mainRoutes);
 
 app.use('/products', productsRoutes);

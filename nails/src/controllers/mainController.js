@@ -18,9 +18,11 @@ const mainController = {
         res.render("carrito");
     },
 
+
     paginaproducto: (req, res) => {
         res.render("paginaproducto");
     },
+
 }
 
 module.exports = mainController;
