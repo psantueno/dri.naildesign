@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Agregar Producto</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/formsproducts.css">
-
-</head>
+<!-- START HEAD-->
+<%- include("./partials/head.ejs") %>
+<!-- END HEAD-->
 
 <body>
-    <h1>esto esun H1 de la pagina de src views products agregarproduct.html</h1>
+
+    <!-- START HEADER -->
+<%- include("./partials/header.ejs") %>
+<!-- END HEADER-->
+
     <form action="/validar" method="post">
 
     </form>
 
     <form class="forms" action="action_page.php">
         <div class="container2">
-            <h1>Agregar Productos</h1>
+            <h1>Editar Productos</h1>
       
 
             <div class="campos-form">
@@ -70,7 +67,7 @@
         </div>
 
         <div class="botones">
-            <button type="button" class="btn-bgstroke" href="#">Enviar</button>
+            <button type="button" class="btn-bgstroke" href="#">Modificar</button>
         </div>
 
         <div class="botones">
@@ -81,5 +78,10 @@
     </form>
 
 </body>
+
+<!-- START FOOTER -->
+<%- include("./partials/footer.ejs") %>    
+<!-- END FOOTER-->
+
 
 </html>

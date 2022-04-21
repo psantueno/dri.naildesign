@@ -4,9 +4,6 @@ const mainController = require("../controllers/mainController")
 
 router.get('/', mainController.home);
 
-router.get('/paginaproducto', mainController.paginaproducto);
-
-
 router.get('/login', mainController.login);
 // Actualizaciòn de las rutas asignadas DA
 router.get('/registro', mainController.registro);
