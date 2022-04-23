@@ -7,7 +7,7 @@ const stylesOfPages = ['rel=stylesheet href=/css/detailProduct.css', 'rel=styles
 const productsController = { 
     
     listProducts: (req, res) => {
-        res.render("listProducts", {title: titlesOfPages[0], style1:"", style2:"", listaProductosEnviar:listaDeProductos});
+        res.render("listProductsDinamic", {title: titlesOfPages[0], style1:"", style2:"", listaProductosEnviar:listaDeProductos});
     },
 
     detailProduct: (req, res) => {
@@ -22,9 +22,6 @@ const productsController = {
         res.render("editProduct", {title: titlesOfPages[1], style1:stylesOfPages[1], style2:""});
     },
 
-    prueba: (req, res) => {
-        res.render("listProductsDinamica", {title: titlesOfPages[0], style1:"", style2:"", listaProductosEnviar:listaDeProductos});
-    },
 }
 
 module.exports = productsController;
