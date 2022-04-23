@@ -131,6 +131,13 @@
     align-items: flex-end;
 }
 
+.botonedit {
+    display: flex;
+    justify-content: center;
+    max-height: 85px;
+}
+
+
 .product_quantity {
     width: 104px;
     height: 47px;
@@ -228,6 +235,10 @@
     right: 3px;
 }
 
+/* START MEDIA QUERIES */
+
+
+/* TABLET */
 @media screen and (max-width:767px) {
     .image_selected img {
         min-width: 300px;
@@ -240,12 +251,19 @@
 
 }
 
+/* DESKTOP */
 @media screen and (min-width:768px) and (max-width:991px) {
 
     .image_selected img {
         min-width: 300px !important;
         max-width: 300px !important;
     }  
+
+    .botonedit {
+        display: flex;
+        justify-content: right;
+        max-height: 85px;
+    }
 }
 
 @media screen and (min-width:992px) {
@@ -256,5 +274,11 @@
     
     .image_selected {  
         height: 525px;
+    }
+
+    .botonedit {
+        display: flex;
+        justify-content: right;
+        max-height: 85px;
     }
 }
