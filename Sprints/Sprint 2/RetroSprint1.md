@@ -22,6 +22,6 @@ Para el diseño no teníamos muy claro como lo queríamos, y cada uno creó un d
 
 
 Participantes:
-Santiago Antueno
+Sebastián Antueno
 Diego Alba
 Aline Gruba Barbosa

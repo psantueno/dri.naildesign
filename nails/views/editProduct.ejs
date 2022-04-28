@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<!-- START HEAD-->
+<%- include("./partials/head.ejs") %>
+<!-- END HEAD-->
+
+<body>
+
+    <!-- START HEADER -->
+<%- include("./partials/header.ejs") %>
+<!-- END HEADER-->
+
+    <form action="/validar" method="post">
+
+    </form>
+
+    <form class="forms" action="action_page.php">
+        <div class="container2">
+            <h1>Editar Productos</h1>
+      
+
+            <div class="campos-form">
+                <label for="nombre-producto"><b>Nombre del producto</b></label>
+                <input type="text" placeholder="Nombre de producto" name="nombreproducto" id="nombreproducto" required>
+            </div>
+
+            <div class="campos-form">
+                <label for="descripcion-producto"><b>Descripcion del producto</b></label>
+                <textarea type="text" placeholder="Descripcion de producto" name="descripcionproducto" id="descripcionproducto" required></textarea>
+            </div>
+
+            <div class="campos-form categoria-producto">
+                <label for="categoria-producto"><b>Categoría</b></label>
+                <textarea type="text" placeholder="Categoría de producto" name="categoriaproducto" id="categoriaproducto" required></textarea>
+            </div>
+
+            <div class="categoria">
+                <label for="categoria-producto"><b>Categorías del producto (puede elegir más de una) </b></label>
+                <div class="interes2">
+                    <input name="maquillaje" type="checkbox" />Maquillaje
+                    <br />
+                    <input name="esmalte" type="checkbox" />Esmalte
+                    <br />
+                    <input name="crema" type="checkbox" />Crema
+                    <br />
+                    <input name="unapostiza" type="checkbox" />Uñas Postizas
+                    <br />
+                    <input name="cuidado" type="checkbox" />Cuidado
+                    </br>
+                </div>
+            </div>
+
+            <div class="campos-form">
+                <label for="cantidad-producto"><b>Cantidad (ml)</b></label>
+                <input type="number" placeholder="Cantidad de producto" name="Cantidadproducto" id="cantidadproducto" required>
+            </div>
+
+            <div class="campos-form">
+            <label for="precio-producto"><b>Precio del producto</b></label>
+            <input type="number" placeholder="Precio de producto" name="precioproducto" id="precioproducto" required>
+        </div>
+
+        <div class="campos-form">
+        <label for="imagen-producto"><b>Imagen del producto</b></label>
+        <input type="file" placeholder="Imagen de producto" name="imagenproducto" id="imagenproducto" required>
+        </div>
+
+        <div class="botones">
+            <button type="button" class="btn-bgstroke" href="#">Modificar</button>
+        </div>
+
+        <div class="botones">
+            <button type="button" class="btn-bgstroke" href="#">Borrar</button>
+        </div>
+
+        </div>
+    </form>
+
+</body>
+
+<!-- START FOOTER -->
+<%- include("./partials/footer.ejs") %>    
+<!-- END FOOTER-->
+
+
+</html>

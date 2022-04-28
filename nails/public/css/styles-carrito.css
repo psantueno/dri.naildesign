@@ -94,9 +94,9 @@
 
 .shopping-cart .summary{
 	border-top: 2px solid #D36878;
-    background-color: #f7fbff;
-    height: 100%;
-    padding: 30px;
+    background-color: #ffffff;
+    height: 95%;
+    padding: 10px;
     display: flex;
     flex-direction: column;
 }
@@ -129,6 +129,7 @@
 .fa-trash {
 	color: #746F6F !important;
 	cursor: pointer !important;
+	transition: color 500ms !important;
 }
 
 .fa-trash:hover {
@@ -137,6 +138,11 @@
 
 .shopping-cart .summary button{
 	margin-top: 20px;
+}
+
+.boton-car {
+	display: flex;
+	justify-content: center;
 }
 
 .btn-primary {
@@ -191,6 +197,7 @@
         display: flex;
         align-items: center;
     }
+
 
     @media (min-width: 1200px){}
     .container, .container-lg, .container-md, .container-sm, .container-xl {

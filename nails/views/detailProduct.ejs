@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- START HEAD-->
+<%- include("./partials/head.ejs") %>
+    <!-- FINISH HEAD-->
+
+    <!-- START PRODUCT PAGE -->
+
+    <body>
+
+        <!-- START HEADER-->
+        <%- include("./partials/header.ejs") %>
+            <!-- END HEADER-->
+
+            <div class="super_container">
+                <div class="single_product">
+                    <div class="container-fluid" style=" background-color: #fff; padding: 11px;">
+                        <div class="row">
+                            <div class="col-lg-4 order-lg-2 order-1">
+                                <div class="image_selected"><img
+                                        src="https://johnlewis.scene7.com/is/image/JohnLewis/236871399" alt=""></div>
+                            </div>
+                            <div class="col-lg-6 order-3">
+                                <div class="product_description">
+                                    <div class="product_name">
+                                        <h2>Aqua Blue</h2>
+                                    </div>
+                                    <div class="preciopdp"> <span class="product_price">ARS $810,00</span>
+                                        <strike class="product_discount"> <span style='color:black'>ARS $1090,000<span>
+                                        </strike>
+                                    </div>
+
+                                    <hr class="singleline">
+                                    <div class="informacionpdp"> <span class="product_info">Esmalte cremoso de larga
+                                            duración<br>Hidrata y mantiene fortalecida la uña<br>Duración 7 días</span>
+                                    </div>
+
+                                    <hr class="singleline">
+                                    <div class="order_info d-flex flex-row">
+                                        <form action="#">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6 cantidad">
+                                            <label class="col-xs-3" for="quantity">Cantidad:</label>
+                                            <input id="quantity" type="number" value="1"
+                                                class="form-control quantity-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="col-xs-6 botonpagar"> 
+                                        <a href="/cart" target="_blanc"></a>
+                                        <button type="button" class="btn-bgstroke">Comprar</button>
+                                        <!-- div class="product_fav"><i class="fas fa-heart"></i></div -->
+                                    </a>
+                                </div>
+                                
+
+                            </div>
+                            <div class="botonedit">
+                                <a href="/products/editProduct" target="_blanc">
+                                    <button type="button" class="btn-bgstroke">Editar</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+            <!-- END PRODUCT PAGE-->
+    </body>
+
+    <!-- START FOOTER-->
+    <%- include("./partials/footer.ejs") %>
+        <!-- END FOOTER-->
+
+</html>
