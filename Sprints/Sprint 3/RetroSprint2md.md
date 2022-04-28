@@ -1,11 +1,8 @@
 Retro Sprint 2:
 
 COMENZAR A HACER
-
 Más puntualidad en las reuniones y avisar a los compañeros cuando surge un imprevisto, fomentando el respeto por el tiempo de cada uno de los integrantes.
-
 Al dividir las tareas, y al instante crear las tareas en Trello.
-
 Exigir de Digital House más visibilidad de los entregables y fechas. Nos complica tener entregables que aún no vimos y la demora en recibir feedbacks. Así podremos planificar el sprint desde el inicio.
 
 
