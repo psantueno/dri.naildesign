@@ -140,6 +140,11 @@
 	margin-top: 20px;
 }
 
+.boton-car {
+	display: flex;
+	justify-content: center;
+}
+
 .btn-primary {
     color: #D36878;
 }

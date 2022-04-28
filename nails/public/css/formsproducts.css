@@ -1,6 +1,7 @@
 p.text {
   color: white;
 }
+
 .container2 {
     display: flex;
     flex-flow: row wrap;
@@ -42,6 +43,17 @@ p.text {
       /*margin-bottom: 40px;*/
   }
 
+  .categoria-producto {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+
+  .cantidad-producto b {
+    margin-top: 10px;
+  }
+
   .categoria {
     margin-bottom: 30px;
     font-family: 'Roboto', sans-serif;
@@ -51,12 +63,17 @@ p.text {
     width: 100%;
   }
 
+  .categoria {
+    margin-top: 15px;
+  }
+
   .categoria b {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     color: black;
-}
-  
+    margin-top: 10px;
+  }
+
   input {
     font-family: 'Roboto', sans-serif;
   }
