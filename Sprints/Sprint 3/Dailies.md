@@ -16,9 +16,9 @@ Sebastián Antueno:
 - Qué va a hacer hoy: aplicar archivos parciales e incluirlos en las vistas.
 
 Diego Alba
-- Qué hizo ayer: 
-- Impedimientos:
-- Qué va a hacer hoy: 
+- Qué hizo ayer: revisar el codigo para implementar sistema de ruteo base y direccionamiento a vistas mediante controlador
+- Impedimientos: luego de intentar colocar las vistas en subcarpetas individuales, se determina que no es posible, debe utilizarse un views comun
+- Qué va a hacer hoy: implementar rutas y controladores de mainy producto 
 
 .
 .
@@ -32,12 +32,7 @@ Aline Gruba:
 Sebastián Antueno:
 - Qué hizo ayer: finalizar la aplicación de archivos parciales.
 - Impedimientos: ninguno.
-- Qué va a hacer hoy: voy a crear el sistema de rutas y renderización con EJS de home, carrito, detalle de producto y formulario de carga /edición de productos.
-
-Diego Alba
-- Qué hizo ayer: 
-- Impedimientos:
-- Qué va a hacer hoy:  
+- Qué va a hacer hoy: voy a crear/modificar el sistema de rutas y renderización con EJS de home, carrito, detalle de producto y formulario de carga /edición de productos.
 
 .
 .
@@ -52,11 +47,6 @@ Sebastián Antueno:
 - Qué hizo ayer: crear el sistema de rutas y renderización con EJS de home, carrito, detalle de producto y formulario de carga /edición de productos.
 - Impedimientos: ninguno.
 - Qué va a hacer hoy: finalizar con los detalles del sistema de rutas y renderización de vistas.
-
-Diego Alba
-- Qué hizo ayer: 
-- Impedimientos:
-- Qué va a hacer hoy: 
 
 .
 .
@@ -73,7 +63,7 @@ Sebastián Antueno:
 - Qué va a hacer hoy: agregar botón editar en el detalle de productos y direccionar algunos botones que no tienen funcionamiento.
 
 Diego Alba
-- Qué hizo ayer: 
-- Impedimientos:
-- Qué va a hacer hoy: 
+- Qué hizo ayer: revisar los detalles y funcionalidad final de los avances del proyecto
+- Impedimientos:ninguno
+- Qué va a hacer hoy: reportar los bugs y corregir lo que sea posible.
 
