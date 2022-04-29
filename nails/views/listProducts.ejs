@@ -26,247 +26,59 @@
 
                         <div class="container">
 
-                            <div class="item-box">
-                                <a class="enlace-detalle" href="/products/detailProduct">
-                                    <div class="item-box-image">
-                                        <img src="/image/jaipur-frasco.webp" alt="Esmalte Cream Velvet"></img>
-                                    </div>
-                                </a>
 
+                            <% for(let i=0; i < listaEsmaltes.length; i++) { %>
+                            <div class="item-box">
+                                <a class="enlace-detalle" href="/products/detailProduct">
+                                    <div class="item-box-image">
+                                        <img src= <%= listaEsmaltes[i].imagen %>  alt="Esmalte Cream Velvet"></img>
+                                    </div>
+                                </a>
                                 <div class="nombre-producto">
-                                    <h3>Esmalte Cream Velvet</h3>
+                                    <h3> <%= listaEsmaltes[i].nombre %> </h3>
                                 </div>
-                                <p>AR$810,00</p>
+                                <p> <%= listaEsmaltes[i].precio %> </p>
                                 <a class="to-carrito" href="/cart">
                                     <button type="button" class="btn-bgstroke">Comprar</button>
                                 </a>
                             </div>
-                            <div class="item-box">
-                                <a class="enlace-detalle" href="/products/detailProduct">
-                                    <div class="item-box-image">
-                                        <img src="/image/jaipur-frasco.webp" alt="Esmalte St Germain"></img>
-                                    </div>
-                                </a>
-                                <div class="nombre-producto">
-                                    <h3>Esmalte St Germain</h3>
-                                </div>
-                                <p>AR$940,00</p>
-                                <a class="to-carrito" href="/cart">
-                                    <button class="btn-bgstroke" type="button">Comprar</button>
-                                </a>
-                            </div>
-                            <div class="item-box">
-                                <a class="enlace-detalle" href="/products/detailProduct">
-                                    <div class="item-box-image">
-                                        <img src="/image/jaipur-frasco.webp" alt="Esmalte Wichita"></img>
-                                    </div>
-                                </a>
-                                <div class="nombre-producto">
-                                    <h3>Esmalte Cream Velvet</h3>
-                                </div>
-                                <p>AR$780,00</p>
-                                <a class="to-carrito" href="/cart">
-                                    <button type="button" class="btn-bgstroke">Comprar</button>
-                                </a>
-                            </div>
-                            <div class="item-box">
-                                <a class="enlace-detalle" href="/products/detailProduct">
-                                    <div class="item-box-image">
-                                        <img src="/image/jaipur-frasco.webp" alt="Esmalte Psychedelic Lime"></img>
-                                    </div>
-                                </a>
-                                <div class="nombre-producto">
-                                    <h3>Esmalte Jaipur Frasco</h3>
-                                </div>
-                                <p>AR$810,00</p>
-                                <a class="to-carrito" href="/cart">
-                                    <button type="button" class="btn-bgstroke">Comprar</button>
-                                </a>
-                            </div>
-                            <div class="item-box">
-                                <a class="enlace-detalle" href="/products/detailProduct">
-                                    <div class="item-box-image">
-                                        <img src="/image/jaipur-frasco.webp" alt="Esmalte Smokey Blue"></img>
-                                    </div>
-                                </a>
-                                <div class="nombre-producto">
-                                    <h3>Esmalte Smokey Blue</h3>
-                                </div>
-                                <p>AR$810,00</p>
-                                <a class="to-carrito" href="/cart">
-                                    <button type="button" class="btn-bgstroke">Comprar</button>
-                                </a>
-                            </div>
-                            <div class="item-box">
-                                <a class="enlace-detalle" href="/products/detailProduct">
-                                    <div class="item-box-image">
-                                        <img src="/image/jaipur-frasco.webp" alt="Esmalte Jaipur Frasco"></img>
-                                    </div>
-                                </a>
-                                <div class="nombre-producto">
-                                    <h3>Esmalte Jaipur Frasco</h3>
-                                </div>
-                                <p>AR$810,00</p>
-                                <a class="to-carrito" href="/cart">
-                                    <button type="button" class="btn-bgstroke">Comprar</button>
-                                </a>
-                            </div>
-                            <div class="item-box">
-                                <a class="enlace-detalle" href="/products/detailProduct">
-                                    <div class="item-box-image">
-                                        <img src="/image/jaipur-frasco.webp" alt="Esmalte Green Zen"></img>
-                                    </div>
-                                </a>
 
-                                <div class="nombre-producto">
-                                    <h3>Esmalte Green Zen</h3>
-                                </div>
-                                <p>AR$810,00</p>
-                                <a class="to-carrito" href="/cart">
-                                    <button type="button" class="btn-bgstroke">Comprar</button>
-                                </a>
-                            </div>
-                            <div class="item-box">
-                                <a class="enlace-detalle" href="/products/detailProduct">
-                                    <div class="item-box-image">
-                                        <img src="/image/jaipur-frasco.webp" alt="Esmalte Aqua Blue"></img>
-                                    </div>
-                                </a>
-                                <div class="nombre-producto">
-                                    <h3>Esmalte Aqua Blue</h3>
-                                </div>
-                                <p>AR$810,00</p>
-                                <a class="to-carrito" href="/cart">
-                                    <button class="btn-bgstroke" type="button">Comprar</button>
-                                </a>
-                            </div>
+                            <% } %>
+
                         </div>
                         <hr>
                         <!-- END ESMALTES-->
+                    </div>
 
                     <!-- START MAQUILLAJE-->
+
                     <div class="shop-texto">
                         <h2>Maquillaje</h2>
 
                         <div class="container">
 
+                            <% for(let i=0; i < listaMaquillaje.length; i++) { %>
                             <div class="item-box">
                                 <a class="enlace-detalle" href="/products/detailProduct">
                                     <div class="maquillaje">
-                                        <img src="/image/images.jpeg" alt="Paleta de Maquiagem"></img>
+                                        <img src= <%= listaMaquillaje[i].imagen %> alt="Paleta de Maquillaje"></img>
                                     </div>
                                 </a>
 
                                 <div class="nombre-producto">
-                                    <h3>Paleta de Maquiagem</h3>
+                                    <h3> <%= listaMaquillaje[i].nombre %> </h3>
                                 </div>
-                                <p>AR$810,00</p>
+                                <p> <%= listaMaquillaje[i].precio %> </p>
                                 <a class="to-carrito" href="/cart">
                                     <button type="button" class="btn-bgstroke">Comprar</button>
                                 </a>
                             </div>
-                            <div class="item-box">
-                                <a class="enlace-detalle" href="/products/detailProduct">
-                                    <div class="maquillaje">
-                                        <img src="/image/rimel.jpeg" alt="Delineador Líquido"></img>
-                                    </div>
-                                </a>
-                                <div class="nombre-producto">
-                                    <h3>Delineador Líquido</h3>
-                                </div>
-                                <p>AR$940,00</p>
-                                <a class="to-carrito" href="/cart">
-                                    <button class="btn-bgstroke" type="button">Comprar</button>
-                                </a>
-                            </div>
-                            <div class="item-box">
-                                <a class="enlace-detalle" href="/products/detailProduct">
-                                    <div class="maquillaje">
-                                        <img src="/image/rimel2.jpeg" alt="Rímel Waterproof"></img>
-                                    </div>
-                                </a>
-                                <div class="nombre-producto">
-                                    <h3>Rímel Waterproof</h3>
-                                </div>
-                                <p>AR$780,00</p>
-                                <a class="to-carrito" href="/cart">
-                                    <button type="button" class="btn-bgstroke">Comprar</button>
-                                </a>
-                            </div>
-                            <div class="item-box">
-                                <a class="enlace-detalle" href="/products/detailProduct">
-                                    <div class="maquillaje">
-                                        <img src="/image/baseliquila.webp" alt="Base Líquida"></img>
-                                    </div>
-                                </a>
-                                <div class="nombre-producto">
-                                    <h3>Base Líquida</h3>
-                                </div>
-                                <p>AR$810,00</p>
-                                <a class="to-carrito" href="/cart">
-                                    <button type="button" class="btn-bgstroke">Comprar</button>
-                                </a>
-                            </div>
-                            <div class="item-box">
-                                <a class="enlace-detalle" href="/products/detailProduct">
-                                    <div class="maquillaje">
-                                        <img src="/image/base-dior.jpeg" alt="Esmalte Smokey Blue"></img>
-                                    </div>
-                                </a>
-                                <div class="nombre-producto">
-                                    <h3>Esmalte Smokey Blue</h3>
-                                </div>
-                                <p>AR$810,00</p>
-                                <a class="to-carrito" href="/cart">
-                                    <button type="button" class="btn-bgstroke">Comprar</button>
-                                </a>
-                            </div>
-                            <div class="item-box">
-                                <a class="enlace-detalle" href="/products/detailProduct">
-                                    <div class="maquillaje">
-                                        <img src="/image/labial-ultracor.png" alt="Labial Ultracor"></img>
-                                    </div>
-                                </a>
-                                <div class="nombre-producto">
-                                    <h3>Labial Ultracor</h3>
-                                </div>
-                                <p>AR$810,00</p>
-                                <a class="to-carrito" href="/cart">
-                                    <button type="button" class="btn-bgstroke">Comprar</button>
-                                </a>
-                            </div>
-                            <div class="item-box">
-                                <a class="enlace-detalle" href="/products/detailProduct">
-                                    <div class="maquillaje">
-                                        <img src="/image/brillo-pink.webp" alt="Brillo Pink"></img>
-                                    </div>
-                                </a>
+                                <% } %>
 
-                                <div class="nombre-producto">
-                                    <h3>Brillo Pink</h3>
-                                </div>
-                                <p>AR$810,00</p>
-                                <a class="to-carrito" href="/cart">
-                                    <button type="button" class="btn-bgstroke">Comprar</button>
-                                </a>
-                            </div>
-                            <div class="item-box">
-                                <a class="enlace-detalle" href="/products/detailProduct">
-                                    <div class="maquillaje">
-                                        <img src="/image/sombras.webp" alt="Kit Sombras de Ojos"></img>
-                                    </div>
-                                </a>
-                                <div class="nombre-producto">
-                                    <h3>Kit Sombras de Ojos</h3>
-                                </div>
-                                <p>AR$810,00</p>
-                                <a class="to-carrito" href="/cart">
-                                    <button class="btn-bgstroke" type="button">Comprar</button>
-                                </a>
-                            </div>
                         </div>
                         <hr>
                         <!-- END MAQUILLAJE-->
+                    </div>
 
             </section>
             </secction>
