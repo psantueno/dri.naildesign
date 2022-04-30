@@ -137,6 +137,12 @@
     max-height: 85px;
 }
 
+.botonedit .btn-bgstroke {
+    font-size: 10px !important;
+    margin-left: 15px;
+    max-width: none !important;
+}
+
 
 .product_quantity {
     width: 104px;
