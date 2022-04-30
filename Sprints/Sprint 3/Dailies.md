@@ -11,7 +11,7 @@ Aline Gruba:
 - Qué va a hacer hoy: empezar con los forms de edición de productos (add y edit). La parte visual (html y css)
 
 Sebastián Antueno:
-- Qué hizo ayer: esdtuve mirando el código para eliminar todo lo que se repita.
+- Qué hizo ayer: estuvo mirando el código para eliminar todo lo que se repita.
 - Impedimientos: ninguno.
 - Qué va a hacer hoy: aplicar archivos parciales e incluirlos en las vistas.
 
