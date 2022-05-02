@@ -19,66 +19,41 @@
                         <p>Las Mejores Marcas Internacionales las encontrás en nuestro Shop Online</p>
                     </div>
                     <hr>
+                        <!-- PRUEBA PARA MOSTRAR TODO POR AUTO CLASIFICACIÒN -->
 
-                    <!-- START ESMALTES-->
-                    <div class="shop-texto">
-                        <h2>Esmaltes</h2>
-
-                        <div class="container">
-
-
-                            <% for(let i=0; i < listaEsmaltes.length; i++) { %>
-                            <div class="item-box">
-                                <a class="enlace-detalle" href="/products/detailProduct">
-                                    <div class="item-box-image">
-                                        <img src= <%= listaEsmaltes[i].imagen %>  alt="Esmalte Cream Velvet"></img>
+                        <%categoriasProductos.forEach(categoria=>{%>
+                        <div class="shop-texto">
+                            <h2><%=categoria%></h2>
+    
+                            <div class="container">
+                                <% productsJson.forEach(product=>{ if(product.categoria===categoria){ %>
+                                    <div class="item-box">
+                                        <a class="enlace-detalle" href="/products/detailProduct/<%=product.id%>">
+                                            <div class="item-box-image">
+                                                <img src= <%= product.imagen %>  alt="Esmalte Cream Velvet"></img>
+                                            </div>
+                                        </a>
+                                        <div class="nombre-producto">
+                                            <h3> <%= product.nombre %> </h3>
+                                        </div>
+                                        <p> <%= product.precio %> </p>
+                                        <a class="to-carrito" href="/cart">
+                                            <button type="button" class="btn-bgstroke">Comprar</button>
+                                        </a>
                                     </div>
-                                </a>
-                                <div class="nombre-producto">
-                                    <h3> <%= listaEsmaltes[i].nombre %> </h3>
-                                </div>
-                                <p> <%= listaEsmaltes[i].precio %> </p>
-                                <a class="to-carrito" href="/cart">
-                                    <button type="button" class="btn-bgstroke">Comprar</button>
-                                </a>
+        
+                                <%  }}) %>
                             </div>
-
-                            <% } %>
-
+                            <hr>
                         </div>
-                        <hr>
-                        <!-- END ESMALTES-->
-                    </div>
 
-                    <!-- START MAQUILLAJE-->
+                    <%})%>
 
-                    <div class="shop-texto">
-                        <h2>Maquillaje</h2>
+<!-- PRUEBA PARA MOSTRAR TODO POR AUTO CLASIFICACIÒN -->
 
-                        <div class="container">
 
-                            <% for(let i=0; i < listaMaquillaje.length; i++) { %>
-                            <div class="item-box">
-                                <a class="enlace-detalle" href="/products/detailProduct">
-                                    <div class="maquillaje">
-                                        <img src= <%= listaMaquillaje[i].imagen %> alt="Paleta de Maquillaje"></img>
-                                    </div>
-                                </a>
 
-                                <div class="nombre-producto">
-                                    <h3> <%= listaMaquillaje[i].nombre %> </h3>
-                                </div>
-                                <p> <%= listaMaquillaje[i].precio %> </p>
-                                <a class="to-carrito" href="/cart">
-                                    <button type="button" class="btn-bgstroke">Comprar</button>
-                                </a>
-                            </div>
-                                <% } %>
 
-                        </div>
-                        <hr>
-                        <!-- END MAQUILLAJE-->
-                    </div>
 
             </section>
             </secction>

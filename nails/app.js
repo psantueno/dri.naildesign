@@ -1,6 +1,11 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const fs = require("fs");
+
+const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+
+
 
 const publicPath = path.resolve(__dirname, './public');
 
@@ -14,7 +19,8 @@ const productsRoutes = require("./src/routes/products.js")
 app.listen(3000, () => {
     console.log('Servidor corriendo en el puerto 3000');
 });
-
+//llamado a method override para poder usar put y delete
+app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 //Definiendo carpeta pública.
 app.use(express.static(publicPath));
 
@@ -23,6 +29,7 @@ app.set('view engine', 'ejs');
 
 // Actualizaciòn de las rutas Acceso a login y register desde mainRoutes.
 app.use('/', mainRoutes);
+
 
 app.use('/products', productsRoutes);
 
@@ -33,18 +40,6 @@ app.get('/menu', (req, res) => {
 app.get('/banner', (req, res) => {
     res.sendFile(path.join(__dirname, './src/views/partials/bannerhome.html'));
 })
-
-// app.get('/product', (req, res) => {
-//     res.sendFile(path.join(__dirname, './src/views/products/productpage.html'));
-// })
-
-// app.get('/product1', (req, res) => {
-//     res.sendFile(path.join(__dirname, './src/views/products/agregarproduct.html'));
-// })
-
-// app.get('/product2', (req, res) => {
-//     res.sendFile(path.join(__dirname, './src/views/products/editarproduct.html'));
-// })
 
 app.get('/servicios', (req, res) => { 
     res.sendFile(path.join(__dirname, './views/servicios.html'));

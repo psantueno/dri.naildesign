@@ -18,22 +18,23 @@
                     <div class="container-fluid" style=" background-color: #fff; padding: 11px;">
                         <div class="row">
                             <div class="col-lg-4 order-lg-2 order-1">
-                                <div class="image_selected"><img
-                                        src="https://johnlewis.scene7.com/is/image/JohnLewis/236871399" alt=""></div>
+
+                                <div class="image_selected">
+                                    <img src="<%=productoDeUrl.imagen%>" alt="imagen producto">
+                                </div>
                             </div>
                             <div class="col-lg-6 order-3">
                                 <div class="product_description">
                                     <div class="product_name">
-                                        <h2>Aqua Blue</h2>
+                                        <h2><%=productoDeUrl.nombre%></h2>
                                     </div>
-                                    <div class="preciopdp"> <span class="product_price">ARS $810,00</span>
-                                        <strike class="product_discount"> <span style='color:black'>ARS $1090,000<span>
+                                    <div class="preciopdp"> <span class="product_price">ARS $<%=productoDeUrl.precio-productoDeUrl.precio*productoDeUrl.descuento/100%></span>
+                                        <strike class="product_discount"> <span style='color:black'>ARS $<%=productoDeUrl.precio%><span>
                                         </strike>
                                     </div>
 
                                     <hr class="singleline">
-                                    <div class="informacionpdp"> <span class="product_info">Esmalte cremoso de larga
-                                            duración<br>Hidrata y mantiene fortalecida la uña<br>Duración 7 días</span>
+                                    <div class="informacionpdp"> <span class="product_info"><%=productoDeUrl.descripcion%></span>
                                     </div>
 
                                     <hr class="singleline">
@@ -58,7 +59,7 @@
 
                             </div>
                             <div class="botonedit">
-                                <a href="/products/editProduct" target="_blanc">
+                                <a href="/products/editProduct/<%=productoDeUrl.id%>" target="_blanc">
                                     <button type="button" class="btn-bgstroke">Editar Produto</button>
                                 </a>
 

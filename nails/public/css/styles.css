@@ -449,7 +449,7 @@ ul li:hover {
   align-items: flex-end;
   padding-top: 30px;
 }
-
+/*.item-box-image img se cambia por esmaltes porque en listproducts se cambiò la clase a esmaltes para poder hacer match con el array preguntarlo al grupo*/
 .item-box-image img {
   width: 35%;
   background: transparent 50% 50% no-repeat;
