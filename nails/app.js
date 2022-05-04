@@ -9,6 +9,11 @@ const methodOverride =  require('method-override'); // Pasar poder usar los mét
 
 const publicPath = path.resolve(__dirname, './public');
 
+//configuraciòn del entorno para poder capturar la informacion enviada desde el formulario. 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+
 //Rutas del main.js
 const mainRoutes = require("./src/routes/main.js");
 
