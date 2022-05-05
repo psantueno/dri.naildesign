@@ -1,9 +1,3 @@
-//array con lista de esmaltes, se agrega el 2 a la base dedatosProductos abajo para que no rompa el codigo
-
-//array con titles de las distintas views para aplicar en el head.
-const titlesOfPages = ["Shop", "Editar Productos", "Agregar productos", "Detalle del Producto"];
-// array con las hojas de estilos para aplicar en el head.
-const stylesOfPages = ['rel=stylesheet href=/css/detailProduct.css', 'rel=stylesheet href=/css/formsproducts.css'];
 const fs = require("fs")
 const path = require("path")
 // base de datos vieja creada Diego const productsFilePath = path.join(__dirname, '../database/dBproducts.json');
@@ -23,46 +17,34 @@ productsJson.forEach(product=>{
 });
 
 
-
-
-
-
 const productsController = { 
     
     listProducts: (req, res) => {
-        //console.log(productsJson)
-        res.render("listProducts", {title: titlesOfPages[0], style1:"", style2:"",productsJson,categoriasProductos});
+        res.render("listProducts", {productsJson, categoriasProductos});
     },
 
     detailProduct: (req, res) => {
-
-        let id = parseInt(req.params.id)
-        const productoDeUrl= productsJson.find(product => product.id===id)
-        
-        //console.log(productoDeUrl)
-
-        
-        //res.render("listProducts", {title: "detalle de producto", style1:'rel=stylesheet href=/css/detailProduct.css',productoDeUrl});
-        res.render("detailProduct", {title: "detalle de producto", style1:'rel=stylesheet href=/css/detailProduct.css',productoDeUrl});
+        // console.log(req.params);
+        // console.log(req.params.id);
+        const id = parseInt(req.params.id);
+        // console.log(id);
+        // console.log(req.params.id);
+        const productoDeUrl= productsJson.find(product => product.id===id);
+        // console.log(productoDeUrl);
+        res.render("detailProduct", {productoDeUrl});
     },
 
     addNewProduct: (req, res) => {
-        res.render("addProduct", {title: titlesOfPages[2], style1:stylesOfPages[1], style2:""});
+        res.render("addProduct");
     },
 
     editProduct: (req, res) => {
-        let id = parseInt(req.params.id)
-        let productoDeUrl= productsJson.find(product => {
-            if(id===product.id){
-                return product
-            }
-        })
-
-
-     
-
-
-        res.render("editProduct", {title: titlesOfPages[1], style1:stylesOfPages[1], style2:"",productoDeUrl});
+        const id = parseInt(req.params.id);
+        const productEdited = productsJson.find(product => product.id === id);
+        // console.log(productoDeUrl);
+        // console.log(productoDeUrl);
+        res.render("editProduct", {productEdited});
+       
     },
     
     

@@ -2,7 +2,7 @@
 <html>
 
 <!-- START HEAD-->
-<%- include("./partials/head.ejs") %>
+<%- include("./partials/head.ejs", {title: "Editando: " + productEdited.nombre, style1: 'rel=stylesheet href=/css/formsproducts.css', style2:""}) %>
 <!-- END HEAD-->
 
 <body>
@@ -11,28 +11,28 @@
 <%- include("./partials/header.ejs") %>
 <!-- END HEADER-->
 
-    <form class="forms"  action="/products/editProduct/<%=productoDeUrl.id%>?_method=PUT" method="POST" >
+    <form action="/products/editProduct/<%= productEdited.id %>?_method=PUT" method="POST" class="forms">
         <div class="container2">
             <h1>Editar Productos</h1>
       
 
             <div class="campos-form">
                 <label for="nombre-producto"><b>Nombre de producto</b></label>
-                <input type="text" placeholder="" value="<%=productoDeUrl.nombre%>" name="nombreproducto" id="nombreproducto" required>
+                <input type="text" placeholder="" value="<%=productEdited.nombre%>" name="nombreproducto" id="nombreproducto" required>
             </div>
 
             <div class="campos-form">
                 <label for="descripcion-producto"><b>Descripcion del producto </b></label>
-                <textarea type="text" placeholder="" name="descripcionproducto" id="descripcionproducto" required><%=productoDeUrl.descripcion%></textarea>
+                <textarea type="text" placeholder="" name="descripcionproducto" id="descripcionproducto" required><%=productEdited.descripcion%></textarea>
             </div>
 
             <div class="campos-form categoria-producto">
                 <label for="categoria-producto"><b>Categoría</b></label>
-                <textarea type="text" placeholder=""  name="categoriaproducto" id="categoriaproducto" required><%=productoDeUrl.categoria%></textarea>
+                <textarea type="text" placeholder=""  name="categoriaproducto" id="categoriaproducto" required><%=productEdited.categoria%></textarea>
             </div>
             <div class="campos-form categoria-producto">
                 <label for="descuento-producto"><b>Descuento</b></label>
-                <textarea type="text" placeholder=""  name="descuentoproducto" id="descuentoproducto" required><%=productoDeUrl.descuento%></textarea>
+                <textarea type="text" placeholder=""  name="descuentoproducto" id="descuentoproducto" required><%=productEdited.descuento%></textarea>
             </div>
 
             <div class="categoria">
@@ -58,11 +58,11 @@
 
             <div class="campos-form">
             <label for="precio-producto"><b>Precio del producto</b></label>
-            <input type="number" placeholder="" value="<%=productoDeUrl.precio%>" name="precioproducto" id="precioproducto" required>
+            <input type="number" placeholder="" value="<%=productEdited.precio%>" name="precioproducto" id="precioproducto" required>
         </div>
 
         <div class="campos-form">
-        <label for="imagen-producto"><b>Imagen del producto (actual:<%=productoDeUrl.imagen%>)</b></label>
+        <label for="imagen-producto"><b>Imagen del producto (actual:<%=productEdited.imagen%>)</b></label>
         <input type="file" placeholder="Imagen de producto" name="imagenproducto" id="imagenproducto"  value="">
         </div>
 
