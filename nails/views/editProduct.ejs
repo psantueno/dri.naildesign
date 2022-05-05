@@ -30,6 +30,10 @@
                 <label for="categoria-producto"><b>Categoría</b></label>
                 <textarea type="text" placeholder=""  name="categoriaproducto" id="categoriaproducto" required><%=productoDeUrl.categoria%></textarea>
             </div>
+            <div class="campos-form categoria-producto">
+                <label for="descuento-producto"><b>Descuento</b></label>
+                <textarea type="text" placeholder=""  name="descuentoproducto" id="descuentoproducto" required><%=productoDeUrl.descuento%></textarea>
+            </div>
 
             <div class="categoria">
                 <label for="categoria-producto"><b>Categorías del producto (puede elegir más de una) </b></label>
@@ -59,7 +63,7 @@
 
         <div class="campos-form">
         <label for="imagen-producto"><b>Imagen del producto (actual:<%=productoDeUrl.imagen%>)</b></label>
-        <input type="file" placeholder="Imagen de producto" name="imagenproducto" id="imagenproducto"  value="<%=productoDeUrl.imagen%>">
+        <input type="file" placeholder="Imagen de producto" name="imagenproducto" id="imagenproducto"  value="">
         </div>
 
         <div class="botones">
