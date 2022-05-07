@@ -18,9 +18,11 @@
                     <div class="container-fluid" style=" background-color: #fff; padding: 11px;">
                         <div class="row">
                             <div class="col-lg-4 order-lg-2 order-1">
-
+                                <form action="/products/<%= productoDeUrl.id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="btn-bgstroke-delete">ELIMINAR</button>
+                                </form>
                                 <div class="image_selected">
-                                    <img src="<%= productoDeUrl.imagen%>" alt="imagen producto">
+                                    <img src="/image/<%= productoDeUrl.imagen%>" alt="imagen producto">
                                 </div>
                             </div>
                             <div class="col-lg-6 order-3">
@@ -66,14 +68,11 @@
                                 <a href="/products/addProduct" target="_blanc">
                                     <button type="button" class="btn-bgstroke">Agregar Producto</button>
                                 </a>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-           
-
             <!-- END PRODUCT PAGE-->
     </body>
 

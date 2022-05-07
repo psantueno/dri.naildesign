@@ -2,7 +2,7 @@ const fs = require("fs")
 const path = require("path")
 // base de datos vieja creada Diego const productsFilePath = path.join(__dirname, '../database/dBproducts.json');
 const productsFilePath = path.join(__dirname, '../database/products.json');
-let productsJson = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let productsJson = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); // lista de productos total
 
 
 //Array para almacenar las categorìas de los productos y poder hacer bien dinamica la vista y la programaciòn màs condensada
@@ -104,6 +104,26 @@ const productsController = {
 
         //res.send("fui por put")
     },
+
+    store: (req, res) => {
+
+        const newProduct = req.body;                             // Trae los datos del form create.
+		newProduct.id = productsJson.length + 1;                 // asigno un ID.
+        newProduct.imagen = req.file.filename;                   // asocio la imagen al producto nuevo.
+        productsJson.push(newProduct);                           // agrego el producto creado al array de objetos de nuestra base de datos.
+		newProductReady = JSON.stringify(productsJson);          // convierto a JSON para poder almacenarlo en dataBase.
+		fs.writeFileSync(productsFilePath, newProductReady);     // escribo en el archivo products.json (database).
+        res.redirect("/products");
+    },
+
+    destroy: (req, res) => {
+		let id = parseInt(req.params.id);
+		let productsUpdate = productsJson.filter(element => element.id !== id);
+		productsToDb = JSON.stringify(productsUpdate);
+		fs.writeFileSync(productsFilePath, productsToDb);
+        // console.log("kajdsfjkasd fskadfñkasdfj ks")
+		res.redirect("/products");
+	}
 }
 
 module.exports = productsController;

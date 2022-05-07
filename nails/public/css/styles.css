@@ -336,6 +336,31 @@ ul li:hover {
   background-color: #D36878;
   color: #ffffff; 
 }
+
+/* ESTILO DEL BOTON ELIMINAR OF PAGE DETAILPRODUCT */
+.btn-bgstroke-delete {
+  font-size: 30px;
+  display: inline-block;
+  border:rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold; 
+  margin-bottom: 15px;
+  max-width: 95%; 
+  text-align: center;
+  background-color: rgb(255, 0, 0, 0.3);
+  position: relative;
+  z-index: 10;
+  transition: all 700ms;
+}
+
+.btn-bgstroke-delete:hover {
+  background-color: rgb(255, 0, 0, 1);
+  border: 1px solid rgb(255, 0, 0, 1);
+}
+
 /*END STYLE BANNERHOME*/
 
 /*START SECCION ECOMMERCE-PRODUCTOS-HOME*/
