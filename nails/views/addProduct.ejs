@@ -2,40 +2,43 @@
 <html>
 
 <!-- START HEAD-->
-<%- include("./partials/head.ejs", {title: "Crear producto", style1:'rel=stylesheet href=/css/formsproducts.css', style2:""}) %>
-<!-- END HEAD-->
+<%- include("./partials/head.ejs", {title: "Crear producto" , style1:'rel=stylesheet href=/css/formsproducts.css',
+    style2:""}) %>
+    <!-- END HEAD-->
 
-<body>
+    <body>
 
-    <!-- START HEADER -->
-<%- include("./partials/header.ejs") %>
-<!-- END HEADER-->
+        <!-- START HEADER -->
+        <%- include("./partials/header.ejs") %>
+            <!-- END HEADER-->
 
-    <form action="/validar" method="post">
+            <form action="/validar" method="post">
 
-    </form>
+            </form>
 
-    <form class="forms" action="action_page.php">
-        <div class="container2">
-            <h1>Agregar Productos</h1>
-      
+            <form class="forms" action="/products" method="POST" enctype="multipart/form-data">
+                <div class="container2">
+                    <h1>Agregar Productos</h1>
 
-            <div class="campos-form">
-                <label for="nombre-producto"><b>Nombre del producto</b></label>
-                <input type="text" placeholder="Nombre de producto" name="nombreproducto" id="nombreproducto" required>
-            </div>
 
-            <div class="campos-form">
-                <label for="descripcion-producto"><b>Descripcion del producto</b></label>
-                <textarea type="text" placeholder="Descripcion de producto" name="descripcionproducto" id="descripcionproducto" required></textarea>
-            </div>
+                    <div class="campos-form">
+                        <label for="nombre-producto"><b>Nombre del producto</b></label>
+                        <input type="text" placeholder="Nombre de producto" name="nombre" id="nombreproducto" required>
+                    </div>
 
-            <div class="campos-form categoria-producto">
-                <label for="categoria-producto"><b>Categoría</b></label>
-                <textarea type="text" placeholder="Categoría de producto" name="categoriaproducto" id="categoriaproducto" required></textarea>
-            </div>
+                    <div class="campos-form">
+                        <label for="descripcion-producto"><b>Descripcion del producto</b></label>
+                        <textarea type="text" placeholder="Descripcion de producto" name="descripcion"
+                            id="descripcionproducto" required></textarea>
+                    </div>
 
-            <div class="categoria">
+                    <div class="campos-form categoria-producto">
+                        <label for="categoria-producto"><b>Categoría</b></label>
+                        <textarea type="text" placeholder="Categoría de producto" name="categoria"
+                            id="categoriaproducto" required></textarea>
+                    </div>
+
+                    <!-- <div class="categoria">
                 <label for="categoria-producto"><b>Categorías del producto (puede elegir más de una) </b></label>
                 <div class="interes2">
                     <input name="maquillaje" type="checkbox" />Maquillaje
@@ -49,39 +52,48 @@
                     <input name="cuidado" type="checkbox" />Cuidado
                     </br>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="campos-form">
-                <label for="cantidad-producto"><b>Cantidad (ml)</b></label>
-                <input type="number" placeholder="Cantidad de producto" name="Cantidadproducto" id="cantidadproducto" required>
-            </div>
+                    <div class="campos-form">
+                        <label for="cantidad-producto"><b>Cantidad</b></label>
+                        <input type="number" placeholder="Cantidad de producto" name="stock" id="cantidadproducto"
+                            required>
+                    </div>
 
-            <div class="campos-form">
-            <label for="precio-producto"><b>Precio del producto</b></label>
-            <input type="number" placeholder="Precio de producto" name="precioproducto" id="precioproducto" required>
-        </div>
+                    <div class="campos-form">
+                        <label for="precio-producto"><b>Precio del producto</b></label>
+                        <input type="number" placeholder="Precio de producto" name="precio" id="precioproducto"
+                            required>
+                    </div>
 
-        <div class="campos-form">
-        <label for="imagen-producto"><b>Imagen del producto</b></label>
-        <input type="file" placeholder="Imagen de producto" name="imagenproducto" id="imagenproducto" required>
-        </div>
+                    <div class="campos-form">
+                        <label for="precio-producto"><b>Descuento</b></label>
+                        <input type="number" placeholder="Descuento del producto" name="descuento" id="descuento-producto"
+                            required>
+                    </div>
 
-        <div class="botones">
-            <button type="button" class="btn-bgstroke" href="#">Enviar</button>
-        </div>
+                    <div class="campos-form">
+                        <label for="imagen-producto"><b>Imagen del producto</b></label>
+                        <input type="file" placeholder="Imagen de producto" name="imagenproducto" id="imagenproducto"
+                            required>
+                    </div>
 
-        <div class="botones">
-            <button type="button" class="btn-bgstroke" href="#">Borrar</button>
-        </div>
+                    <div class="botones">
+                        <button type="submit" class="btn-bgstroke" href="#">Guardar</button>
+                    </div>
 
-        </div>
-    </form>
+                    <div class="botones">
+                        <button type="button" class="btn-bgstroke" href="#">Borrar</button>
+                    </div>
 
-</body>
+                </div>
+            </form>
 
-<!-- START FOOTER -->
-<%- include("./partials/footer.ejs") %>    
-<!-- END FOOTER-->
+    </body>
+
+    <!-- START FOOTER -->
+    <%- include("./partials/footer.ejs") %>
+        <!-- END FOOTER-->
 
 
 </html>
