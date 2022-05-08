@@ -34,23 +34,17 @@
 }
 
 .single_product {
-    padding-top: 66px;
     background-color: #e5e5e5;
     margin-top: 0px;
     padding: 17px
 }
 
-.product_name {
-    font-size: 20px;
-    font-weight: 400;
-    margin-top: 0px
-}
-
 .product_name h2 {
     color: #D36878;
-    font-size: 48px;
+    font-size: 46px;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 
 .preciopdp {
@@ -77,7 +71,6 @@
     font-weight: 300;
     margin-top: 9px;
     clear: left;
-    margin-left: 10px;
     color: #D36878;
 }
 
@@ -89,28 +82,8 @@
 }
 
 .informacionpdp {
-    display: flex;
-    flex-direction: column;
-    align-content: stretch;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.product_info {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-}
-
-.informacionpdp span{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+    padding: 0 10px;
+    text-align: center;
 }
 
 .cantidad{
@@ -259,12 +232,9 @@
     padding: 15px
 }
 
-.single_product {
-    padding-top: 16px;
-}
-
 .image_selected img {
-    max-width: 50%;
+    min-height: 300px !important;
+    max-height: 300px !important;
 }
 
 .product_category {
@@ -294,10 +264,10 @@
 
 /* TABLET */
 @media screen and (max-width:767px) {
-    .image_selected img {
+    /*.image_selected img {
         min-width: 300px;
         max-width: 300px;
-    }
+    }*/
     
     .breadcrumb {
         justify-content: center;
@@ -308,12 +278,12 @@
 /* DESKTOP */
 @media screen and (min-width:768px) and (max-width:991px) {
 
-    .image_selected img {
+    /*.image_selected img {
         min-width: 300px !important;
         max-width: 300px !important;
     }  
 
-    /*.botonedit {
+    .botonedit {
         display: flex;
         justify-content: right;
         max-height: 85px;
@@ -326,16 +296,16 @@
 }
 
 @media screen and (min-width:992px) {
-    .image_selected img {
-        min-width: 100%;
-        max-width: 80%;
-    }
-    
     .image_selected {  
         height: 525px;
     }
+    
+    /*.image_selected img {
+        min-width: 100%;
+        max-width: 80%;
+    }
 
-    /*.botonedit {
+    .botonedit {
         display: flex;
         justify-content: right;
         max-height: 85px;

@@ -337,31 +337,6 @@ ul li:hover {
   color: #ffffff; 
 }
 
-/* ESTILO DEL BOTON ELIMINAR OF PAGE DETAILPRODUCT */
-/*.btn-bgstroke-delete {
-  font-size: 30px;
-  display: inline-block;
-  border:rgba(0, 0, 0, 0.5);
-  color: #ffffff;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold; 
-  margin-bottom: 15px;
-  max-width: 95%; 
-  text-align: center;
-  background-color: rgb(255, 0, 0, 0.3);
-  position: relative;
-  z-index: 10;
-  transition: all 700ms;
-}
-
-.btn-bgstroke-delete:hover {
-  background-color: rgb(255, 0, 0, 1);
-  border: 1px solid rgb(255, 0, 0, 1);
-}
-
-/*END DEL BOTON ELIMINAR OF PAGE DETAILPRODUCT */
 
 /*START SECCION ECOMMERCE-PRODUCTOS-HOME*/
 .bodya {
@@ -415,7 +390,6 @@ ul li:hover {
 
 .container .item-box {
   width: 95%;
-  padding-bottom: 20px !important;
 }
 
 .item-box {
@@ -457,7 +431,7 @@ ul li:hover {
   align-content: center;
   justify-content: center;
   align-items: flex-end;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 .maquillaje{
@@ -476,9 +450,10 @@ ul li:hover {
 }
 /*.item-box-image img se cambia por esmaltes porque en listproducts se cambiò la clase a esmaltes para poder hacer match con el array preguntarlo al grupo*/
 .item-box-image img {
-  width: 35%;
+  width: 85%;
   background: transparent 50% 50% no-repeat;
   background-size: cover;
+  max-height: 140px !important;
 }
 
 .maquillaje img {
@@ -535,99 +510,6 @@ ul li:hover {
 /*END SECCION ECOMMERCE-PRODUCTOS-HOME*/
 
 
-/*STAR SECCION SERVICIOS-HOME*/
-/*.servicios {
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-.servicios {
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-width: 100%;
-background-color: #fafafa;
-
-}
-
-.servicios-text {
-position: relative;
-color: #595a59;
-padding: 20px;
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-flex-direction: column;
-}
-
-.servicios-text h1{
-color: #d36878;
-margin-bottom: 10px;
-margin-left: 0px;
-}
-
-.servicios-text h4{
-margin-bottom: 20px;
-}
-
-.servicios-text p{
-padding: 0px;
-font-size: 16px;
-color: #746f6f;
-margin-bottom: 20px;
-text-align: center;
-}
-
-.servicios-text ul{
-display: block;
-align-items: center;
-justify-content: space-around;
-flex-wrap: wrap;
-list-style: none !important;
-padding: 0;
-}
-
-.servicios-image {
-position: relative;
-display: flex;
-color: #595a59;
-text-decoration: none;
-flex-grow: 0.25;
-flex-direction: column;
-align-content: center;
-align-items: center;
-width: 10%;
-}
-
-.servicios-image img{
-flex-direction: column;
-align-content: center;
-align-items: center;
-width: 50%;
-}
-
-.servicios-banner {
-  width: 100%;
-  padding:60px 0;
-  text-align: center;
-  color: white;
-  background:url("../image/banner-home.jpeg");
-  background-size: cover;
-  background-position-y: center;
-  margin-bottom: 30px;
-  }
-  
-  .card-bg-servicios {
-  position: relative;
-  width: 100%;
-  background: rgba(247, 248, 250, 0.8);
-  border-radius: 20px;
-  margin: 0 auto;
-  color: black;
-  padding: 20px;
-  }*/
-/*END SECCION SERVICIOS-HOME*/
 
 /*START SECCION REVIEWS-HOME*/
 .reviews-home {
@@ -775,40 +657,6 @@ font-size: 12px;
 }
 /*END PAGINA DE LOGIN*/
 
-/*START SERVICIOS PAGE*/
-/*.container-gral-servicio {
-text-align: center;
-margin: 25px 0;
-}
-
-.circular{
-border-radius: 50%;
-}
-
-.title-servicio {
-text-align: center;
-font-weight: bold;
-color: rgb(73, 69, 69);
-background-color: #ecbebd;
-text-transform: uppercase;
-}
-
-.divisor {
-height: 3rem;
-background-color: rgba(0, 0, 0, .1);
-border: solid rgba(0, 0, 0, .15);
-border-width: 1px 0;
-box-shadow: inset 0 0.5em 1.5em rgb(0 0 0 / 10%), inset 0 0.125em 0.5em rgb(0 0 0 / 15%);
-}
-
-.title-main-servicios{
-text-align: right;
-font-weight: bold;
-font-style: oblique;
-text-shadow: #595a59 ;
-}*/
-/*END SERVICIOS PAGE*/
-
 /*START MEDIAS QUERIES*/
 /* Medidas de dispositivos:
 320px — 480px: dispositivos móveis. 
@@ -888,33 +736,6 @@ body .main-header {
 .fa-key {
   display: none !important;
 }
-/*END MQ SERVICIO MX 480px*/
-
-/*.servicios-image{
-display: none;
-}
-
-.servicios-image div{
-display: none;
-}
-
-.servicios-image img{
-display: none;
-}
-
-.servicios-text {
-width:100%;
-align-content: center;
-align-items: center;
-}
-
-.servicios-text ul{
-display: flex;
-align-items: center;
-justify-content: center;
-list-style: auto
-}*/
-/*END MQ SERVICIO MX 480px*/
 
 /*STAR MQ REVIEWS MX 480px*/
 .reviews-nombre img {
@@ -925,10 +746,10 @@ width: 20%;
 
 @media screen and (min-width:481px) and (max-width:768px) {
 .container .item-box {
-  width: 40%;
+  width: 45%;
 }
 
-.servicios-image{
+/*.servicios-image{
   display: none;
 }
 
@@ -950,7 +771,7 @@ width: 20%;
   display: flex;
   align-items: center;
   justify-content: center;list-style: auto;
-}
+}*/
 
 .reviews-nombre img {
   width: 40%;
@@ -979,12 +800,8 @@ body .main-header {
 
 @media screen and (min-width:769px) and (max-width: 939px){
 .button-menu{
-  display: none;
+  display: none !important;
 }
-
-/*.btn-group {
-  display: none;
-}*/
 
 .main-nav3 {
   width: 30%;
@@ -1002,7 +819,7 @@ body .main-header {
   padding: 0px 0px;
 }
 
-.servicios-image{
+/*.servicios-image{
   display: none;
 }
 
@@ -1024,7 +841,7 @@ body .main-header {
   display: flex;
   align-items: center;
   justify-content: center;list-style: auto;
-}
+}*/
 
 .reviews-nombre img {
   width: 45%;
@@ -1054,10 +871,6 @@ body .main-header {
 .button-menu{
   display: none;
 }
-
-/*.btn-group {
-  display: none !Important;
-}*/
 
 .main-nav3 {
   width: 30%;
@@ -1106,10 +919,7 @@ body .main-header {
 .nombre-producto h3 {
   font-size: 15px;
 }
-
 }
-
-
 
 @media screen and (min-width:1078px) {
 .button-menu{
