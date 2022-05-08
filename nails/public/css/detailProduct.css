@@ -129,18 +129,25 @@
     align-content: center;
     justify-content: center;
     align-items: flex-end;
+    margin-top: 20px;
 }
 
 .botonedit {
     display: flex;
-    justify-content: center;
+    justify-content: right;
+    font-size: 11px !important;
     max-height: 85px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    margin-bottom: 20px;
 }
 
 .botonedit .btn-bgstroke {
-    font-size: 10px !important;
-    margin-left: 15px;
+    font-size: 13px !important;
     max-width: none !important;
+    border: 0px solid #D36878;
+    margin-right: 10px;
 }
 
 
@@ -170,7 +177,7 @@
     height: 47px
 }
 
-.btn-bgstroke {
+/*.btn-bgstroke {
     padding: 5px 50px;
     border-radius: 10px;
     cursor: pointer;
@@ -194,27 +201,40 @@
     font-size: 11px;
     margin-left: 15px;
     max-width: none !important;
-}
+}*/
 
 /* ESTILO DEL BOTON ELIMINAR OF PAGE DETAILPRODUCT */
+.eliminar-product {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
 .btn-bgstroke-delete {
-    padding: 5px 50px;
+    display: inline-block;
+    border: 0px solid #D36878;
+    color: #D36878;
+    font-size: 13px !important;
+    max-width: none !important;
+    padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
-    font-weight: bold; 
-    margin-top: 20px;
-    font-size: 30px;
-    display: inline-block;
-    border: none;
+    font-weight: 300;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    max-width: 95%;
     text-align: center;
-    background-color: rgb(255, 0, 0, 0.3);
-    color: #ffffff;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 10;
     transition: all 700ms;
+   
 }
 
 .btn-bgstroke-delete:hover {
-    background-color: rgb(255, 0, 0, 1);
-    border: 1px solid rgb(255, 0, 0, 1);
+    background-color: #D36878;
+    border: #fff;
+    color: #ffffff;
   }
 
 
@@ -293,11 +313,16 @@
         max-width: 300px !important;
     }  
 
-    .botonedit {
+    /*.botonedit {
         display: flex;
         justify-content: right;
         max-height: 85px;
-    }
+    }*/
+
+    /*.eliminar-product {
+        display: flex;
+        justify-content: flex-end;
+    }*/
 }
 
 @media screen and (min-width:992px) {
@@ -310,9 +335,14 @@
         height: 525px;
     }
 
-    .botonedit {
+    /*.botonedit {
         display: flex;
         justify-content: right;
         max-height: 85px;
-    }
+    }*/
+
+    /*.eliminar-product {
+        display: flex;
+        justify-content: flex-end;
+    }*/
 }

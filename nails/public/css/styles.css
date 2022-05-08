@@ -338,7 +338,7 @@ ul li:hover {
 }
 
 /* ESTILO DEL BOTON ELIMINAR OF PAGE DETAILPRODUCT */
-.btn-bgstroke-delete {
+/*.btn-bgstroke-delete {
   font-size: 30px;
   display: inline-block;
   border:rgba(0, 0, 0, 0.5);
@@ -361,7 +361,7 @@ ul li:hover {
   border: 1px solid rgb(255, 0, 0, 1);
 }
 
-/*END STYLE BANNERHOME*/
+/*END DEL BOTON ELIMINAR OF PAGE DETAILPRODUCT */
 
 /*START SECCION ECOMMERCE-PRODUCTOS-HOME*/
 .bodya {
@@ -982,9 +982,9 @@ body .main-header {
   display: none;
 }
 
-.btn-group {
-  display: none !Important;
-}
+/*.btn-group {
+  display: none;
+}*/
 
 .main-nav3 {
   width: 30%;
@@ -1055,9 +1055,9 @@ body .main-header {
   display: none;
 }
 
-.btn-group {
+/*.btn-group {
   display: none !Important;
-}
+}*/
 
 .main-nav3 {
   width: 30%;

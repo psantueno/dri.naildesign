@@ -2,9 +2,10 @@
 <html lang="en">
 
 <!-- START HEAD-->
-<%- include("./partials/head.ejs", {title: "detalle de producto", style1:'rel=stylesheet href=/css/detailProduct.css', style2:""}) %>
+<%- include("./partials/head.ejs", {title: "detalle de producto" , style1:'rel=stylesheet href=/css/detailProduct.css',
+    style2:""}) %>
     <!-- FINISH HEAD-->
-   
+
     <!-- START PRODUCT PAGE -->
 
     <body>
@@ -17,10 +18,24 @@
                 <div class="single_product">
                     <div class="container-fluid" style=" background-color: #fff; padding: 11px;">
                         <div class="row">
-                            <div class="col-lg-4 order-lg-2 order-1">
+                            <div></div>
+                            <div class="eliminar-product">
                                 <form action="/products/<%= productoDeUrl.id %>?_method=DELETE" method="POST">
-                                    <button type="submit" class="btn-bgstroke-delete">ELIMINAR</button>
-                                </form>
+                                    <button type="submit" class="btn-bgstroke-delete" title="Eliminar este producto"><i
+                                            class="fas fa-trash"></i></button>
+                                </form>                              <div class="botonedit">
+                                    <a href="/products/editProduct/<%=productoDeUrl.id%>" target="_blanc">
+                                        <button type="button" class="btn-bgstroke" title="Editar este produto"> <i
+                                                class="fas fa-edit"></i></button>
+                                    </a>
+
+                                    <a href="/products/addProduct" target="_blanc">
+                                        <button type="button" class="btn-bgstroke" title="Agregar nuevo producto "><i
+                                                class="fas fa-plus-square"></i></i></button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 order-lg-2 order-1">
                                 <div class="image_selected">
                                     <img src="/image/<%= productoDeUrl.imagen%>" alt="imagen producto">
                                 </div>
@@ -28,15 +43,22 @@
                             <div class="col-lg-6 order-3">
                                 <div class="product_description">
                                     <div class="product_name">
-                                        <h2><%=productoDeUrl.nombre%></h2>
+                                        <h2>
+                                            <%=productoDeUrl.nombre%>
+                                        </h2>
                                     </div>
-                                    <div class="preciopdp"> <span class="product_price">ARS $<%=productoDeUrl.precio-productoDeUrl.precio*productoDeUrl.descuento/100%></span>
-                                        <strike class="product_discount"> <span style='color:black'>ARS $<%=productoDeUrl.precio%><span>
+                                    <div class="preciopdp"> <span class="product_price">ARS $
+                                            <%=productoDeUrl.precio-productoDeUrl.precio*productoDeUrl.descuento /100%>
+                                        </span>
+                                        <strike class="product_discount"> <span style='color:black'>ARS $
+                                                <%=productoDeUrl.precio%><span>
                                         </strike>
                                     </div>
 
                                     <hr class="singleline">
-                                    <div class="informacionpdp"> <span class="product_info"><%=productoDeUrl.descripcion%></span>
+                                    <div class="informacionpdp"> <span class="product_info">
+                                            <%=productoDeUrl.descripcion%>
+                                        </span>
                                     </div>
 
                                     <hr class="singleline">
@@ -53,22 +75,32 @@
                                 </div>
                                 <div class="col-xs-6 botonpagar">
                                     <a href="/cart" target="_blanc">
-                                    <button type="button" class="btn-bgstroke">Comprar</button>
-                                    <!-- div class="product_fav"><i class="fas fa-heart"></i></div -->
+                                        <button type="button" class="btn-bgstroke">Comprar</button>
+                                        <!-- div class="product_fav"><i class="fas fa-heart"></i></div -->
                                     </a>
                                 </div>
 
 
                             </div>
-                            <div class="botonedit">
-                                <a href="/products/editProduct/<%=productoDeUrl.id%>" target="_blanc">
-                                    <button type="button" class="btn-bgstroke">Editar Produto</button>
-                                </a>
+                            <!--div>
+                                <div class="botonedit">
+                                    <a href="/products/editProduct/<%=productoDeUrl.id%>" target="_blanc">
+                                        <button type="button" class="btn-bgstroke" title="Editar este produto"> <i
+                                                class="fas fa-edit"></i></button>
+                                    </a>
 
-                                <a href="/products/addProduct" target="_blanc">
-                                    <button type="button" class="btn-bgstroke">Agregar Producto</button>
-                                </a>
-                            </div>
+                                    <a href="/products/addProduct" target="_blanc">
+                                        <button type="button" class="btn-bgstroke" title="Agregar nuevo producto "><i
+                                                class="fas fa-plus-square"></i></i></button>
+                                    </a>
+                                </div>
+                                <div class="eliminar-product">
+                                    <form action="/products/<%= productoDeUrl.id %>?_method=DELETE" method="POST">
+                                        <button type="submit" class="btn-bgstroke-delete"
+                                            title="Eliminar este producto"><i class="fas fa-trash"></i></button>
+                                    </form>
+                                </div>
+                            </div -->
                         </div>
                     </div>
                 </div>
