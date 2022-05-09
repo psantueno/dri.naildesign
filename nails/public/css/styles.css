@@ -347,6 +347,7 @@ ul li:hover {
 }
 
 .shop-home {
+  width: 100%;
   display: block;
   justify-content: center;
   align-items: center;
@@ -363,6 +364,13 @@ ul li:hover {
   font-weight: 300;
   margin-top: 20px;
   margin-bottom: 50px;
+}
+
+.btn2 .btn-bgstroke {
+  margin-bottom: 0px !important;
+  padding: 0px 20px !important;
+  font-size: 17px !important;
+  border: 0px !important;
 }
 
 .shop-texto p {
@@ -483,6 +491,70 @@ ul li:hover {
   line-height: 0;
   font-size: 18px;
   color: #746f6f;
+}
+
+
+.product_name h2 {
+  color: #D36878;
+  font-size: 46px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.preciopdp {
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.preciopdp2 {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.preciopdp2 .product_price2 {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 9px;
+  clear: left;
+  color: gray;
+}
+
+.product_price {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 9px;
+  clear: left;
+  color: gray;
+}
+
+.product_discount {
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 300;
+  clear: left;
+  color: gray !important;
+  text-decoration-color: #D36878;
+}
+
+.product_discount2 {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 300;
+  clear: left;
+  color: #000000;
+  text-decoration-color: #D36878;
 }
 
 .item-box p {
@@ -815,33 +887,14 @@ body .main-header {
   width: 35%;
 }
 
+.shop-texto .container {
+  min-width: 700px;
+  max-width: 900px;
+}
+
 .reviews-nombre h3 {
   padding: 0px 0px;
 }
-
-/*.servicios-image{
-  display: none;
-}
-
-.servicios-image div{
-  display: none;
-}
-
-.servicios-image img{
-  display: none;
-}
-
-.servicios-text {
-  width:100%;
-  align-content: center;
-  align-items: center;
-}
-
-.servicios-text ul{
-  display: flex;
-  align-items: center;
-  justify-content: center;list-style: auto;
-}*/
 
 .reviews-nombre img {
   width: 45%;
@@ -884,16 +937,9 @@ body .main-header {
   width: 22%;
 }
 
-.servicios-text {
-  width:40%;
-  align-content: flex-start;
-  align-items: flex-start;
-}
-
-.servicios-text ul{
-  display: flex;
-  align-items: center;
-  justify-content: center;list-style: auto;
+.shop-texto .container {
+  min-width: 900px;
+  max-width: 1070px;
 }
 
 .reviews-nombre img {
@@ -943,7 +989,7 @@ body .main-header {
 }
 
 .container .item-box {
-  width: 20%;
+  width: 22%;
 }
 
 .servicios-text {
@@ -956,6 +1002,10 @@ body .main-header {
   display: flex;
   align-items: center;
   justify-content: center;list-style: auto;
+}
+
+.shop-texto .container {
+    max-width: 1050px !important;
 }
 
 .reviews-nombre {

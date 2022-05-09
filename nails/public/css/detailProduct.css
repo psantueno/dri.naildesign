@@ -39,40 +39,7 @@
     padding: 17px
 }
 
-.product_name h2 {
-    color: #D36878;
-    font-size: 46px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
 
-.preciopdp {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.product_price {
-    display: inline-block;
-    font-size: 30px;
-    font-weight: 500;
-    margin-top: 9px;
-    clear: left
-}
-
-.product_discount {
-    display: inline-block;
-    font-size: 17px;
-    font-weight: 300;
-    margin-top: 9px;
-    clear: left;
-    color: #D36878;
-}
 
 .singleline {
     margin-top: 1rem;

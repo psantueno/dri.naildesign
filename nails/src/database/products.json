@@ -4,16 +4,16 @@
         "nombre": "Esmalte Velvet",
         "precio": 900,
         "imagen": "esmalte-velvet-mavala.webp",
-        "categoria": "Esmalte",
+        "categoria": "Esmaltes",
         "descuento": 10,
         "descripcion": "Secado rápido y alta adherencia del esmalte. Mavala se preocupa por la salud de los consumidores, sin parabenos y sin formaldehido. Sin níquel añadido y sin ingredientes animales."
     },
     {
         "id": 2,
-        "nombre": "Esmalte Velvet",
-        "precio": 900,
-        "imagen": "esmalte-velvet-mavala.webp",
-        "categoria": "Esmalte",
+        "nombre": "Esmalte Julia",
+        "precio": 1900,
+        "imagen": "esmalte-julia.webp",
+        "categoria": "Esmaltes",
         "descuento": 10,
         "descripcion": "Secado rápido y alta adherencia del esmalte. Mavala se preocupa por la salud de los consumidores, sin parabenos y sin formaldehido. Sin níquel añadido y sin ingredientes animales."
     },
@@ -22,7 +22,7 @@
         "nombre": "Esmalte Jaipur",
         "precio": 800,
         "imagen": "jaipur-frasco.webp",
-        "categoria": "Esmalte",
+        "categoria": "Esmaltes",
         "descuento": 15,
         "descripcion": "Secado rápido y alta adherencia del esmalte. Mavala se preocupa por la salud de los consumidores, sin parabenos y sin formaldehido. Sin níquel añadido y sin ingredientes animales."
     },
@@ -31,7 +31,7 @@
         "nombre": "Esmalte Smokey",
         "precio": 1950,
         "imagen": "smokey-blue.webp",
-        "categoria": "Esmalte",
+        "categoria": "Esmaltes",
         "descuento": 20,
         "descripcion": "Secado rápido y alta adherencia del esmalte. Mavala se preocupa por la salud de los consumidores, sin parabenos y sin formaldehido. Sin níquel añadido y sin ingredientes animales."
     },
@@ -40,7 +40,7 @@
         "nombre": "Esmalte Maputo",
         "precio": 600,
         "imagen": "esmalte-maputo.jpeg",
-        "categoria": "Esmalte",
+        "categoria": "Esmaltes",
         "descuento": 10,
         "descripcion": "Secado rápido y alta adherencia del esmalte. Mavala se preocupa por la salud de los consumidores, sin parabenhos y sin formaldehido. Sin níquel añadido y sin ingredientes animales."
     },
@@ -49,7 +49,7 @@
         "nombre": "Esmalte Karichi",
         "precio": 1000,
         "imagen": "esmalte-karichi.jpeg",
-        "categoria": "Esmalte",
+        "categoria": "Esmaltes",
         "descuento": 20,
         "descripcion": "Secado rápido y alta adherencia del esmalte. Mavala se preocupa por la salud de los consumidores, sin parabenos y sin formaldehido. Sin níquel añadido y sin ingredientes animales."
     },
@@ -58,7 +58,7 @@
         "nombre": "Esmalte Rose Hill",
         "precio": 1200,
         "imagen": "esmalte-rose.webp",
-        "categoria": "Esmalte",
+        "categoria": "Esmaltes",
         "descuento": 15,
         "descripcion": "Secado rápido y alta adherencia del esmalte. Mavala se preocupa por la salud de los consumidores, sin parabenos y sin formaldehido. Sin níquel añadido y sin ingredientes animales."
     },
@@ -67,7 +67,7 @@
         "nombre": "Esmalte Silver",
         "precio": 1000,
         "imagen": "esmalte-silver.webp",
-        "categoria": "Esmalte",
+        "categoria": "Esmaltes",
         "descuento": 10,
         "descripcion": "Secado rápido y alta adherencia del esmalte. Mavala se preocupa por la salud de los consumidores, sin parabenos y sin formaldehido. Sin níquel añadido y sin ingredientes animales."
     },
