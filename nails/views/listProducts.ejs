@@ -36,10 +36,21 @@
                                         <div class="nombre-producto">
                                             <h3> <%= product.nombre %> </h3>
                                         </div>
-                                        <p> <%= product.precio %> </p>
+
+                                        <div class="preciopdp"> <span class="product_price">ARS $
+                                            <%=product.precio-product.precio*product.descuento /100%>
+                                        </span>
+                                        <br>
+                                        <strike class="product_discount"> <span style='color:black'>ARS $
+                                                <%=product.precio%><span>
+                                        </strike>
+                                    </div>
+                                        
                                         <a class="to-carrito" href="/cart">
                                             <button type="button" class="btn-bgstroke">Comprar</button>
                                         </a>
+
+                                       
                                     </div>
         
                                 <% }}) %>
