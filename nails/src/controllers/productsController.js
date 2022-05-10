@@ -35,7 +35,8 @@ const productsController = {
     },
 
     addNewProduct: (req, res) => {
-        res.render("addProduct");
+        
+        res.render("addProduct", {categoriasProductos});
     },
 
     editProduct: (req, res) => {
@@ -43,7 +44,7 @@ const productsController = {
         const productEdited = productsJson.find(product => product.id === id);
         // console.log(productoDeUrl);
         // console.log(productoDeUrl);
-        res.render("editProduct", {productEdited});
+        res.render("editProduct", {productEdited,categoriasProductos});
        
     },
     
