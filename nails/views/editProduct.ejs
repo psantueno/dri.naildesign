@@ -28,28 +28,26 @@
 
             <div class="campos-form categoria-producto">
                 <label for="categoria-producto"><b>Categoría</b></label>
-                <textarea type="text" placeholder=""  name="categoriaproducto" id="categoriaproducto" required><%=productEdited.categoria%></textarea>
+                
+                <select name="categoriaproducto">
+                    <option value="<%=productEdited.categoria%>" selected><%=productEdited.categoria%></option>
+                    <%categoriasProductos.forEach(element => {%> 
+
+                        <%if(productEdited.categoria!=element){%>
+                    <option value="<%=element%>"><%=element%> </option>
+                    <%}%>
+
+                    <%})%>
+                </select>
+            
+            
             </div>
             <div class="campos-form categoria-producto">
                 <label for="descuento-producto"><b>Descuento</b></label>
                 <textarea type="text" placeholder=""  name="descuentoproducto" id="descuentoproducto" required><%=productEdited.descuento%></textarea>
             </div>
 
-            <div class="categoria">
-                <label for="categoria-producto"><b>Categorías del producto (puede elegir más de una) </b></label>
-                <div class="interes2">
-                    <input name="maquillaje" type="checkbox" />Maquillaje
-                    <br />
-                    <input name="esmalte" type="checkbox" />Esmalte
-                    <br />
-                    <input name="crema" type="checkbox" />Crema
-                    <br />
-                    <input name="unapostiza" type="checkbox" />Uñas Postizas
-                    <br />
-                    <input name="cuidado" type="checkbox" />Cuidado
-                    </br>
-                </div>
-            </div>
+            
 
             <div class="campos-form">
                 <label for="cantidad-producto"><b>Cantidad (ml)</b></label>
