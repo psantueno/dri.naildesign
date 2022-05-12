@@ -12,9 +12,6 @@
         <%- include("./partials/header.ejs") %>
             <!-- END HEADER-->
 
-            <form action="/validar" method="post">
-
-            </form>
 
             <form class="forms" action="/products" method="POST" enctype="multipart/form-data">
                 <div class="container2">
@@ -35,32 +32,18 @@
                     <div class="campos-form categoria-producto">
                         <label for="categoria-producto"><b>Categoría</b></label>
                         <select name="categoria">
-                            
-                            <%categoriasProductos.forEach(element => {%> 
-        
-                                
-                            <option value="<%=element%>"><%=element%> </option>
-                            
-        
-                            <%})%>
+
+                            <%categoriasProductos.forEach(element=> {%>
+
+
+                                <option value="<%=element%>">
+                                    <%=element%>
+                                </option>
+
+
+                                <%})%>
                         </select>
                     </div>
-
-                    <!-- <div class="categoria">
-                <label for="categoria-producto"><b>Categorías del producto (puede elegir más de una) </b></label>
-                <div class="interes2">
-                    <input name="maquillaje" type="checkbox" />Maquillaje
-                    <br />
-                    <input name="esmalte" type="checkbox" />Esmalte
-                    <br />
-                    <input name="crema" type="checkbox" />Crema
-                    <br />
-                    <input name="unapostiza" type="checkbox" />Uñas Postizas
-                    <br />
-                    <input name="cuidado" type="checkbox" />Cuidado
-                    </br>
-                </div>
-            </div> -->
 
                     <div class="campos-form">
                         <label for="cantidad-producto"><b>Cantidad</b></label>
@@ -76,8 +59,8 @@
 
                     <div class="campos-form">
                         <label for="precio-producto"><b>Descuento</b></label>
-                        <input type="number" placeholder="Descuento del producto" name="descuento" id="descuento-producto"
-                            required>
+                        <input type="number" placeholder="Descuento del producto" name="descuento"
+                            id="descuento-producto" required>
                     </div>
 
                     <div class="campos-form">
