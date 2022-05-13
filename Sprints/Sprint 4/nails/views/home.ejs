@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- START HEAD-->
+<%- include("./partials/head.ejs", {title: "¡Bienvenida!" , style1:"", style2:""}) %>
+    <!-- FINISH HEAD-->
+
+    <body class="body">
+
+        <!-- START HEADER-->
+        <%- include("./partials/header.ejs") %>
+            <!-- END HEADER-->
+
+            <!-- START BANNER HOME-->
+            <%- include("./partials/bannerhome.ejs") %>
+                <!-- END BANNER HOME-->
+
+                <!-- START PRODUCTOS HOME-->
+                <section id="productos" class="bodya">
+                    <secction class="shop-home">
+                        <div class="shop-texto">
+                            <h1>Productos</h1>
+                            <p>Las Mejores Marcas Internacionales las encontrás en nuestro Shop Online</p>
+                            <a href="/products">
+                                <button type="button" class="btn-bgstroke">Shop</button>
+                            </a>
+                        </div>
+
+
+                        <!-- PRUEBA PARA MOSTRAR TODO POR AUTO CLASIFICACIÒN -->
+
+                        <% categoriasProductos.forEach(categoria=>{ %>
+
+                            <%let contador=0;%>
+                                <div class="shop-texto">
+                                    <h2>
+                                        <%=categoria%>
+                                    </h2>
+
+                                    <div class="container">
+                                        <% productsJson.forEach(product=>{ if(product.categoria===categoria){ %>
+
+                                            <%if (contador<4){%>
+
+
+                                                <div class="item-box">
+                                                    <a class="enlace-detalle"
+                                                        href="/products/detailProduct/<%=product.id%>">
+                                                        <div class="item-box-image">
+                                                            <img src="/image/<%= product.imagen %>"
+                                                                alt="Esmalte Cream Velvet"></img>
+                                                        </div>
+                                                    </a>
+                                                    <div class="nombre-producto">
+                                                        <h3>
+                                                            <%= product.nombre %>
+                                                        </h3>
+                                                    </div>
+
+                                                    <div class="preciopdp"> <span class="product_price">ARS $
+                                                            <%=product.precio-product.precio*product.descuento /100%>
+                                                        </span>
+                                                        <br>
+                                                        <strike class="product_discount">ARS $
+                                                            <%=product.precio%><span>
+                                                        </strike>
+                                                    </div>
+
+                                                    <a class="to-carrito" href="/cart">
+                                                        <button type="button" class="btn-bgstroke">Comprar</button>
+                                                    </a>
+
+
+                                                </div>
+
+                                                <%}%>
+                                                    <%contador++%>
+
+                                                        <% }}) %>
+                                    </div>
+                                    <div class="col-xs-6 btn2">
+                                        <a href="/products" target="_blanc">
+                                            <button type="button" class="btn-bgstroke">Ver más productos</button>
+                                            
+                                        </a>
+                                    </div>
+                                    <hr>
+                                </div>
+                                
+                                <%})%>
+
+                                    <!-- PRUEBA PARA MOSTRAR TODO POR AUTO CLASIFICACIÒN -->
+
+
+
+
+
+
+
+
+                </section>
+                </secction>
+                <!-- END PRODUCTOS HOME-->
+
+                <!-- START REVIEWS-->
+                <secction class="reviews-home">
+                    <div class="reviews-texto">
+                        <h1>Reviews</h1>
+                        <p>Mensajes que recibimos de nuestros clientes</p>
+                    </div>
+
+                    <div class="container">
+                        <div class="reviews-container">
+                            <div class="reviews-box">
+                                <div class="reviews-box-image">
+                                    <img src="image/reviews1.jpeg" alt="Cliente 1"></img>
+                                </div>
+                                <div class="reviews-nombre">
+                                    <h3>Sandra Amorias</h3>
+                                    <img src="image/45s.jpeg" alt="Estrelas"></img>
+                                </div>
+                                <p>Precioso. La paciencia y la perfección juntas.</p>
+                            </div>
+
+                            <div class="reviews-box">
+                                <div class="reviews-box-image">
+                                    <img src="image/reviews1.jpeg" alt="Cliente 1"></img>
+                                </div>
+                                <div class="reviews-nombre">
+                                    <h3>Mercedes Soto</h3>
+                                    <img src="image/45s.jpeg" alt="Estrelas"></img>
+                                </div>
+                                <p>Precioso. La paciencia y la perfección juntas.</p>
+                            </div>
+
+                            <div class="reviews-box">
+                                <div class="reviews-box-image">
+                                    <img src="image/reviews1.jpeg" alt="Cliente 1"></img>
+                                </div>
+                                <div class="reviews-nombre">
+                                    <h3>Graciela Ramos</h3>
+                                    <img src="image/45s.jpeg" alt="Estrelas"></img>
+                                </div>
+                                <p>Precioso. La paciencia y la perfección juntas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </secction>
+                <!-- END REVIEWS HOME-->
+
+                <!-- START FOOTER-->
+                <%- include("./partials/footer.ejs") %>
+                    <!-- END FOOTER-->
+
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                        crossorigin="anonymous"></script>
+                    <!-- script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script -->
+    </body>
+
+</html>

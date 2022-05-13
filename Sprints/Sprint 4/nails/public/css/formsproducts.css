@@ -1,0 +1,161 @@
+p.text {
+  color: white;
+}
+
+.container2 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+.container2 h1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 40px 0;
+    color: #D36878;
+}
+
+
+.forms {
+    display: flex;
+    width: 100%;
+    /* margin: 0 250px; */
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.forms .container2 {
+    padding: 16px;
+    background-color: white;
+    width: 50%;
+  }
+
+  .campos-form {
+      justify-content: flex-start;
+      width: 100%;
+      /*margin-bottom: 40px;*/
+  }
+
+  .categoria-producto {
+    width: 90%;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+
+  .cantidad-producto b {
+    margin-top: 10px;
+  }
+
+  .categoria {
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color:rgb(95, 95, 95);
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .categoria {
+    margin-top: 15px;
+  }
+
+  .categoria b {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: black;
+    margin-top: 10px;
+  }
+
+  input {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  input[type=text], input[type=number], input[type=file], textarea {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    background-image: none !important;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 16px 18px;
+    background-position: 98% 50%;
+    cursor: auto;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  input[type=checkbox] {
+    background-color: #D36878;
+    outline: none;
+  }
+
+  input[type="date"] {
+    justify-items: center;
+  }
+
+  input[type="date" i] {
+    font-size: 14px;
+    color:rgb(95, 95, 95)
+  }
+
+  input[type="checkbox" i] {
+        margin-right: 10px;
+        margin-top: 10px;
+  }
+  
+  /* Overwrite default styles of hr */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+
+  .botones {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+
+/*START MEDIA QUERY*/
+
+@media (max-width: 480px){
+    .forms .container2 {
+        width: 90%;
+      }
+
+      footer .design-footer {
+        text-align: center;
+        padding: 0 70px;
+        background-color: #ffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 768px){
+    .forms .container2 {
+        width: 80%;
+    }
+}
+
+@media (min-width: 769px){
+
+}
