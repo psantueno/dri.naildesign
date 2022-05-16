@@ -40,6 +40,7 @@ p.text {
   .campos-form {
       justify-content: flex-start;
       width: 100%;
+      display: contents;
       /*margin-bottom: 40px;*/
   }
 
