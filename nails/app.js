@@ -2,17 +2,22 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const fs = require("fs");
+const session = require("express-session");
 
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
-
-
 
 const publicPath = path.resolve(__dirname, './public');
 
 //configuraciòn del entorno para poder capturar la informacion enviada desde el formulario. 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+// Configuración para usar SESSION //
+app.use(session({
+    secret: "This is a secret, remember",
+    resave: false,
+    saveUninitialized: true,
 
+}));
 
 //Rutas del main.js
 const mainRoutes = require("./src/routes/main.js");
