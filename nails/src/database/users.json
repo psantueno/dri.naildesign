@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "nombre": "Aline Gruba",
+        "mail": "gruba.aline@gmail.com",
+        "imagen": "usuario-generico.png",
+        "rol": "Administrador",
+        "telefono": 1530674058,
+        "password": "abc123"
+    },
+    {
+        "id": 2,
+        "nombre": "Sebastián Antueno",
+        "mail": "seba.antueno@gmail.com",
+        "imagen": "usuario-generico.png",
+        "rol": "Cliente",
+        "telefono": 152222,
+        "password": "abc123"
+    }
+]
