@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const bcryptjs = require("bcryptjs")
 
 const usersFilePath = path.join(__dirname, '../database/users.json');
 let usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); // lista de usuarios total
@@ -19,7 +20,7 @@ usersJson.forEach(users => {
 const usersController = {
 
     listUsers: (req, res) => {
-        res.render("listUserss", { usersJson, usersUsers });
+        res.render("listUsers", { usersJson, usersUsers });
     },
 
     detailUsers: (req, res) => {
@@ -28,12 +29,12 @@ const usersController = {
         const usersDeUrl = usersJson.find(users => users.id === id);
         res.render("detailUsers", { usersDeUrl });
     },
-
+/*
     addNewUser: (req, res) => {
 
         res.render("addUsers", { rolUsers });
     },
-
+NO REQUIERE ESTE METODO ESE ADD NEW USER SE VA A EJECUTAR EN L APAGINA DE REGISTRO, SOLO SE NECESITA LA RUTA POR POST*/
     editUsers: (req, res) => {
         const id = parseInt(req.params.id);
         const usersEdited = usersJson.find(users => users.id === id);
@@ -71,14 +72,27 @@ const usersController = {
     },
 
     store: (req, res) => {
-
+        
         const newusers = req.body;                             // Trae los datos del form create.
-        newusers.id = UsersJson.length + 1;                 // asigno un ID.
+        newusers.id = usersJson.length + 1;                 // asigno un ID.
+        newusers.rol= "Cliente"
+        newusers.password= bcryptjs.hashSync(req.body.password,10)
+        if(req.imagenusuario != undefined){
         newusers.imagen = req.file.filename;                   // asocio la imagen del cliente (si hay).
-        usersJson.push(newUsers);                           // agrego el usuario creado al array de objetos de nuestra base de datos.
-        newUsersReady = JSON.stringify(usersJson);          // convierto a JSON para poder almacenarlo en dataBase.
-        fs.writeFileSync(usersFilePath, newusersReady);     // escribo en el archivo users.json (database).
-        res.redirect("/users");
+        } else{
+            newusers.imagen = "usuario-generico.png"
+        }
+
+        usersJson.push(newusers);                           // agrego el usuario creado al array de objetos de nuestra base de datos.
+        //console.log(usersJson)
+        let newUsersReady = JSON.stringify(usersJson);          // convierto a JSON para poder almacenarlo en dataBase.
+        fs.writeFileSync(usersFilePath, newUsersReady);     // escribo en el archivo users.json (database).
+        res.redirect("/users/registro");
+    },
+
+    registro: (req, res) => {
+        
+        res.render("registro");
     },
 
     destroy: (req, res) => {
