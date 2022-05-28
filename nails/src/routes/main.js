@@ -14,7 +14,7 @@ router.get('/', mainController.home);
 router.get('/login', mainController.login);
 router.post('/login', usersValidation, mainController.processLogin);
 
-router.get('/registro', mainController.registro);
+//router.get('/registro', mainController.registro);
 
 router.get('/cart', mainController.cart);
 

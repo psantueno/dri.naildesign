@@ -24,6 +24,7 @@ const mainRoutes = require("./src/routes/main.js");
 
 //Rutas de products.js
 const productsRoutes = require("./src/routes/products.js")
+const usersRoutes = require("./src/routes/users.js")
 
 
 app.listen(3000, () => {
@@ -42,6 +43,7 @@ app.use('/', mainRoutes);
 
 
 app.use('/products', productsRoutes);
+app.use('/users', usersRoutes);
 
 app.get('/menu', (req, res) => {
     res.sendFile(path.join(__dirname, './views/menu.html'));
