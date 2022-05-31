@@ -26,6 +26,13 @@ p {
   height: 16px;
 }
 
+.users-img {
+  border-radius: 50%; 
+  height: 50px;
+  width: 50px;
+  margin-right: 1em;
+}
+
 
 p.description-text-servicios{
   padding: 0;
@@ -723,10 +730,10 @@ font-size: 12px;
   max-width: 80% !important;
 }
 
-.d-flex {
-  display: flex!important;
-  justify-content: center !important;
+.d-flex2 {
+  display: flex;
 }
+
 /*END PAGINA DE LOGIN*/
 
 /*START MEDIAS QUERIES*/
