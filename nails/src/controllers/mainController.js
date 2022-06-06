@@ -44,6 +44,7 @@ const mainController = {
 
     processLogin: (req, res) => {
         const { errors } = validationResult(req);
+        //console.log(req.body)
         if(errors.length > 0) {
             return res.render("login", {errors});
         } else {
