@@ -7,6 +7,11 @@ const multer = require("multer");
 // ************ Controllers Require ************
 const productsController = require("../controllers/productsController");
 
+// ************ Middlewares Require's  ************ //
+const addEditProductValidation = require("../middlewares/validacionAddyEditProduct"); //falta pasarlo por form edit y add
+const notLogged = require("../middlewares/notLogged");
+const adminAuth = require("../middlewares/adminAuth");
+
 // ************ Configuración Multer ************
 const storage = multer.diskStorage({
 	destination: (req, file, callback) => {
@@ -31,15 +36,15 @@ router.get('/', productsController.listProducts);
 router.get('/detailProduct/:id', productsController.detailProduct);
 
 // /*** CREATE ONE PRODUCT ***/ 
-router.get('/addProduct', productsController.addNewProduct);
+router.get('/addProduct', notLogged, adminAuth, productsController.addNewProduct);
 router.post('/', upload.single("imagenproducto"), productsController.store);
 
 // /*** EDITAR PRODUCTOS ***/ 
-router.get('/editProduct/:id', productsController.editProduct);
+router.get('/editProduct/:id', notLogged, adminAuth, productsController.editProduct);
 router.put('/editProduct/:id', upload.single("imagenproducto"), productsController.updateProduct);
 
 // /*** ELIMINAR PRODUCTOS ***/ 
-router.delete('/:id', productsController.destroy);
+router.delete('/:id', notLogged, adminAuth, productsController.destroy);
 
 
 module.exports = router;

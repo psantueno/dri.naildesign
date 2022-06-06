@@ -1,22 +1,19 @@
+// ************ Librerías Require's ************ //
 const express = require("express");
 const router = express.Router();
 const { body } = require("express-validator");
+
+// ************ Controllers Require's  ************ //
 const mainController = require("../controllers/mainController");
 
-const usersValidation = [
-    body("email").notEmpty().withMessage("El correo es requerido").bail()
-        .isEmail().withMessage("Escriba un correo válido"),
-    body("password").notEmpty().withMessage("Debe ingresar su contraseña").bail()
-        .isLength({ min: 8 }).withMessage("La contraseña debe tener al menos 8 caracteres")
-]
+// ************ Middlewares Require's  ************
 
+
+// ************ MAIN ROUTES ************ //
+
+// HOME //
 router.get('/', mainController.home);
-
-router.get('/login', mainController.login);
-router.post('/login', usersValidation, mainController.processLogin);
-
-//router.get('/registro', mainController.registro);
-
+// CARRITO //
 router.get('/cart', mainController.cart);
 
 module.exports = router;
