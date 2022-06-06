@@ -1,7 +1,8 @@
 [
     {
         "id": 1,
-        "nombre": "Aline Gruba",
+        "nombre": "Aline",
+        "apellido": "Gruba",
         "email": "gruba.aline@gmail.com",
         "imagen": "usuario-generico.png",
         "rol": "Administrador",
@@ -9,7 +10,8 @@
         "password": "abc12345"
     },
     {
-        "nombre": "Sebastian Antueno",
+        "nombre": "Sebastian",
+        "apellido": "Antueno",
         "email": "seba.antueno@gmail.com",
         "password": "$2a$10$pCr/.LGHkgxr.iL/y5ZOTOJPE0XzZCHbsLEcIhNJPKSUSlnvZvKVa",
         "id": 2,
@@ -17,7 +19,8 @@
         "imagen": "usuario-generico.png"
     },
     {
-        "nombre": "DIEGO LEONARDO ALBA CASTILLO",
+        "nombre": "Diego ",
+        "apellido": "Alba Castillo",
         "email": "dlalba282@gmail.com",
         "password": "12314",
         "id": 3,
@@ -71,17 +74,10 @@
     },
     {
         "nombre": "Aline",
+        "apellido": "Gruba",
         "email": "gruba.aline@gmail.com",
         "password": "$2a$10$MmL4JA5uSVhpM9l/XdyuWuuYL5byt0EqouckHSKaEdVB9wYRK4I/a",
         "id": 10,
-        "rol": "Cliente",
-        "imagen": "usuario-generico.png"
-    },
-    {
-        "nombre": "",
-        "email": "gruba.aline@gmail.com",
-        "password": "$2a$10$BGLz5HOybKG.rXkSC3FsZeIG7kRTFT4F9dqWPTyOSHznNo5YVlwei",
-        "id": 11,
         "rol": "Cliente",
         "imagen": "usuario-generico.png"
     }

@@ -24,14 +24,14 @@ usersJson.forEach(users => {
 const usersController = {
 
     listUsers: (req, res) => {
-        res.render("listUsers", { usersJson, usersUsers });
+        res.render("listUsers", { usersJson, usersUsers, userLoggedIn: req.session.userLogin });
     },
 
     detailUsers: (req, res) => {
         ;
         const id = parseInt(req.params.id);
         const usersDeUrl = usersJson.find(users => users.id === id);
-        res.render("detailUsers", { usersDeUrl });
+        res.render("detailUsers", { usersDeUrl, userLoggedIn: req.session.userLogin });
     },
 /*
     addNewUser: (req, res) => {
@@ -42,7 +42,7 @@ NO REQUIERE ESTE METODO ESE ADD NEW USER SE VA A EJECUTAR EN L APAGINA DE REGIST
     editUsers: (req, res) => {
         const id = parseInt(req.params.id);
         const usersEdited = usersJson.find(users => users.id === id);
-        res.render("editUsers", { usersEdited, rolUsers });
+        res.render("editUsers", { usersEdited, rolUsers, userLoggedIn: req.session.userLogin });
 
     },
 
@@ -88,7 +88,7 @@ NO REQUIERE ESTE METODO ESE ADD NEW USER SE VA A EJECUTAR EN L APAGINA DE REGIST
         if(errors.length > 0) {
             //console.log("estoy estancado en el errors mayor a 0")
             console.log(errors)    
-            return res.render("registro", {errors, old: req.body});
+            return res.render("registro", {errors, old: req.body, });
         } else {
         
         const newusers = req.body; 
@@ -113,7 +113,7 @@ NO REQUIERE ESTE METODO ESE ADD NEW USER SE VA A EJECUTAR EN L APAGINA DE REGIST
 
     registro: (req, res) => {
         
-        res.render("registro");
+        res.render("registro", {userLoggedIn: req.session.userLogin});
     },
 
     destroy: (req, res) => {

@@ -26,18 +26,18 @@ const productsController = {
         ;
         const id = parseInt(req.params.id);
         const productoDeUrl = productsJson.find(product => product.id === id);
-        res.render("detailProduct", { productoDeUrl });
+        res.render("detailProduct", { productoDeUrl, userLoggedIn: req.session.userLogin });
     },
 
     addNewProduct: (req, res) => {
 
-        res.render("addProduct", { categoriasProductos });
+        res.render("addProduct", { categoriasProductos, userLoggedIn: req.session.userLogin });
     },
 
     editProduct: (req, res) => {
         const id = parseInt(req.params.id);
         const productEdited = productsJson.find(product => product.id === id);
-        res.render("editProduct", { productEdited, categoriasProductos });
+        res.render("editProduct", { productEdited, categoriasProductos, userLoggedIn: req.session.userLogin });
 
     },
 
