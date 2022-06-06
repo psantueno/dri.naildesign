@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
+// ************ BASE DATA PRODUCTS ************ //
 const productsFilePath = path.join(__dirname, '../database/products.json');
 let productsJson = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); // lista de productos total
 
@@ -15,7 +16,7 @@ productsJson.forEach(product => {
     }
 });
 
-
+// ************ START CONTROLLER ************ //
 const productsController = {
 
     listProducts: (req, res) => {
@@ -30,8 +31,18 @@ const productsController = {
     },
 
     addNewProduct: (req, res) => {
-
         res.render("addProduct", { categoriasProductos, userLoggedIn: req.session.userLogin });
+    },
+
+    store: (req, res) => {
+
+        const newProduct = req.body;                             // Trae los datos del form create.
+        newProduct.id = productsJson.length + 1;                 // asigno un ID.
+        newProduct.imagen = req.file.filename;                   // asocio la imagen al producto nuevo.
+        productsJson.push(newProduct);                           // agrego el producto creado al array de objetos de nuestra base de datos.
+        newProductReady = JSON.stringify(productsJson);          // convierto a JSON para poder almacenarlo en dataBase.
+        fs.writeFileSync(productsFilePath, newProductReady);     // escribo en el archivo products.json (database).
+        res.redirect("/products");
     },
 
     editProduct: (req, res) => {
@@ -68,17 +79,6 @@ const productsController = {
         let productsUpdatedDB = JSON.stringify(productsJson)
         fs.writeFileSync(productsFilePath, productsUpdatedDB)
         res.redirect('/products')
-    },
-
-    store: (req, res) => {
-
-        const newProduct = req.body;                             // Trae los datos del form create.
-        newProduct.id = productsJson.length + 1;                 // asigno un ID.
-        newProduct.imagen = req.file.filename;                   // asocio la imagen al producto nuevo.
-        productsJson.push(newProduct);                           // agrego el producto creado al array de objetos de nuestra base de datos.
-        newProductReady = JSON.stringify(productsJson);          // convierto a JSON para poder almacenarlo en dataBase.
-        fs.writeFileSync(productsFilePath, newProductReady);     // escribo en el archivo products.json (database).
-        res.redirect("/products");
     },
 
     destroy: (req, res) => {
