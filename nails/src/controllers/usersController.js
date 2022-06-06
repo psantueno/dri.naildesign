@@ -82,7 +82,7 @@ NO REQUIERE ESTE METODO ESE ADD NEW USER SE VA A EJECUTAR EN L APAGINA DE REGIST
         const { errors} = validationResult(req);
 
         if(req.body.terminos!=undefined){
-            console.log("is checked")
+            //console.log("is checked")
         
         
         if(errors.length > 0) {
