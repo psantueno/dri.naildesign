@@ -42,6 +42,7 @@ const mainController = {
 
     processLogin: (req, res) => {
         const { errors } = validationResult(req);
+
         if (errors.length > 0) {
             return res.render("login", { errors, old: req.body });
         }
