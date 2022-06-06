@@ -1,21 +1,87 @@
 [
     {
-        "nombre": "sfasdasd",
-        "apellido": "asdasda",
-        "email": "dlalba282@gmail.com",
-        "password": "$2a$10$CCm28acSJTZ36R/KDPlmMu0hbd4xY1tTBwWUev/O7lhtIoi8XZMq2",
-        "terminos": "on",
         "id": 1,
+        "nombre": "Aline Gruba",
+        "email": "gruba.aline@gmail.com",
+        "imagen": "usuario-generico.png",
+        "rol": "Administrador",
+        "telefono": 1530674058,
+        "password": "abc12345"
+    },
+    {
+        "nombre": "Sebastian Antueno",
+        "email": "seba.antueno@gmail.com",
+        "password": "$2a$10$pCr/.LGHkgxr.iL/y5ZOTOJPE0XzZCHbsLEcIhNJPKSUSlnvZvKVa",
+        "id": 2,
         "rol": "Cliente",
         "imagen": "usuario-generico.png"
     },
     {
-        "nombre": "asdasd",
-        "apellido": "asdasdasd",
-        "email": "das-2@sda.com",
-        "password": "$2a$10$XdudpqN6B1UVJCKxC.Iq1OZgyAmnjaRJxFc4qDExvWd8QDNm53Cii",
-        "terminos": "on",
-        "id": 2,
+        "nombre": "DIEGO LEONARDO ALBA CASTILLO",
+        "email": "dlalba282@gmail.com",
+        "password": "12314",
+        "id": 3,
+        "imagen": "usuario-generico.png"
+    },
+    {
+        "nombre": "DIEGO LEONARDO ALBA CASTILLO3",
+        "email": "dlalba282@gmail.com",
+        "password": "sdasads",
+        "id": 4,
+        "imagen": "usuario-generico.png"
+    },
+    {
+        "nombre": "DIEGO LEONARDO ALBA CASTILLO image",
+        "email": "dlalba282@gmail.com",
+        "password": "131234",
+        "id": 5,
+        "imagen": "usuario-generico.png"
+    },
+    {
+        "nombre": "DIEGO ALBA",
+        "email": "dlalba28a2@gmail.com",
+        "password": "1234r",
+        "id": 6,
+        "rol": "Cliente",
+        "imagen": "usuario-generico.png"
+    },
+    {
+        "nombre": "DIEGO LEONARDO ALBA CASTILLO",
+        "email": "dlalba282@gmail.com",
+        "password": "2131231",
+        "id": 7,
+        "rol": "Cliente",
+        "imagen": "usuario-generico.png"
+    },
+    {
+        "nombre": "adri",
+        "email": "ass@gmail.com",
+        "password": "1231313",
+        "id": 8,
+        "rol": "Cliente",
+        "imagen": "usuario-generico.png"
+    },
+    {
+        "nombre": "Usuario encriptado",
+        "email": "asa282@gmail.com",
+        "password": "$2a$10$XmbpKpSb7INvz9d9FlVB5uVBJTg0pi3kI2sgVzdwnsnY2QKLX89uS",
+        "id": 9,
+        "rol": "Cliente",
+        "imagen": "usuario-generico.png"
+    },
+    {
+        "nombre": "Aline",
+        "email": "gruba.aline@gmail.com",
+        "password": "$2a$10$MmL4JA5uSVhpM9l/XdyuWuuYL5byt0EqouckHSKaEdVB9wYRK4I/a",
+        "id": 10,
+        "rol": "Cliente",
+        "imagen": "usuario-generico.png"
+    },
+    {
+        "nombre": "",
+        "email": "gruba.aline@gmail.com",
+        "password": "$2a$10$BGLz5HOybKG.rXkSC3FsZeIG7kRTFT4F9dqWPTyOSHznNo5YVlwei",
+        "id": 11,
         "rol": "Cliente",
         "imagen": "usuario-generico.png"
     }

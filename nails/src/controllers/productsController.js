@@ -19,7 +19,7 @@ productsJson.forEach(product => {
 const productsController = {
 
     listProducts: (req, res) => {
-        res.render("listProducts", { productsJson, categoriasProductos });
+        res.render("listProducts", { productsJson, categoriasProductos, userLoggedIn: req.session.userLogin });
     },
 
     detailProduct: (req, res) => {
