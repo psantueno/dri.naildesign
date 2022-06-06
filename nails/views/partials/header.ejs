@@ -32,20 +32,17 @@
                     <!--<a class="link-item" href="#contacto">Contacto</a> -->
                 </span>
         </nav>
+        <% if (userLoggedIn === undefined) { %>
         <nav class="main-nav3">
             <span class="nav-links3">
               <!-- START SIN LOGUIN-->
-                  <!-- a class="link-item" href="/login"><i class="fas fa-sign-in-alt"></i> Login</a -->
+                  <a class="link-item" href="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
               <!-- END SIN LOGUIN-->
-
-              <!-- START USER LOGUIN-->             
-                  <img class="users-img"
-                    src="https://i0.wp.com/www.diarlu.com/wp-content/uploads/2019/09/cara-hombre-sonriendo.jpg?resize=500%2C500&ssl=1"
-                    alt="Mario Souto" width="150" height="150">
-                  <a class="link-item" href="/login">
-                    Mario
-                  </a>
+              <% } else { %>
+              <!-- START USER LOGUIN-->  
+              <a class="users-img" href="#" ><i class="fas fa-user-circle"></i></i> <%=userLoggedIn.nombre%></a>           
               <!-- END USER LOGUIN-->
+              <% } %>
 
                   <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
                 </span>
