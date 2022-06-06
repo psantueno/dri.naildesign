@@ -6,6 +6,10 @@ const usersFilePath = path.join(__dirname, '../database/users.json');
 let usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); // lista de usuarios total
 
 
+//Validacion de resultados registro importo resultado de la validaciòn
+const { validationResult } = require("express-validator");
+
+
 //Array para almacenar los rols de los usuarios
 const rolUsuers = [];
 
@@ -72,8 +76,23 @@ NO REQUIERE ESTE METODO ESE ADD NEW USER SE VA A EJECUTAR EN L APAGINA DE REGIST
     },
 
     store: (req, res) => {
+
+        //se validan errores del form y se continua con el guardado: 
+
+        const { errors} = validationResult(req);
+
+        if(req.body.terminos!=undefined){
+            //console.log("is checked")
         
-        const newusers = req.body;                             // Trae los datos del form create.
+        
+        if(errors.length > 0) {
+            //console.log("estoy estancado en el errors mayor a 0")
+            console.log(errors)    
+            return res.render("registro", {errors, old: req.body});
+        } else {
+        
+        const newusers = req.body; 
+        console.log(newusers)                            // Trae los datos del form create.
         newusers.id = usersJson.length + 1;                 // asigno un ID.
         newusers.rol= "Cliente"
         newusers.password= bcryptjs.hashSync(req.body.password,10)
@@ -87,8 +106,10 @@ NO REQUIERE ESTE METODO ESE ADD NEW USER SE VA A EJECUTAR EN L APAGINA DE REGIST
         //console.log(usersJson)
         let newUsersReady = JSON.stringify(usersJson);          // convierto a JSON para poder almacenarlo en dataBase.
         fs.writeFileSync(usersFilePath, newUsersReady);     // escribo en el archivo users.json (database).
-        res.redirect("/users/registro");
-    },
+        res.redirect("/login");
+    } } else {
+        res.render("registro", {terminos: "Debes aceptar los terminos y condiciones",old: req.body})
+    }},
 
     registro: (req, res) => {
         
