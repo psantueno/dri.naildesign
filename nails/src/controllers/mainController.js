@@ -22,7 +22,7 @@ productsJson.forEach(product => {
 const mainController = {
 
     home: (req, res) => {
-        res.render("home", { productsJson, categoriasProductos, userLoggedIn: req.session.userLogin });
+        res.render("home", { productsJson, categoriasProductos });
     },
 
     registro: (req, res) => {
@@ -30,7 +30,7 @@ const mainController = {
     },
 
     cart: (req, res) => {
-        res.render("carrito", { userLoggedIn: req.session.userLogin });
+        res.render("carrito");
     }
 }
 

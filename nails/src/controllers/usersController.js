@@ -21,13 +21,13 @@ usersJson.forEach(users => {
 const usersController = {
 
     login: (req, res) => {
-        res.render("login", { userLoggedIn: req.session.userLogin });
+        res.render("login");
     },
 
     processLogin: (req, res) => {
         const { errors } = validationResult(req);
         if (errors.length > 0) {
-            return res.render("login", { errors, old: req.body, userLoggedIn: req.session.userLogin });
+            return res.render("login", { errors, old: req.body });
         }
         else {
             let userToLogin = undefined;
@@ -41,7 +41,6 @@ const usersController = {
             }
             if (userToLogin === undefined) {
                 return res.render("login", {
-                    userLoggedIn: req.session.userLogin,
                     errors: [
                         {
                             param: "credentialsInvalid",
@@ -57,20 +56,20 @@ const usersController = {
     },
 
     listUsers: (req, res) => {
-        res.render("listUsers", { usersJson, usersUsers, userLoggedIn: req.session.userLogin });
+        res.render("listUsers", { usersJson, usersUsers });
     },
 
     detailUsers: (req, res) => {
         ;
         const id = parseInt(req.params.id);
         const usersDeUrl = usersJson.find(users => users.id === id);
-        res.render("detailUsers", { usersDeUrl, userLoggedIn: req.session.userLogin });
+        res.render("detailUsers", { usersDeUrl });
     },
     
     editUsers: (req, res) => {
         const id = parseInt(req.params.id);
         const usersEdited = usersJson.find(users => users.id === id);
-        res.render("editUsers", { usersEdited, rolUsers, userLoggedIn: req.session.userLogin });
+        res.render("editUsers", { usersEdited, rolUsers});
 
     },
 
@@ -111,7 +110,7 @@ const usersController = {
 
         if (req.body.terminos != undefined) {
             if (errors.length > 0) {
-                return res.render("registro", { errors, old: req.body, userLoggedIn: req.session.userLogin });
+                return res.render("registro", { errors, old: req.body });
             }
             else {
                 const newusers = req.body;
@@ -132,12 +131,12 @@ const usersController = {
             }
         }
         else {
-            res.render("registro", { terminos: "Debes aceptar los terminos y condiciones", old: req.body, userLoggedIn: req.session.userLogin })
+            res.render("registro", { terminos: "Debes aceptar los terminos y condiciones", old: req.body })
         }
     },
 
     registro: (req, res) => {
-        res.render("registro", { userLoggedIn: req.session.userLogin });
+        res.render("registro");
     },
 
     destroy: (req, res) => {

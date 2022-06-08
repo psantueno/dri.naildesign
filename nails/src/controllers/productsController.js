@@ -20,18 +20,18 @@ productsJson.forEach(product => {
 const productsController = {
 
     listProducts: (req, res) => {
-        res.render("listProducts", { productsJson, categoriasProductos, userLoggedIn: req.session.userLogin });
+        res.render("listProducts", { productsJson, categoriasProductos });
     },
 
     detailProduct: (req, res) => {
         ;
         const id = parseInt(req.params.id);
         const productoDeUrl = productsJson.find(product => product.id === id);
-        res.render("detailProduct", { productoDeUrl, userLoggedIn: req.session.userLogin });
+        res.render("detailProduct", { productoDeUrl });
     },
 
     addNewProduct: (req, res) => {
-        res.render("addProduct", { categoriasProductos, userLoggedIn: req.session.userLogin });
+        res.render("addProduct", { categoriasProductos });
     },
 
     store: (req, res) => {
@@ -48,7 +48,7 @@ const productsController = {
     editProduct: (req, res) => {
         const id = parseInt(req.params.id);
         const productEdited = productsJson.find(product => product.id === id);
-        res.render("editProduct", { productEdited, categoriasProductos, userLoggedIn: req.session.userLogin });
+        res.render("editProduct", { productEdited, categoriasProductos });
 
     },
 
