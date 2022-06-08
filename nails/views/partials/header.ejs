@@ -36,9 +36,25 @@
     <% if (locals.isLogged) { %>
 
       <!-- START USER LOGUIN-->
-      <a class="users-img" href="#"><i class="fas fa-user-circle"></i></i>
+      <!-- a class="link-item" href="#"><i class="fas fa-user-circle"></i>
         <%=locals.userLogin.nombre%>
-      </a>
+      </a -->
+      <nav class="main-nav3">
+        <span class="nav-links3">
+          <div class="dropdown">
+            <a class="link-item" href="#"><i class="fas fa-user-circle"></i>
+              <%=locals.userLogin.nombre%>
+            </a>
+            <div class="dropdown-content">
+              <a href="#">Mi perfil</a>
+              <a href="#">Salir</a>
+            </div>
+            <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+          
+        </span>
+      </nav>
+
+
       <!-- END USER LOGUIN-->
       <% } else { %>
         <nav class="main-nav3">
@@ -46,11 +62,12 @@
             <!-- START SIN LOGUIN-->
             <a class="link-item" href="/users/login"><i class="fas fa-sign-in-alt"></i> Login</a>
             <!-- END SIN LOGUIN-->
-            <% } %>
 
-              <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+
+            <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
           </span>
   </div>
   </nav>
-  </div>
+  <% } %>
+    </div>
 </header>

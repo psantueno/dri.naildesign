@@ -56,13 +56,15 @@
                   <% } %>
 
                   <!-- Mensaje de error cuando el email o contraseña son incorrectas -->
-                  <% if (locals && locals.errors) { %>
+                  <div class="mensaje-error">
+                    <% if (locals && locals.errors) { %>
                     <% for (let i=0; errors.length > i; i++) { %>
                         <% if (errors[i].param === "credentialsInvalid") { %>
                             <label><%= errors[i].msg %></label>           
                          <% } %>
                     <% } %>
                 <% } %>
+              </div>
                     
                     <div class="d-flex2 flex-row mb-4">
                     <input type="checkbox" class="input-no-shadow" value="" id="form2Example3">
