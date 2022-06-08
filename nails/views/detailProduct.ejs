@@ -19,7 +19,7 @@
                     <div class="container-fluid" style=" background-color: #fff; padding: 11px;">
                         <div class="row">
                             <div></div>
-                            <% if (userLoggedIn.rol === "Administrador") { %>
+                            <% if (locals.userLogin && locals.userLogin.rol === "Administrador") { %>
                             <div class="eliminar-product">
                                 <form action="/products/<%= productoDeUrl.id %>?_method=DELETE" method="POST">
                                     <button type="submit" class="btn-bgstroke-delete" title="Eliminar este producto"><i

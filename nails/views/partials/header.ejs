@@ -1,53 +1,56 @@
 <header class="main-header">
-        <div class="contenedor-logo-burgmenu">
+  <div class="contenedor-logo-burgmenu">
 
-        <!-- Start menu mobile-->
-        <div class="btn-group button-menu">
-            <!-- button type="button" class="btn btn-secondary" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" -->
-            <button class="btn btn-secondary" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fas fa-bars"></i>
-            </button>
-            <!-- ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" -->
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-              <li><a class="dropdown-item" href="/products">Productos</a></li>
-              <li><a class="dropdown-item" href="#servicios">Servicios</a></li>
-              <li><a class="dropdown-item" href="#contacto">Contacto</a></li>
-            </ul>
-          </div>
-          <!-- End menu mobile-->
+    <!-- Start menu mobile-->
+    <div class="btn-group button-menu">
+      <!-- button type="button" class="btn btn-secondary" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" -->
+      <button class="btn btn-secondary" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+      <!-- ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" -->
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <li><a class="dropdown-item" href="/products">Productos</a></li>
+        <li><a class="dropdown-item" href="#servicios">Servicios</a></li>
+        <li><a class="dropdown-item" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <!-- End menu mobile-->
 
 
-        <!-- Start Logo y menu desktop-->
-        <div class="main-logo">
-        <a href="/"><img src="/image/logo.jpeg" alt="Logo Dri.Nails"></a>
-        </div>
-        </div>
+    <!-- Start Logo y menu desktop-->
+    <div class="main-logo">
+      <a href="/"><img src="/image/logo.jpeg" alt="Logo Dri.Nails"></a>
+    </div>
+  </div>
 
-        <div class="contenedor-main-nav-nav3">
-        <nav id="nav" class="main-nav">
-            <div class="nav-links">
-                <span class="nav-links2">
-                    <a class="link-item" href="/products">Productos</a>
-                    <!-- a class="link-item" href="#servicios">Servicios</a -->
-                    <!--<a class="link-item" href="#contacto">Contacto</a> -->
-                </span>
-        </nav>
-        <% if (userLoggedIn === undefined) { %>
+  <div class="contenedor-main-nav-nav3">
+    <nav id="nav" class="main-nav">
+      <div class="nav-links">
+        <span class="nav-links2">
+          <a class="link-item" href="/products">Productos</a>
+          <!-- a class="link-item" href="#servicios">Servicios</a -->
+          <!--<a class="link-item" href="#contacto">Contacto</a> -->
+        </span>
+    </nav>
+    <% if (locals.isLogged) { %>
+
+      <!-- START USER LOGUIN-->
+      <a class="users-img" href="#"><i class="fas fa-user-circle"></i></i>
+        <%=locals.userLogin.nombre%>
+      </a>
+      <!-- END USER LOGUIN-->
+      <% } else { %>
         <nav class="main-nav3">
-            <span class="nav-links3">
-              <!-- START SIN LOGUIN-->
-                  <a class="link-item" href="/users/login"><i class="fas fa-sign-in-alt"></i> Login</a>
-              <!-- END SIN LOGUIN-->
-              <% } else { %>
-              <!-- START USER LOGUIN-->  
-              <a class="users-img" href="#" ><i class="fas fa-user-circle"></i></i> <%=userLoggedIn.nombre%></a>           
-              <!-- END USER LOGUIN-->
-              <% } %>
+          <span class="nav-links3">
+            <!-- START SIN LOGUIN-->
+            <a class="link-item" href="/users/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <!-- END SIN LOGUIN-->
+            <% } %>
 
-                  <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
-                </span>
-            </div>
-        </nav>
-        </div>
-    </header>
-    
+              <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+          </span>
+  </div>
+  </nav>
+  </div>
+</header>

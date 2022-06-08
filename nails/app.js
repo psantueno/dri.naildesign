@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const fs = require("fs");
 const session = require("express-session");
+const userLogged = require("./src/middlewares/userLogged");
 
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 
@@ -19,6 +20,10 @@ app.use(session({
 
 }));
 
+// Middleware de aplicación para verificar si hay usuario y logueado y mostrar vistas y/o botones //
+app.use(userLogged);
+
+
 //Rutas del main.js
 const mainRoutes = require("./src/routes/main.js");
 
@@ -34,6 +39,7 @@ app.listen(3000, () => {
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 //Definiendo carpeta pública.
 app.use(express.static(publicPath));
+
 
 //Se configura el view engine EJS
 app.set('view engine', 'ejs');
