@@ -1,18 +1,22 @@
+// ************ LIBRARIES REQUIRE'S ************ //
 const express = require('express');
 const app = express();
 const path = require('path');
 const fs = require("fs");
 const session = require("express-session");
-const userLogged = require("./src/middlewares/userLogged");
+const methodOverride =  require('method-override'); // Para usar los métodos PUT y DELETE
+const cookies = require("cookie-parser");
 
-const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 
+// ************ CONFIGURACIÓN DE CARPETA PUBLIC  ************ //
 const publicPath = path.resolve(__dirname, './public');
 
-//configuraciòn del entorno para poder capturar la informacion enviada desde el formulario. 
+// ************ CONFIGURACIÓN EXPRESS ************ // Captura la información enviada desde el form.
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-// Configuración para usar SESSION //
+
+
+// ************ CONFIGURACIÓN SESSION ************ //
 app.use(session({
     secret: "This is a secret, remember",
     resave: false,
@@ -20,37 +24,40 @@ app.use(session({
 
 }));
 
-// Middleware de aplicación para verificar si hay usuario y logueado y mostrar vistas y/o botones //
-app.use(userLogged);
-
-
-//Rutas del main.js
+// ************ ROUTERS REQUIRE'S ************ //
 const mainRoutes = require("./src/routes/main.js");
-
-//Rutas de products.js
 const productsRoutes = require("./src/routes/products.js")
 const usersRoutes = require("./src/routes/users.js")
 
-
+// Levanta el servidor //
 app.listen(3000, () => {
     console.log('Servidor corriendo en el puerto 3000');
 });
-//llamado a method override para poder usar put y delete
+
+// ************ MIDDLEWARES REQUIRE'S  ************ //
+const userLogged = require("./src/middlewares/userLogged");
+
+// COOKIES //
+app.use(cookies());
+
+// Middleware de aplicación para verificar si hay usuario logueado y mostrar vistas y/o botones segun su rol//
+app.use(userLogged);
+
+// Llama method override para poder usar put y delete
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
-//Definiendo carpeta pública.
+
+//Indica a express que esta es la carpeta de archivos estáticos.
 app.use(express.static(publicPath));
 
-
-//Se configura el view engine EJS
+// ************ CONFIGURACIÓN DEL TEMPLATES ENGINE - EJS ************ //
 app.set('view engine', 'ejs');
 
-// Actualizaciòn de las rutas Acceso a login y register desde mainRoutes.
+// ************ ROUTERS ************ //
 app.use('/', mainRoutes);
-
-
 app.use('/products', productsRoutes);
 app.use('/users', usersRoutes);
 
+// ************ CONFIGURACIONES BOOTSTRAP ************ //
 app.get('/menu', (req, res) => {
     res.sendFile(path.join(__dirname, './views/menu.html'));
     });

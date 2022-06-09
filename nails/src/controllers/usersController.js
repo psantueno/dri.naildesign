@@ -1,7 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
-const bcryptjs = require("bcryptjs")
+const bcryptjs = require("bcryptjs");
+const { redirect } = require("express/lib/response");
 
 // ************ BASE DATA USERS ************ //
 const usersFilePath = path.join(__dirname, '../database/users.json');
@@ -51,8 +52,19 @@ const usersController = {
             }
             delete userToLogin.password;           //proceso de seguridad para proteger el password del user.
             req.session.userLogin = userToLogin;
+            
+            if (req.body.rememberMe) {
+                res.cookie("userEmail", req.body.email, {maxAge: (1000 * 60) * 2}); //1° param: name cookie, 2°param: valor cookie y 3°param: duración.
+            }
+
             res.redirect("/");
         }
+    },
+
+    logout: (req, res) => {
+        res.clearCookie("userEmail");
+        req.session.destroy();
+        return res.redirect("/");
     },
 
     listUsers: (req, res) => {
