@@ -38,5 +38,25 @@
         "id": 4,
         "rol": "Cliente",
         "imagen": "usuario-generico.png"
+    },
+    {
+        "nombre": "diego",
+        "apellido": "alba ",
+        "email": "dlalba282ac@gmail.com",
+        "password": "$2a$10$O3fw9L5JdNQR0BXPvd18BO9WJcuJw.bwqtT25STSyGgdTsk47jSS.",
+        "terminos": "on",
+        "id": 5,
+        "rol": "Cliente",
+        "imagen": "usuario-generico.png"
+    },
+    {
+        "nombre": "nuevo",
+        "apellido": "asdas",
+        "email": "dlalba2821@gmail.com",
+        "password": "$2a$10$kkwbn8lt30ihP5gRgEe4EOd2yRS9KCUi066YpeOga42gcT5TP0ASm",
+        "terminos": "on",
+        "id": 6,
+        "rol": "Cliente",
+        "imagen": "users-1654777863563.png"
     }
 ]

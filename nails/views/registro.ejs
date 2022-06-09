@@ -70,11 +70,15 @@
                     </div>
                     <% if (locals && locals.errors) { %>
                       <% for (let i=0; errors.length > i; i++) { %>
-                          <% if (errors[i].param === "mail") { %>
+                          <% if (errors[i].param === "email") { %>
                               <label><%= errors[i].msg %></label>           
                            <% } %>
                       <% } %>
                   <% } %>
+                  <% if (locals && locals.emailexiste) { %>
+                            <label><%= emailexiste %></label>           
+                         <% } %>
+                 
   
   
                     <div class="d-flex flex-row align-items-center mb-4">
@@ -94,7 +98,8 @@
                   <% } %>
   
   
-                    <div class="d-flex flex-row align-items-center mb-4">
+                  <!--  
+                  <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                         <label class="form-label" for="form3Example4cd">Repita el password</label>
@@ -102,6 +107,8 @@
                         
                       </div>
                     </div>
+
+                    -->
                     <!--Se agrega boton de agregar archivos para multer-->
 
                     <div class="d-flex flex-row align-items-center mb-4">

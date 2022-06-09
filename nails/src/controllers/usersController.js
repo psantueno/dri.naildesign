@@ -105,20 +105,23 @@ const usersController = {
     store: (req, res) => {
 
         //se validan errores del form y se continua con el guardado: 
-
+        //console.log(req)
         const { errors } = validationResult(req);
+        //console.log(errors)
 
         if (req.body.terminos != undefined) {
             if (errors.length > 0) {
                 return res.render("registro", { errors, old: req.body });
             }
-            else {
+            
+            else if (usersJson.find(element => element.email===req.body.email)=== undefined) {
+                //console.log(usersJson.find(element => element.email===req.body.email))
                 const newusers = req.body;
-                console.log(newusers)                                          // Trae los datos del form create.
+                //console.log(newusers)                                          // Trae los datos del form create.
                 newusers.id = usersJson.length + 1;                            // asigno un ID.
                 newusers.rol = "Cliente"
                 newusers.password = bcryptjs.hashSync(req.body.password, 10)
-                if (req.imagenusuario != undefined) {
+                if (req.imagenusuario != undefined) {                           // tambien se podrìa validar como req.file != undefined 
                     newusers.imagen = req.file.filename;                       // asocio la imagen del cliente (si hay).
                 }
                 else {
@@ -128,6 +131,10 @@ const usersController = {
                 let newUsersReady = JSON.stringify(usersJson);      // convierto a JSON para poder almacenarlo en dataBase.
                 fs.writeFileSync(usersFilePath, newUsersReady);    // escribo en el archivo users.json (database).
                 res.redirect("/users/login");
+            } else{
+                
+                
+                res.render("registro", { emailexiste: "el email ya se encuentra registrado", old: req.body })
             }
         }
         else {

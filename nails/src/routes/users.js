@@ -22,6 +22,7 @@ const storage = multer.diskStorage({
 
 	filename: (req, file, callback) => {
 		const imageName = "users-" + Date.now() + path.extname(file.originalname);
+		req.imagenusuario=imageName;
 		callback(null, imageName);
 	}
 });
