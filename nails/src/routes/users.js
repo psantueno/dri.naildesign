@@ -1,4 +1,4 @@
-// ************ Librerías Require's ************ //
+// ************ Libraries Require's ************ //
 const express = require("express");
 const router = express.Router();
 const path = require('path');
@@ -36,6 +36,8 @@ const upload = multer({storage: storage});
 router.get('/login', guestRoutes, usersController.login);
 // PROCESS LOGIN //
 router.post('/login', usersValidation, usersController.processLogin);
+// LOGOUT //
+router.get('/login', guestRoutes, usersController.logout);
 // REGISTER //
 router.get('/registro', guestRoutes, usersController.registro);
 // PROCESS REGISTER //
