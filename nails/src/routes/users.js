@@ -35,9 +35,9 @@ const upload = multer({storage: storage});
 // LOGIN //
 router.get('/login', guestRoutes, usersController.login);
 // PROCESS LOGIN //
-router.post('/login', usersValidation, usersController.processLogin);
+router.post('/login', usersController.processLogin);
 // LOGOUT //
-router.get('/login', guestRoutes, usersController.logout);
+router.get('/logout', usersValidation, usersController.logout);
 // REGISTER //
 router.get('/registro', guestRoutes, usersController.registro);
 // PROCESS REGISTER //

@@ -22,7 +22,6 @@ productsJson.forEach(product => {
 const mainController = {
 
     home: (req, res) => {
-        console.log(req.cookies.userEmail);
         res.render("home", { productsJson, categoriasProductos });
     },
 

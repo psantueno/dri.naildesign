@@ -8,7 +8,6 @@ const multer = require("multer");
 const productsController = require("../controllers/productsController");
 
 // ************ Middlewares Require's  ************ //
-const addEditProductValidation = require("../middlewares/validacionAddyEditProduct"); //falta pasarlo por form edit y add
 const notLogged = require("../middlewares/notLogged");
 const adminAuth = require("../middlewares/adminAuth");
 

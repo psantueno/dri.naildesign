@@ -2,7 +2,6 @@ const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
-const { redirect } = require("express/lib/response");
 
 // ************ BASE DATA USERS ************ //
 const usersFilePath = path.join(__dirname, '../database/users.json');
@@ -26,6 +25,7 @@ const usersController = {
     },
 
     processLogin: (req, res) => {
+    
         const { errors } = validationResult(req);
         if (errors.length > 0) {
             return res.render("login", { errors, old: req.body });
@@ -50,11 +50,15 @@ const usersController = {
                     ]
                 });
             }
-            delete userToLogin.password;           //proceso de seguridad para proteger el password del user.
-            req.session.userLogin = userToLogin;
-            
+            req.session.userLogin = {
+                email: userToLogin.email, 
+                nombre: userToLogin.nombre,
+                rol: userToLogin.rol                 //proceso de seguridad para proteger el password, solo asigno las propiedades necesarias.
+            }  
+            console.log(req.session.userLogin)
+
             if (req.body.rememberMe) {
-                res.cookie("userEmail", req.body.email, {maxAge: (1000 * 60) * 2}); //1° param: name cookie, 2°param: valor cookie y 3°param: duración.
+                res.cookie("userEmail", req.body.email, { maxAge: (1000 * 60) * 2 }); //1° param: name cookie, 2°param: valor cookie y 3°param: duración.
             }
 
             res.redirect("/");
@@ -72,16 +76,16 @@ const usersController = {
     },
 
     detailUsers: (req, res) => {
-        ;
+    
         const id = parseInt(req.params.id);
         const usersDeUrl = usersJson.find(users => users.id === id);
         res.render("detailUsers", { usersDeUrl });
     },
-    
+
     editUsers: (req, res) => {
         const id = parseInt(req.params.id);
         const usersEdited = usersJson.find(users => users.id === id);
-        res.render("editUsers", { usersEdited, rolUsers});
+        res.render("editUsers", { usersEdited, rolUsers });
 
     },
 
@@ -116,26 +120,24 @@ const usersController = {
 
     store: (req, res) => {
 
-        //se validan errores del form y se continua con el guardado: 
-        //console.log(req)
         const { errors } = validationResult(req);
-        //console.log(errors)
 
         if (req.body.terminos != undefined) {
             if (errors.length > 0) {
                 return res.render("registro", { errors, old: req.body });
             }
-            
-            else if (usersJson.find(element => element.email===req.body.email)=== undefined) {
-                //console.log(usersJson.find(element => element.email===req.body.email))
-                const newusers = req.body;
-                //console.log(newusers)                                          // Trae los datos del form create.
+
+            else if (usersJson.find(element => element.email === req.body.email) === undefined) {
+                
+                const newusers = req.body;                                      // Trae los datos del form create.
                 newusers.id = usersJson.length + 1;                            // asigno un ID.
-                newusers.rol = "Cliente"
-                newusers.password = bcryptjs.hashSync(req.body.password, 10)
+                newusers.rol = "Cliente";
+                newusers.password = bcryptjs.hashSync(req.body.password, 10);
+
                 if (req.imagenusuario != undefined) {                           // tambien se podrìa validar como req.file != undefined 
                     newusers.imagen = req.file.filename;                       // asocio la imagen del cliente (si hay).
                 }
+
                 else {
                     newusers.imagen = "usuario-generico.png";
                 }
@@ -143,12 +145,14 @@ const usersController = {
                 let newUsersReady = JSON.stringify(usersJson);      // convierto a JSON para poder almacenarlo en dataBase.
                 fs.writeFileSync(usersFilePath, newUsersReady);    // escribo en el archivo users.json (database).
                 res.redirect("/users/login");
-            } else{
+            }
+
+            else {
                 
-                
-                res.render("registro", { emailexiste: "el email ya se encuentra registrado", old: req.body })
+                res.render("registro", { emailexiste: "El email ya se encuentra registrado", old: req.body })
             }
         }
+        
         else {
             res.render("registro", { terminos: "Debes aceptar los terminos y condiciones", old: req.body })
         }

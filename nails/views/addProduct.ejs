@@ -20,12 +20,12 @@
 
                     <div class="campos-form">
                         <label for="nombre-producto"><b>Nombre del producto</b></label>
-                        <input type="text" placeholder="Nombre de producto" name="nombre" id="nombreproducto" required>
+                        <input type="text" placeholder="Nombre de producto" name="nombre" id="nombreproducto"  value="<%= (locals && locals.old) ? old.nombre : null %>" required>
                     </div>
 
                     <div class="campos-form">
                         <label for="descripcion-producto"><b>Descripcion del producto</b></label>
-                        <textarea type="text" placeholder="Descripcion de producto" name="descripcion"
+                        <textarea type="text" placeholder="Descripcion de producto" name="descripcion" value="<%= (locals && locals.old) ? old.descripcion : null %>"
                             id="descripcionproducto" required></textarea>
                     </div>
 
@@ -47,19 +47,19 @@
 
                     <div class="campos-form">
                         <label for="cantidad-producto"><b>Cantidad</b></label>
-                        <input type="number" placeholder="Cantidad de producto" name="stock" id="cantidadproducto"
+                        <input type="number" placeholder="Cantidad de producto" name="cantidad" id="cantidadproducto" value="<%= (locals && locals.old) ? old.cantidad : null %>"
                             required>
                     </div>
 
                     <div class="campos-form">
                         <label for="precio-producto"><b>Precio del producto</b></label>
-                        <input type="number" placeholder="Precio de producto" name="precio" id="precioproducto"
+                        <input type="number" placeholder="Precio de producto" name="precio" id="precioproducto" value="<%= (locals && locals.old) ? old.precio : null %>"
                             required>
                     </div>
 
                     <div class="campos-form">
                         <label for="precio-producto"><b>Descuento</b></label>
-                        <input type="number" placeholder="Descuento del producto" name="descuento"
+                        <input type="number" placeholder="Descuento del producto" name="descuento" value="<%= (locals && locals.old) ? old.descuento : null %>"
                             id="descuento-producto" required>
                     </div>
 

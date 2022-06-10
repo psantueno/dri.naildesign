@@ -53,6 +53,7 @@ const productsController = {
     },
 
     updateProduct: (req, res) => {
+        
         let id = parseInt(req.params.id);
 
         productsJson.forEach(product => {
