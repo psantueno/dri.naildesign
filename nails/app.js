@@ -6,6 +6,7 @@ const fs = require("fs");
 const session = require("express-session");
 const methodOverride =  require('method-override'); // Para usar los métodos PUT y DELETE
 const cookies = require("cookie-parser");
+const Sequelize = require("sequelize");
 
 
 // ************ CONFIGURACIÓN DE CARPETA PUBLIC  ************ //
@@ -69,3 +70,50 @@ app.get('/banner', (req, res) => {
 app.get('/servicios', (req, res) => { 
     res.sendFile(path.join(__dirname, './views/servicios.html'));
 })
+
+
+// ************ CONFIGURACIONES MYSQL ************ //
+//parametros de conexión a BD - hay que pasar al archivo ./src/database/db//
+const sequelize = new Sequelize("nails","root","Acontec3",{
+    host: "localhost",
+    dialect: "mysql"
+});
+
+
+//definición de modelo Productos//
+const productsModel = sequelize.define("products",{
+    idproducts: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true
+    },
+    nombre: {
+        type: Sequelize.STRING(22),
+        allowNull: false
+    },
+    precio: {type: Sequelize.INTEGER},
+    imagen: {type: Sequelize.STRING(26)},
+    category: {type: Sequelize.STRING(10)},
+    descuento: {type: Sequelize.INTEGER},
+    cantidad: {type: Sequelize.STRING},
+    descricao: Sequelize.STRING(432)
+});
+
+// conectar BD //
+sequelize.authenticate()
+    .then(() => {
+        console.log("conexión BD OK")
+    })
+    .catch( error => {
+        console.log("ERROR BD!!!")
+    })
+
+// productsModel.findAll({attributes:['nombre','precio']})
+//     .then(products => {
+//         const resultado = JSON.stringify(products)
+//         console.log(resultado)
+//     })
+//     .catch(error =>{
+//         console.log("error")
+//     })
