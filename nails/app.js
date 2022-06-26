@@ -79,8 +79,17 @@ const sequelize = new Sequelize("nails","root","Acontec3",{
     dialect: "mysql"
 });
 
+// conectar BD //
+sequelize.authenticate()
+    .then(() => {
+        console.log("conexión BD OK")
+    })
+    .catch( error => {
+        console.log("ERROR BD!!!")
+    })
 
-//definición de modelo Productos//
+
+//BD PRODUCTS - definición de modelo Productos//
 const productsModel = sequelize.define("products",{
     idproducts: {
         type: Sequelize.INTEGER,
@@ -100,18 +109,59 @@ const productsModel = sequelize.define("products",{
     descricao: Sequelize.STRING(432)
 });
 
-// conectar BD //
-sequelize.authenticate()
-    .then(() => {
-        console.log("conexión BD OK")
-    })
-    .catch( error => {
-        console.log("ERROR BD!!!")
-    })
+//BD USERS - definición de modelo Usuarios//
+const usersModel = sequelize.define("users",{
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true
+    },
+    nombre: {
+        type: Sequelize.STRING(9),
+        allowNull: false
+    },
+    apellido: {
+        type: Sequelize.STRING(13),
+        allowNull: false
+    },
+    email: {
+        type: Sequelize.STRING(23),
+        allowNull: false
+    },
+    password: {
+        type: Sequelize.STRING(60),
+        allowNull: false
+    },
+    terminos: {
+        type: Sequelize.STRING(2),
+        allowNull: false
+    },
+    rol: {
+        type: Sequelize.STRING(13),
+        allowNull: false
+    },
+    imagen: {
+        type: Sequelize.STRING(20),
+        allowNull: false
+    },
+
+
+
+});
 
 // productsModel.findAll({attributes:['nombre','precio']})
 //     .then(products => {
 //         const resultado = JSON.stringify(products)
+//         console.log(resultado)
+//     })
+//     .catch(error =>{
+//         console.log("error")
+//     })
+
+// usersModel.findAll({attributes:['nombre','rol']})
+//     .then(users => {
+//         const resultado = JSON.stringify(users)
 //         console.log(resultado)
 //     })
 //     .catch(error =>{
