@@ -74,83 +74,83 @@ app.get('/servicios', (req, res) => {
 
 // ************ CONFIGURACIONES MYSQL ************ //
 //parametros de conexión a BD - hay que pasar al archivo ./src/database/db//
-const sequelize = new Sequelize("nails","root","Acontec3",{
-    host: "localhost",
-    dialect: "mysql"
-});
+// const sequelize = new Sequelize("nails","root","Acontec3",{
+//     host: "localhost",
+//     dialect: "mysql"
+// });
 
 // conectar BD //
-sequelize.authenticate()
-    .then(() => {
-        console.log("conexión BD OK")
-    })
-    .catch( error => {
-        console.log("ERROR BD!!!")
-    })
+// sequelize.authenticate()
+//     .then(() => {
+//         console.log("conexión BD OK")
+//     })
+//     .catch( error => {
+//         console.log("ERROR BD!!!")
+//     })
 
 
 //BD PRODUCTS - definición de modelo Productos//
-const productsModel = sequelize.define("products",{
-    idproducts: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        allowNull: false,
-        primaryKey: true
-    },
-    nombre: {
-        type: Sequelize.STRING(22),
-        allowNull: false
-    },
-    precio: {type: Sequelize.INTEGER},
-    imagen: {type: Sequelize.STRING(26)},
-    category: {type: Sequelize.STRING(10)},
-    descuento: {type: Sequelize.INTEGER},
-    cantidad: {type: Sequelize.STRING},
-    descricao: Sequelize.STRING(432)
-});
+// const productsModel = sequelize.define("products",{
+//     id: {
+//         type: Sequelize.INTEGER,
+//         autoIncrement: true,
+//         allowNull: false,
+//         primaryKey: true
+//     },
+//     nombre: {
+//         type: Sequelize.STRING(22),
+//         allowNull: false
+//     },
+//     precio: {type: Sequelize.INTEGER},
+//     imagen: {type: Sequelize.STRING(26)},
+//     category: {type: Sequelize.STRING(10)},
+//     descuento: {type: Sequelize.INTEGER},
+//     cantidad: {type: Sequelize.STRING},
+//     descricao: Sequelize.STRING(432)
+// });
 
 //BD USERS - definición de modelo Usuarios//
-const usersModel = sequelize.define("users",{
-    id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        allowNull: false,
-        primaryKey: true
-    },
-    nombre: {
-        type: Sequelize.STRING(9),
-        allowNull: false
-    },
-    apellido: {
-        type: Sequelize.STRING(13),
-        allowNull: false
-    },
-    email: {
-        type: Sequelize.STRING(23),
-        allowNull: false
-    },
-    password: {
-        type: Sequelize.STRING(60),
-        allowNull: false
-    },
-    terminos: {
-        type: Sequelize.STRING(2),
-        allowNull: false
-    },
-    rol: {
-        type: Sequelize.STRING(13),
-        allowNull: false
-    },
-    imagen: {
-        type: Sequelize.STRING(20),
-        allowNull: false
-    },
+// const usersModel = sequelize.define("users",{
+//     id: {
+//         type: Sequelize.INTEGER,
+//         autoIncrement: true,
+//         allowNull: false,
+//         primaryKey: true
+//     },
+//     nombre: {
+//         type: Sequelize.STRING(9),
+//         allowNull: false
+//     },
+//     apellido: {
+//         type: Sequelize.STRING(13),
+//         allowNull: false
+//     },
+//     email: {
+//         type: Sequelize.STRING(23),
+//         allowNull: false
+//     },
+//     password: {
+//         type: Sequelize.STRING(60),
+//         allowNull: false
+//     },
+//     terminos: {
+//         type: Sequelize.STRING(2),
+//         allowNull: false
+//     },
+//     rol: {
+//         type: Sequelize.STRING(13),
+//         allowNull: false
+//     },
+//     imagen: {
+//         type: Sequelize.STRING(20),
+//         allowNull: false
+//     },
 
 
 
-});
+// });
 
-// productsModel.findAll({attributes:['nombre','precio']})
+// productsModel.findAll({attributes:['nombre','precio','id-categories']})
 //     .then(products => {
 //         const resultado = JSON.stringify(products)
 //         console.log(resultado)

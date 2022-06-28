@@ -16,33 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `users`
+-- Table structure for table `categories`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `users` (
-  `id_users` int NOT NULL,
-  `nombre` varchar(9) NOT NULL,
-  `apellido` varchar(13) NOT NULL,
-  `email` varchar(23) NOT NULL,
-  `password` varchar(60) NOT NULL,
-  `terminos` varchar(2) NOT NULL,
-  `rol` varchar(13) NOT NULL,
-  `imagen` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE `categories` (
+  `id_category` int NOT NULL,
+  `nombre` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_category`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `categories`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Aline','Gruba','gruba.aline@gmail.com','$2a$10$nb/oHXdFhl8ge0tSx0UnY.C1Ktfu/tE4SAEEUjwUVRHIvfk67Qgfa','on','Cliente','usuario-generico.png'),(2,'Sebastian','Antueno','seba.antueno@gmail.com','$2a$10$pCr/.LGHkgxr.iL/y5ZOTOJPE0XzZCHbsLEcIhNJPKSUSlnvZvKVa','on','Administrador','usuario-generico.png'),(3,'Diego','Alba Castillo','dlalba282@gmail.com','$2a$10$zH.GSP0J/9zEU3GyVPy2ZeVmsNSiFXjmImwwSFFkeOucAu9hthk9C','on','Administrador','usuario-generico.png'),(4,'Lorena','Zacarías','lore_zacariaz@gmail.com','$2a$10$jGqs4zt1imo9Gyi5zfP4XuQ97S3X2MuuqAPw9xNhd9HUzZPSXCqJW','on','Cliente','usuario-generico.png');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+LOCK TABLES `categories` WRITE;
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'Esmaltes'),(2,'Maquijalle'),(3,'Accesorios');
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

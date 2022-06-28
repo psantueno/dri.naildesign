@@ -3,7 +3,7 @@ const path = require("path");
 const { validationResult } = require("express-validator");
 
 // ************ BASE DATA PRODUCTS ************ //
-const productsFilePath = path.join(__dirname, '../database/products.json'); //traigo el json de productos
+const productsFilePath = path.join(__dirname, '../database-vieja/products.json'); //traigo el json de productos
 let productsJson = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); // lista de productos total
 
 // Array para almacenar las categorìas de los productos y poder hacer bien dinamica la vista y la programaciòn màs condensada //

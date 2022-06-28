@@ -2,10 +2,15 @@ const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
+const db = require('../database/models/index')
 
 // ************ BASE DATA USERS ************ //
-const usersFilePath = path.join(__dirname, '../database/users.json');
+//NODE//
+const usersFilePath = path.join(__dirname, '../database-vieja/users.json');
 let usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); // lista de usuarios total
+ 
+//MYSQL//
+const { Users } = db;
 
 // Array para almacenar los rols de los usuarios //
 const rolUsuers = [];

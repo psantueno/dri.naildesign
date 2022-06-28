@@ -1,9 +1,15 @@
 const fs = require("fs");
 const path = require("path");
+const db = require('../database/models/index')
 
 // ************ BASE DATA PRODUCTS ************ //
-const productsFilePath = path.join(__dirname, '../database/products.json');
+//NODE (ocultar)
+const productsFilePath = path.join(__dirname, '../database-vieja/products.json');
 let productsJson = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); // lista de productos total
+
+//MYSQL
+// const productsFilePath = path.join(__dirname, '../database/products.json');
+const { Products } = db;
 
 
 //Array para almacenar las categorìas de los productos y poder hacer bien dinamica la vista y la programaciòn màs condensada
@@ -11,8 +17,8 @@ const categoriasProductos = [];
 
 //se actualiza el array con las categorias de los productos eliminando cualquier duplicado.
 productsJson.forEach(product => {
-    if (!categoriasProductos.includes(product.categoria)) {
-        categoriasProductos.push(product.categoria)
+    if (!categoriasProductos.includes(product.category)) {
+        categoriasProductos.push(product.category)
     }
 });
 
@@ -20,11 +26,19 @@ productsJson.forEach(product => {
 const productsController = {
 
     listProducts: (req, res) => {
-        res.render("listProducts", { productsJson, categoriasProductos });
+        // Products.findAll({raw:true}).then((productos) => {
+        //     console.log(productos)
+        //     res.render("listProducts", { productsJson:productos, categoriasProductos });
+        // })
+
+        const allProducts = Products.findAll({include:'categories', raw:true, nest:true});
+        const allCategories = Categories.findAll({raw:true})
+
+        Promise.all([allProducts,allCategories]).then(([respuesta1,respuesta2]) => {
+        })
     },
 
     detailProduct: (req, res) => {
-        ;
         const id = parseInt(req.params.id);
         const productoDeUrl = productsJson.find(product => product.id === id);
         res.render("detailProduct", { productoDeUrl });
