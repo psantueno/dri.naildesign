@@ -35,9 +35,9 @@ const upload = multer({storage: storage});
 // LOGIN //
 router.get('/login', guestRoutes, usersController.login);
 // PROCESS LOGIN //
-router.post('/login', usersController.processLogin);
+router.post('/login', usersValidation, usersController.processLogin);
 // LOGOUT //
-router.get('/logout', usersValidation, usersController.logout);
+router.get('/logout', usersController.logout);
 // REGISTER //
 router.get('/registro', guestRoutes, usersController.registro);
 // PROCESS REGISTER //
@@ -47,14 +47,14 @@ router.post('/registro',upload.single("imagenusuario"),regValidation,  usersCont
 // router.get('/', usersController.listUsers);
 
 // /*** DETALLE DE USUARIOS ***/ 
-//---router.get('/detailProduct/:id', usersController.detailUsers);
+//---router.get('/detailUser/:id', usersController.detail);
 
 // /*** CREATE USER ***/ 
-//-- upload.single("imagenusuario"), NO REQUIERE ESTA RUTA POR GET, ESTO SE HACE DESDE EL /REGISTRO QUE ESTA EN MAIN router.get('/addUser', usersController.addNewUser);
+// router.get('/addUser', usersController.create);  // Para agregar usuarios admin
 
 // /*** EDITAR USUARIO ***/ 
-//---router.get('/editProduct/:id', usersController.editProduct);
-// --- router.put('/editProduct/:id', upload.single("imagenproducto"), usersController.updateProduct);
+//---router.get('/editUser/:id', usersController.edit);
+// --- router.put('/editUser/:id', upload.single("imagen"), usersController.update);
 
 // /*** ELIMINAR USUARIO ***/ 
 //--- router.delete('/:id', usersController.destroy);

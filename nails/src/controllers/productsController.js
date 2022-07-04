@@ -72,7 +72,7 @@ const productsController = {
             .catch(error => res.send(error));
     },
 
-    updateProduct: (req, res) => {
+    update: (req, res) => {
         if (req.file === undefined) {
             Products
                 .update(
