@@ -40,7 +40,7 @@ router.post('/', upload.single("imagenproducto"), productsController.store);
 
 // /*** EDITAR PRODUCTOS ***/ 
 router.get('/editProduct/:id', notLogged, adminAuth, productsController.editProduct);
-router.put('/editProduct/:id', upload.single("imagenproducto"), productsController.updateProduct);
+router.put('/editProduct/:id', upload.single("imagenproducto"), productsController.update);
 
 // /*** ELIMINAR PRODUCTOS ***/ 
 router.delete('/:id', notLogged, adminAuth, productsController.destroy);
