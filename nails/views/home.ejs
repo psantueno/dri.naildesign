@@ -19,7 +19,7 @@
                 <section id="productos" class="bodya">
                     <secction class="shop-home">
                         <div class="shop-texto">
-                            <h1>Productos</h1>
+                            <h1>Tienda Online</h1>
                             <p>Las Mejores Marcas Internacionales las encontrás en nuestro Shop Online</p>
                             <a href="/products">
                                 <button type="button" class="btn-bgstroke">Shop</button>
@@ -29,16 +29,16 @@
 
                         <!-- PRUEBA PARA MOSTRAR TODO POR AUTO CLASIFICACIÒN -->
 
-                        <% categoriasProductos.forEach(categoria=>{ %>
+                        <% categories.forEach( categoria => { %>
 
                             <%let contador=0;%>
                                 <div class="shop-texto">
                                     <h2>
-                                        <%=categoria%>
+                                        <%=categoria.nombre%>
                                     </h2>
 
                                     <div class="container">
-                                        <% productsJson.forEach(product=>{ if(product.categoria===categoria){ %>
+                                        <% products.forEach( product => { if(product.category.nombre === categoria.nombre) { %>
 
                                             <%if (contador<4){%>
 

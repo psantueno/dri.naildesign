@@ -15,18 +15,18 @@
             <section id="productos" class="bodya">
                 <secction class="shop-home">
                     <div class="shop-texto">
-                        <h1>Productos</h1>
+                        <h1>Tienda Online</h1>
                         <p>Las Mejores Marcas Internacionales las encontrás en nuestro Shop Online</p>
                     </div>
                     <hr>
                         <!-- PRUEBA PARA MOSTRAR TODO POR AUTO CLASIFICACIÒN -->
 
-                        <% categoriasProductos.forEach(categoria=>{ %>
+                        <% categories.forEach( categoria => { %>
                         <div class="shop-texto">
-                            <h2><%=categoria%></h2>
+                            <h2><%=categoria.nombre%></h2>
     
                             <div class="container">
-                                <% productsJson.forEach(product=>{ if(product.categoria===categoria){ %>
+                                <% products.forEach( product => { if(product.category.nombre === categoria.nombre) { %>
                                     <div class="item-box">
                                         <a class="enlace-detalle" href="/products/detailProduct/<%=product.id%>">
                                             <div class="item-box-image">
@@ -60,10 +60,6 @@
                         <%})%>
 
 <!-- PRUEBA PARA MOSTRAR TODO POR AUTO CLASIFICACIÒN -->
-
-
-
-
 
             </section>
             </secction>

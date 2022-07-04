@@ -1,8 +1,10 @@
-
 module.exports = (sequelize, DataTypes) => {
+
     let alias = "Categories";
+
     let cols = {
-        id_category: {
+
+        id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             allowNull: false,
@@ -11,16 +13,26 @@ module.exports = (sequelize, DataTypes) => {
         nombre: {
             type: DataTypes.STRING(9),
             allowNull: false
-         },
-            
-            };
+        },
 
-            let config = {
-                tablename: 'category',
-                timestamps: false
-            }
+    };
+
+    let config = {
+        tablename: 'category',
+        timestamps: false
+    }
+
+    const Category = sequelize.define(alias, cols, config);
+
+     // ************ RELATIONS ************ //
+
+     Category.associate = function (models) {
         
-            const Category = sequelize.define(alias, cols, config);
-        
-            return Category;
-        }
+        Category.hasMany(models.Products, {   
+            as: "products",
+            foreignKey: "category_id"
+        })
+    }
+
+    return Category;
+}
