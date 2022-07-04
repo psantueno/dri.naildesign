@@ -2,27 +2,26 @@ const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
 
+
 // ************ BASE DATA PRODUCTS ************ //
-const productsFilePath = path.join(__dirname, '../database-vieja/products.json'); //traigo el json de productos
-let productsJson = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); // lista de productos total
-
-// Array para almacenar las categorìas de los productos y poder hacer bien dinamica la vista y la programaciòn màs condensada //
-const categoriasProductos = [];
-
-// Se actualiza el array con las categorias de los productos eliminando cualquier duplicado //
-productsJson.forEach(product => {
-
-    if (!categoriasProductos.includes(product.categoria)) {
-        categoriasProductos.push(product.categoria)
-    }
-});
+const db = require('../database/models');
+const { Products } = db;
+const { Categories } = db;
 
 
 // ************ START CONTROLLER ************ //
 const mainController = {
 
     home: (req, res) => {
-        res.render("home", { productsJson, categoriasProductos });
+        const allProducts = Products.findAll({ include: 'category', raw: true, nest: true });
+        const allCategories = Categories.findAll({ raw: true, nest: true })
+
+        Promise
+        .all([allProducts, allCategories])
+        .then(([products, categories]) => {
+            return res.render('home', {products, categories });
+        })
+        .catch(error => res.send(error));
     },
 
     registro: (req, res) => {

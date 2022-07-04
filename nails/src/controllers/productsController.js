@@ -1,107 +1,126 @@
 const fs = require("fs");
 const path = require("path");
-const db = require('../database/models/index')
 
-// ************ BASE DATA PRODUCTS ************ //
-//NODE (ocultar)
-const productsFilePath = path.join(__dirname, '../database-vieja/products.json');
-let productsJson = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); // lista de productos total
-
-//MYSQL
-// const productsFilePath = path.join(__dirname, '../database/products.json');
+// ************ BASE DATA ************ //
+const db = require('../database/models')
 const { Products } = db;
+const { Categories } = db;
 
-
-//Array para almacenar las categorìas de los productos y poder hacer bien dinamica la vista y la programaciòn màs condensada
-const categoriasProductos = [];
-
-//se actualiza el array con las categorias de los productos eliminando cualquier duplicado.
-productsJson.forEach(product => {
-    if (!categoriasProductos.includes(product.category)) {
-        categoriasProductos.push(product.category)
-    }
-});
 
 // ************ START CONTROLLER ************ //
 const productsController = {
 
     listProducts: (req, res) => {
-        // Products.findAll({raw:true}).then((productos) => {
-        //     console.log(productos)
-        //     res.render("listProducts", { productsJson:productos, categoriasProductos });
-        // })
+        const allProducts = Products.findAll({ include: 'category', raw: true, nest: true });
+        const allCategories = Categories.findAll({ raw: true, nest: true });
 
-        const allProducts = Products.findAll({include:'categories', raw:true, nest:true});
-        const allCategories = Categories.findAll({raw:true})
-
-        Promise.all([allProducts,allCategories]).then(([respuesta1,respuesta2]) => {
-        })
+        Promise
+            .all([allProducts, allCategories])
+            .then(([products, categories]) => {
+                return res.render('listProducts', { products, categories });
+            })
+            .catch(error => res.send(error));
     },
 
     detailProduct: (req, res) => {
-        const id = parseInt(req.params.id);
-        const productoDeUrl = productsJson.find(product => product.id === id);
-        res.render("detailProduct", { productoDeUrl });
+        Products.findByPk(req.params.id,
+            {
+                include: ['category']
+            })
+            .then(product => {
+                return res.render('detailProduct', { product });
+            })
+            .catch(error => res.send(error));
     },
 
     addNewProduct: (req, res) => {
-        res.render("addProduct", { categoriasProductos });
+        Categories.findAll({ raw: true, nest: true })
+            .then(categories => {
+                return res.render('addProduct', { categories });
+            })
+            .catch(error => res.send(error));
     },
 
     store: (req, res) => {
-
-        const newProduct = req.body;                             // Trae los datos del form create.
-        newProduct.id = productsJson.length + 1;                 // asigno un ID.
-        newProduct.imagen = req.file.filename;                   // asocio la imagen al producto nuevo.
-        productsJson.push(newProduct);                           // agrego el producto creado al array de objetos de nuestra base de datos.
-        newProductReady = JSON.stringify(productsJson);          // convierto a JSON para poder almacenarlo en dataBase.
-        fs.writeFileSync(productsFilePath, newProductReady);     // escribo en el archivo products.json (database).
-        res.redirect("/products");
+        Products
+            .create(
+                {
+                    nombre: req.body.nombre,
+                    precio: req.body.precio,
+                    imagen: req.file.filename,
+                    category_id: req.body.categoria,
+                    descuento: req.body.descuento,
+                    descripcion: req.body.descripcion,
+                    cantidad: req.body.cantidad
+                }
+            )
+            .then(() => {
+                return res.redirect("/products");
+            })
+            .catch(error => res.send(error))
     },
 
     editProduct: (req, res) => {
-        const id = parseInt(req.params.id);
-        const productEdited = productsJson.find(product => product.id === id);
-        res.render("editProduct", { productEdited, categoriasProductos });
+        const productToEdit = Products.findByPk(req.params.id, { include: ['category'] });
+        const allCategories = Categories.findAll({ raw: true, nest: true });
 
+        Promise
+            .all([productToEdit, allCategories])
+            .then(([productEdited, categories]) => {
+                return res.render('editProduct', { productEdited, categories });
+            })
+            .catch(error => res.send(error));
     },
 
     updateProduct: (req, res) => {
-        
-        let id = parseInt(req.params.id);
-
-        productsJson.forEach(product => {
-            if (product.id === id) {
-
-                if (req.file === undefined) {
-
-                    product.nombre = req.body.nombreproducto;
-                    product.descripcion = req.body.descripcionproducto;
-                    product.precio = parseInt(req.body.precioproducto);
-                    product.descuento = parseInt(req.body.descuentoproducto);
-                    product.categoria = req.body.categoriaproducto;
-                }
-                else {
-                    product.nombre = req.body.nombreproducto;
-                    product.descripcion = req.body.descripcionproducto;
-                    product.precio = parseInt(req.body.precioproducto);
-                    product.descuento = parseInt(req.body.descuentoproducto);
-                    product.categoria = req.body.categoriaproducto;
-                    product.imagen = req.file.filename;
-                }
-            }
-        })
-        let productsUpdatedDB = JSON.stringify(productsJson)
-        fs.writeFileSync(productsFilePath, productsUpdatedDB)
-        res.redirect('/products')
+        if (req.file === undefined) {
+            Products
+                .update(
+                    {
+                        nombre: req.body.nombreproducto,
+                        descripcion: req.body.descripcionproducto,
+                        precio: parseInt(req.body.precioproducto),
+                        descuento: parseInt(req.body.descuentoproducto),
+                        category_id: req.body.categoriaproducto,
+                        cantidad: req.body.cantidad
+                    },
+                    {
+                        where: { id: req.params.id }
+                    })
+                .then(() => {
+                    return res.redirect('/products')
+                })
+                .catch(error => res.send(error));
+        }
+        else {
+            Products
+                .update(
+                    {
+                        nombre: req.body.nombreproducto,
+                        descripcion: req.body.descripcionproducto,
+                        precio: parseInt(req.body.precioproducto),
+                        descuento: parseInt(req.body.descuentoproducto),
+                        category_id: req.body.categoriaproducto,
+                        cantidad: req.body.cantidad,
+                        imagen: req.file.filename
+                    },
+                    {
+                        where: { id: req.params.id }
+                    })
+                .then(() => {
+                    return res.redirect('/products')
+                })
+                .catch(error => res.send(error));
+        }
     },
 
     destroy: (req, res) => {
-        let id = parseInt(req.params.id);
-        let productsUpdate = productsJson.filter(element => element.id !== id);
-        productsToDb = JSON.stringify(productsUpdate);
-        fs.writeFileSync(productsFilePath, productsToDb);
-        res.redirect("/products");
+        Products
+        .destroy({where: {id: req.params.id}, force: true}) // force: true es para asegurar que se ejecute la acción
+        .then( () => {
+            return res.redirect('/products')
+            })
+        .catch(error => res.send(error));
     }
 }
 

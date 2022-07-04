@@ -34,14 +34,14 @@
                         <label for="categoria-producto"><b>Categoría</b></label>
 
                         <select name="categoriaproducto">
-                            <option value="<%=productEdited.categoria%>" selected>
-                                <%=productEdited.categoria%>
+                            <option value="<%=productEdited.category_id%>" selected>
+                                <%=productEdited.category.nombre%>
                             </option>
-                            <%categoriasProductos.forEach(element=> {%>
+                            <% categories.forEach( category => {%>
 
-                                <%if(productEdited.categoria!=element){%>
-                                    <option value="<%=element%>">
-                                        <%=element%>
+                                <%if(productEdited.category_id !== category.id){%>
+                                    <option value="<%=category.id%>">
+                                        <%=category.nombre%>
                                     </option>
                                     <%}%>
                                         <%})%>
