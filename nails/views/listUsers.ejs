@@ -31,15 +31,59 @@
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Apellido</th>
                                         <th scope="col">Email</th>
-                                        <th scope="col">Password</th>
+                                        <th scope="col">Fecha de creación</th>
                                         <th scope="col">Términos</th>
                                         <th scope="col">Rol</th>
-                                        <th scope="col">Imagen</th>
-                                        <th scope="col">Editar</th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
                                     </tr>
                                 </thead>
+
+                                <% for (let i=0; users.length > i; i++) { %>
+
+                                    <% if (i%2 === 0) { %>
                                 <tbody>
                                     <tr>
+                                        <th scope="row"><%= users[i].id %></th>
+                                        <td><%= users[i].nombre %></td>
+                                        <td><%= users[i].apellido %></td>
+                                        <td><%= users[i].email %></td>
+                                        <td>05/02/2022</td>
+                                        <td><%= users[i].terminos %></td>
+                                        <td><%= users[i].rol %></td>
+                                        <td><a class="row-pink" title="Editar" href="/users/detailUser/<%= users[i].id %>"><i class="fas fa-user-edit"></i></a></td>
+                                        <td>
+                                            <form action="/users/<%= users[i].id %>?_method=DELETE" method="POST">
+                                                <button type="submit" class="" title="Eliminar">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+
+                                    <% } else { %>
+            
+                                    <tr>
+                                        <th scope="row"><%= users[i].id %></th>
+                                        <td><%= users[i].nombre %></td>
+                                        <td><%= users[i].apellido %></td>
+                                        <td><%= users[i].email %></td>
+                                        <td>05/02/2022</td>
+                                        <td><%= users[i].terminos %></td>
+                                        <td><%= users[i].rol %></td>
+                                        <td><a class="row-white" title="Editar" href="/users/detailUser/<%= users[i].id %>"><i class="fas fa-user-edit"></i></a></td>
+                                        <td>
+                                            <form action="/users/<%= users[i].id %>?_method=DELETE" method="POST">
+                                                <button type="submit" class="" title="Eliminar">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                 </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                     <% } %>
+                                 <% } %>
+
+                                    <!-- <tr>
                                         <th scope="row">1</th>
                                         <td>Aline</td>
                                         <td>Gruba</td>
@@ -97,31 +141,7 @@
                                         <td>Cliente</td>
                                         <td>usuario-generico.png</td>
                                         <td>Editar</td>
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Aline</td>
-                                        <td>Gruba</td>
-                                        <td>gruba.aline@gmail.com</td>
-                                        <td>secreto</td>
-                                        <td>on</td>
-                                        <td>Cliente</td>
-                                        <td>usuario-generico.png</td>
-                                        <td>Editar</td>
-                                    </tr>
-
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Aline</td>
-                                        <td>Gruba</td>
-                                        <td>gruba.aline@gmail.com</td>
-                                        <td>secreto</td>
-                                        <td>on</td>
-                                        <td>Cliente</td>
-                                        <td>usuario-generico.png</td>
-                                        <td>Editar</td>
-                                    </tr>
+                                    </tr> -->
                                 <!-- END TABLA USERS-->
                                 </tbody>
                             </table>

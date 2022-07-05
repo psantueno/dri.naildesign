@@ -86,7 +86,7 @@ const usersController = {
     detail: (req, res) => {
         Users.findByPk(req.params.id)
             .then(user => {
-                return res.render('detailUsers', { user });
+                return res.render('detailUser', { user });
             })
             .catch(error => res.send(error));
     },

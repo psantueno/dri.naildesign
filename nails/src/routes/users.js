@@ -8,10 +8,11 @@ const multer = require("multer");
 const usersController = require("../controllers/usersController");
 
 // ************ Middlewares Require's  ************ //
-const regValidation= require("../middlewares/validacionRegistro");
+const regValidation = require("../middlewares/validacionRegistro");
 const usersValidation = require("../middlewares/validacionLogin");
 const guestRoutes = require("../middlewares/guestRoutes");
 const notLogged = require("../middlewares/notLogged");
+const adminAuth = require("../middlewares/adminAuth");
 
 // ************ Configuración Multer ************ //
 const storage = multer.diskStorage({
@@ -41,13 +42,11 @@ router.get('/logout', usersController.logout);
 // REGISTER //
 router.get('/registro', guestRoutes, usersController.registro);
 // PROCESS REGISTER //
-router.post('/registro',upload.single("imagenusuario"),regValidation,  usersController.store);
-
-// /*** LISTA DE USUARIOS ***/ 
-// router.get('/', usersController.listUsers);
-
-// /*** DETALLE DE USUARIOS ***/ 
-//---router.get('/detailUser/:id', usersController.detail);
+router.post('/registro',upload.single("imagenusuario"),regValidation, usersController.store);
+// LISTA DE USERS //
+router.get('/', notLogged, adminAuth, usersController.listUsers);
+// EDITAR USER //
+router.get('/detailUser/:id', usersController.detail);
 
 // /*** CREATE USER ***/ 
 // router.get('/addUser', usersController.create);  // Para agregar usuarios admin
@@ -60,4 +59,5 @@ router.post('/registro',upload.single("imagenusuario"),regValidation,  usersCont
 //--- router.delete('/:id', usersController.destroy);
 
 module.exports = router;
+
 

@@ -29,7 +29,9 @@
       <div class="nav-links">
         <span class="nav-links2">
           <a class="link-item" href="/products">Productos</a>
-          <!-- a class="link-item" href="#servicios">Servicios</a -->
+          <% if (locals.userLogin && locals.userLogin.rol === "Administrador") { %>
+          <a class="link-item" href="/users">Usuarios</a>
+          <% } %>
           <!--<a class="link-item" href="#contacto">Contacto</a> -->
         </span>
     </nav>
