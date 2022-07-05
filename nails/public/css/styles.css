@@ -770,6 +770,81 @@ font-size: 12px;
   margin-bottom: 15px;
 }
 
+/*TABLA USUARIOS*/
+table {
+  table-layout: fixed;
+  width: 100%;
+  color: #565e64 !important;
+  font-size: 12px;
+}
+
+.bajada {
+  color: #565e64;
+  margin-bottom: 60px;
+}
+
+thead th:nth-child(1) {
+  width: 02%;
+}
+
+thead th:nth-child(2) {
+  width: 09%;
+}
+
+thead th:nth-child(3) {
+  width: 10%;
+}
+
+thead th:nth-child(4) {
+  width: 10%;
+}
+
+thead th:nth-child(5) {
+  width: 06%;
+}
+
+thead th:nth-child(6) {
+  width: 05%;
+}
+
+thead th:nth-child(7) {
+  width: 05%;
+}
+
+thead th:nth-child(8) {
+  width: 10%;
+}
+
+thead th:nth-child(9) {
+  width: 04%;
+}
+
+th, td {
+  padding: 20px 0;
+}
+
+th {
+  text-align: center !important;
+  text-align: center !important;
+}
+
+tbody td {
+  text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #d48f99;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+
+/*END TABLA USUARIOS*/
+
+
 /*END PAGINA DE LOGIN*/
 
 /*START MEDIAS QUERIES*/
