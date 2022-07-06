@@ -24,8 +24,8 @@
                             <span>United States</span>
                     </div>
 
-
-                    <h1>Editar mi perfil</h1>
+                    
+                    <h1>Editar usuario</h1>
 
 
                     <div class="">
@@ -46,16 +46,16 @@
                             <input type="text" placeholder="" value="" name="emailusers" id="emailusers" required>
                         </div>
 
-                        <!-- div class="campos-form">
-                            <label for="telefono-users"><b>Teléfono</b></label>
+                        <div class="campos-form">
+                            <label for="telefono-users"><b>Términos</b></label>
                             <input type="text" placeholder="" value="" name="telefonousers" id="telefonousers" required>
                         </div>
 
                         <div class="campos-form">
-                            <label for="direccion-users"><b>Dirección</b></label>
+                            <label for="direccion-users"><b>Rol</b></label>
                             <input type="text" placeholder="" value="" name="direccionusers" id="direccionusers"
                                 required>
-                        </div -->
+                        </div>
 
                         <div class="campos-form">
                             <label for="imagen-user"><b>Cambiar foto</b></label>
