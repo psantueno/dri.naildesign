@@ -32,6 +32,7 @@ const usersController = {
                     if (userToLogin) {
                         if (bcryptjs.compareSync(req.body.password, userToLogin.password)) {
                             req.session.userLogin = {
+                                id: userToLogin.id,
                                 email: userToLogin.email,
                                 nombre: userToLogin.nombre,  //proceso de seguridad para proteger el password, solo asigno las propiedades necesarias.
                                 rol: userToLogin.rol
@@ -225,7 +226,8 @@ const usersController = {
 
     destroy: (req, res) => {
 
-        Users.destroy({where: {id: req.params.id}, force: true}) // force: true es para asegurar que se ejecute la acción
+        Users
+        .destroy({where: {id: req.params.id}, force: true})   // force: true es para asegurar que se ejecute la acción
         .then( () => {return res.redirect('/users')
             })
         .catch(error => res.send(error));

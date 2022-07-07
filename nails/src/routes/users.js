@@ -47,6 +47,8 @@ router.post('/registro',upload.single("imagenusuario"),regValidation, usersContr
 router.get('/', notLogged, adminAuth, usersController.listUsers);
 // EDITAR USER //
 router.get('/detailUser/:id', usersController.detail);
+// ELIMINAR USUARIO //
+router.delete('/:id', usersController.destroy);
 
 // /*** CREATE USER ***/ 
 // router.get('/addUser', usersController.create);  // Para agregar usuarios admin
@@ -56,7 +58,7 @@ router.get('/detailUser/:id', usersController.detail);
 // --- router.put('/editUser/:id', upload.single("imagen"), usersController.update);
 
 // /*** ELIMINAR USUARIO ***/ 
-//--- router.delete('/:id', usersController.destroy);
+
 
 module.exports = router;
 
