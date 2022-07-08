@@ -110,7 +110,6 @@ const usersController = {
                         apellido: req.body.apellido,
                         email: req.body.email,
                         password: bcryptjs.hashSync(req.body.password, 10),
-                        terminos: req.body.terminos,
                         rol: req.body.rol
                     },
                     {
