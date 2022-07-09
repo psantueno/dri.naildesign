@@ -14,18 +14,18 @@
         <%- include("./partials/header.ejs") %>
             <!-- END HEADER-->
 
-            <form action="" method="POST" class="forms" enctype="multipart/form-data">
+            <form action="/users/editUser/<%= user.id %>?_method=PUT" method="POST" class="forms" enctype="multipart/form-data">
                 <div class="container2">
 
                     <div class="d-flex flex-column align-items-center text-center">
-                        <img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90">
-                        <span class="font-weight-bold">John Doe</span>
-                            <span class="text-black-50">john_doe12@bbb.com</span>
-                            <span>United States</span>
+                        <img class="rounded-circle mt-5" src="/image/users/<%= user.imagen %>" width="90">
+                        <span class="font-weight-bold"><%= user.nombre + " " + user.apellido %></span>
+                            <span class="text-black-50"><%= user.email %></span>
+                            <span>Argentina</span>
                     </div>
 
                     
-                    <h1>Editar usuario</h1>
+                    <h1>EDITAR USUARIO</h1>
 
 
                     <div class="">
@@ -33,27 +33,28 @@
 
                         <div class="campos-form">
                             <label for="nombre-users"><b>Nombre</b></label>
-                            <input type="text" placeholder="" value="" name="nombreusers" id="nombreusers" required>
+                            <input type="text" placeholder="" value="<%= user.nombre %>" name="nombre" id="nombreusers" required>
                         </div>
 
                         <div class="campos-form">
                             <label for="apellido-users"><b>Apellido</b></label>
-                            <input type="text" placeholder="" value="" name="apellidousers" id="apellidousers" required>
+                            <input type="text" placeholder="" value="<%= user.apellido %>" name="apellido" id="apellido" required>
                         </div>
 
                         <div class="campos-form">
                             <label for="email-users"><b>Email</b></label>
-                            <input type="text" placeholder="" value="" name="emailusers" id="emailusers" required>
+                            <input type="email" placeholder="" value="<%= user.email %>" name="email" id="email" required>
                         </div>
 
                         <div class="campos-form">
-                            <label for="telefono-users"><b>Términos</b></label>
-                            <input type="text" placeholder="" value="" name="telefonousers" id="telefonousers" required>
+
+                            <label for="password-users"><b>Contraseña</b></label>
+                            <input type="password" placeholder="" value="user.password" name="password" id="password" required>
                         </div>
 
                         <div class="campos-form">
-                            <label for="direccion-users"><b>Rol</b></label>
-                            <input type="text" placeholder="" value="" name="direccionusers" id="direccionusers"
+                            <label for="rol-users"><b>Rol</b></label>
+                            <input type="text" placeholder="" value="<%= user.rol %>" name="rol" id="rol"
                                 required>
                         </div>
 
@@ -67,7 +68,9 @@
                         </div>
 
                         <div class="botones">
-                            <button type="button" class="btn-bgstroke" href="#">Volver</button>
+                            <a href="/users">
+                                <button type="button" class="btn-bgstroke" href="#">Volver</button>
+                            </a>
                         </div>
 
                     </div>

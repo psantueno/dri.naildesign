@@ -886,6 +886,35 @@ tbody tr td a.row-white {
   color: #747474;
 }
 
+.botonedit {
+  display: flex;
+  justify-content: right;
+  font-size: 16px !important;
+  max-height: 85px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.botonedit .btn-bgstroke {
+  font-size: 18px !important;
+  max-width: none !important;
+  border: 0px solid #D36878;
+  margin-right: 10px;
+}
+
+.botonedit a {
+  text-decoration: none !important;
+  color: #D36878;
+  font-weight: bold;
+}
+
+.botonedit a:hover {
+  text-decoration: none !important;
+  color: #747474;
+  font-weight: bold;
+}
 
 /*END TABLA USUARIOS*/
 

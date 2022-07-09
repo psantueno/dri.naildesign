@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- START HEAD-->
+<%- include("./partials/head.ejs", {title: "detalle de producto" , style1:'rel=stylesheet href=/css/formsproducts.css',
+    style2:""}) %>
+    <!-- FINISH HEAD-->
+
+    <!-- START DETAIL USER PAGE -->
+
+    <body>
+
+        <!-- START HEADER-->
+        <%- include("./partials/header.ejs") %>
+            <!-- END HEADER-->
+
+            <form action="/users" method="POST" class="forms" enctype="multipart/form-data">
+                <div class="container2">
+
+                    <div class="d-flex flex-column align-items-center text-center">
+                        <img class="rounded-circle mt-5" src="/image/users/usuario-ADD.png" width="90">
+                    </div>
+
+
+                    <h1>CREAR USUARIO</h1>
+
+
+                    <div class="">
+
+
+                        <div class="campos-form">
+                            <label for="nombre-users"><b>Nombre</b></label>
+                            <input type="text" placeholder="" value="" name="nombre" id="nombreusers" required>
+                        </div>
+
+                        <% if (locals && locals.errors) { %>
+                            <% for (let i=0; errors.length > i; i++) { %>
+                                <% if (errors[i].param === "nombre") { %>
+                                    <label><%= errors[i].msg %></label>           
+                                 <% } %>
+                            <% } %>
+                        <% } %>
+
+                        <div class="campos-form">
+                            <label for="apellido-users"><b>Apellido</b></label>
+                            <input type="text" placeholder="" value="" name="apellido" id="apellido" required>
+                        </div>
+                        
+                        <% if (locals && locals.errors) { %>
+                            <% for (let i=0; errors.length > i; i++) { %>
+                                <% if (errors[i].param === "apellido") { %>
+                                    <label><%= errors[i].msg %></label>           
+                                 <% } %>
+                            <% } %>
+                        <% } %>
+
+                        <div class="campos-form">
+                            <label for="email-users"><b>Email</b></label>
+                            <input type="email" placeholder="" value="" name="email" id="email" required>
+                        </div>
+
+                        <% if (locals && locals.errors) { %>
+                            <% for (let i=0; errors.length > i; i++) { %>
+                                <% if (errors[i].param === "email") { %>
+                                    <label><%= errors[i].msg %></label>           
+                                 <% } %>
+                            <% } %>
+                        <% } %>
+                        <% if (locals && locals.emailexiste) { %>
+                                  <label><%= emailexiste %></label>           
+                               <% } %>
+
+                        <div class="campos-form">
+
+                            <label for="password-users"><b>Contraseña</b></label>
+                            <input type="password" placeholder="" value="" name="password" id="password" required>
+                        </div>
+
+                        <% if (locals && locals.errors) { %>
+                            <% for (let i=0; errors.length > i; i++) { %>
+                                <% if (errors[i].param === "password") { %>
+                                    <label><%= errors[i].msg %></label>           
+                                 <% } %>
+                            <% } %>
+                        <% } %>
+
+                        <div class="campos-form">
+                            <label for="rol-users"><b>Rol</b></label>
+                            <input type="text" placeholder="" value="" name="rol" id="rol" required>
+                        </div>
+
+                        <% if (locals && locals.errors) { %>
+                            <% for (let i=0; errors.length > i; i++) { %>
+                                <% if (errors[i].param === "rol") { %>
+                                    <label><%= errors[i].msg %></label>           
+                                 <% } %>
+                            <% } %>
+                        <% } %>
+
+                        <div class="campos-form">
+                            <label for="imagen-user"><b>Foto de perfil</b></label>
+                            <input type="file" placeholder="Imagen user" name="imagenuser" id="imagenuser" value="">
+                        </div>
+
+                        <div class="form-check d-flex justify-content-center mb-5">
+                            <div class="campos-form">
+                                <input type="checkbox" class="input-no-shadow" name="terminos">
+                                <label class="form-check-label" for="form2Example3" style="color: #7d7573">
+                                    Acepto los <a href="#!" style="color: #D36878">Términos y condiciones</a>
+                                </label>
+                            </div>
+                            <% if (locals && locals.terminos) { %>
+                                <label><%= terminos %></label>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            <% } %>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+
+                            <div class="botones">
+                                <button type="submit" class="btn-bgstroke" href="#">Crear</button>
+                            </div>
+
+                            <div class="botones">
+                                <a href="/users">
+                                    <button type="reset" class="btn-bgstroke" href="#">Borrar</button>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+            </form>
+
+            <!-- END DETAIL USER PAGE-->
+    </body>
+
+    <!-- START FOOTER-->
+    <%- include("./partials/footer.ejs") %>
+        <!-- END FOOTER-->
+
+</html>

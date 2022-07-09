@@ -84,8 +84,12 @@ const usersController = {
             .catch(error => res.send(error));
     },
 
+    add: (req, res) => {
+        res.render("addUser");
+    },
+
     detail: (req, res) => {
-        Users.findByPk(req.params.id)
+        Users.findByPk(req.session.userLogin.id)
             .then(user => {
                 return res.render('detailUser', { user });
             })
@@ -94,48 +98,64 @@ const usersController = {
 
     edit: (req, res) => {
         Users.findByPk(req.params.id)
-            .then((userToEdit) => {
-                return res.render('editUser', { userToEdit });
+            .then((user) => {
+                return res.render('editUser', { user });
             })
             .catch(error => res.send(error));
     },
 
     update: (req, res) => {
 
+        let idUser = req.params.id;
+
         if (req.file === undefined) {
-            Users
-                .update(
-                    {
-                        nombre: req.body.nombre,
-                        apellido: req.body.apellido,
-                        email: req.body.email,
-                        password: bcryptjs.hashSync(req.body.password, 10),
-                        rol: req.body.rol
-                    },
-                    {
-                        where: { id: req.params.id }
-                    })
+           
+            Users.update(
+                {
+                    nombre: req.body.nombre,
+                    apellido: req.body.apellido,
+                    email: req.body.email,
+                    // password: hashSync(req.body.password, 10),  // SPRINT7: aplicar evento cuando el campo cambia.
+                    rol: req.body.rol
+                },
+                {
+                    where: {id: idUser}
+                })
                 .then(() => {
+                    if (req.session.userLogin.rol === "Cliente") {
+                        req.session.userLogin = {
+                            id: req.params.id,
+                            email: req.body.email,
+                            nombre: req.body.nombre,  
+                            rol: req.body.rol
+                        }
+                    }
                     return res.redirect('/users')
                 })
                 .catch(error => res.send(error));
         }
         else {
-            Users
-                .update(
-                    {
-                        nombre: req.body.nombre,
-                        apellido: req.body.apellido,
-                        email: req.body.email,
-                        password: bcryptjs.hashSync(req.body.password, 10),
-                        terminos: req.body.terminos,
-                        rol: req.body.rol,
-                        imagen: req.file.filename
-                    },
-                    {
-                        where: { id: req.params.id }
-                    })
+            Users.update(
+                {
+                    nombre: req.body.nombre,
+                    apellido: req.body.apellido,
+                    email: req.body.email,
+                    // password: bcryptjs.hashSync(req.body.password, 10), // SPRINT7: aplicar evento cuando el campo cambia.
+                    rol: req.body.rol,
+                    imagen: req.file.filename
+                },
+                {
+                    where: {id: req.params.id}
+                })
                 .then(() => {
+                    if (req.session.userLogin.rol === "Cliente") {
+                        req.session.userLogin = {
+                            id: req.params.id,
+                            email: req.body.email,
+                            nombre: req.body.nombre,  
+                            rol: req.body.rol
+                        }
+                    }
                     return res.redirect('/users')
                 })
                 .catch(error => res.send(error));
@@ -178,7 +198,7 @@ const usersController = {
                                         imagen: req.file.filename
                                     })
                                     .then(() => {
-                                        return res.redirect("/users/login");
+                                        return res.redirect("/users");
                                     })
                                     .catch(error => res.send(error))
                             }
@@ -194,7 +214,7 @@ const usersController = {
                                         imagen: "usuario-generico.png"
                                     })
                                     .then(() => {
-                                        return res.redirect("/users/login");
+                                        return res.redirect("/users");
                                     })
                                     .catch(error => res.send(error));
                             }
@@ -205,31 +225,70 @@ const usersController = {
     },
 
     create: (req, res) => {
-        Users
-            .create(
-                {
-                    nombre: req.body.nombre,
-                    apellido: req.body.apellido,
-                    email: req.body.email,
-                    password: bcryptjs.hashSync(req.body.password, 10),
-                    terminos: req.body.terminos,
-                    rol: req.body.rol,
-                    imagen: req.file.filename
-                }
-            )
-            .then(() => {
-                return res.redirect("/users");
-            })
-            .catch(error => res.send(error))
+        const { errors } = validationResult(req);
+
+        if (req.body.terminos === undefined) {
+            res.render("addUser", { terminos: "Debe aceptar los términos y condiciones", old: req.body })
+        }
+        else {
+            if (errors.length > 0) {
+                return res.render("addUser", { errors, old: req.body });
+            }
+            else {
+                Users.findOne({
+                    where: { email: req.body.email }
+                })
+                    .then((user) => {
+                        if (user) {
+                            res.render("addUser", { emailexiste: "El email ya se encuentra registrado", old: req.body })
+                        }
+                        else {
+                            if (req.imagenusuario != undefined) {
+                                Users.create(
+                                    {
+                                        nombre: req.body.nombre,
+                                        apellido: req.body.apellido,
+                                        email: req.body.email,
+                                        password: bcryptjs.hashSync(req.body.password, 10),
+                                        terminos: req.body.terminos,
+                                        rol: req.body.rol,
+                                        imagen: req.file.filename
+                                    })
+                                    .then(() => {
+                                        return res.redirect("/users");
+                                    })
+                                    .catch(error => res.send(error))
+                            }
+                            else {
+                                Users.create(
+                                    {
+                                        nombre: req.body.nombre,
+                                        apellido: req.body.apellido,
+                                        email: req.body.email,
+                                        password: bcryptjs.hashSync(req.body.password, 10),
+                                        terminos: req.body.terminos,
+                                        rol: req.body.rol,
+                                        imagen: "usuario-generico.png"
+                                    })
+                                    .then(() => {
+                                        return res.redirect("/users");
+                                    })
+                                    .catch(error => res.send(error));
+                            }
+                        }
+                    })
+            }
+        }
     },
 
     destroy: (req, res) => {
 
         Users
-        .destroy({where: {id: req.params.id}, force: true})   // force: true es para asegurar que se ejecute la acción
-        .then( () => {return res.redirect('/users')
+            .destroy({ where: { id: req.params.id }, force: true })   // force: true es para asegurar que se ejecute la acción
+            .then(() => {
+                return res.redirect('/users')
             })
-        .catch(error => res.send(error));
+            .catch(error => res.send(error));
     }
 }
 
