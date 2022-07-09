@@ -2,88 +2,131 @@
 <html lang="en">
 
 <!-- START HEAD-->
-<%- include("./partials/head.ejs", {title: "Iniciar sesión", style1:"", style2:""}) %>
-<!-- END HEAD-->
+<%- include("./partials/head.ejs", {title: "Iniciar sesión" , style1:"", style2:""}) %>
+    <!-- END HEAD-->
 
-<!-- START LOGIN-->
-<body>
+    <!-- START LOGIN-->
 
-<!-- START HEADER-->
-<%- include("./partials/header.ejs") %>
-<!-- END HEADER-->
+    <body>
 
-    <section>
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-lg-12 col-xl-11">
-                <div class="card text-black" style="border-radius: 25px;">
-                    <div class="card-body p-md-5">
-                        <div class="row justify-content-center">
-                            <!--div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1" -->
+        <!-- START HEADER-->
+        <%- include("./partials/header.ejs") %>
+            <!-- END HEADER-->
 
-                            <p class="text-center h1 fw-bold mx-1 mx-md-4 mt-4">Lista de Usuarios</p>
-                            <p class="bajada">Lista de todos los usuarios registrados</p>
+            <section>
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-lg-12 col-xl-11">
+                        <div class="card text-black" style="border-radius: 25px;">
+                            <div class="card-body p-md-5">
+                                <div class="row justify-content-center">
+                                    <!--div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1" -->
 
-                            <!--START TABLA -->
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Apellido</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Fecha de creación</th>
-                                        <th scope="col">Términos</th>
-                                        <th scope="col">Rol</th>
-                                        <th scope="col">Editar</th>
-                                        <th scope="col">Borrar</th>
-                                    </tr>
-                                </thead>
+                                    <p class="text-center h1 fw-bold mx-1 mx-md-4 mt-4">Lista de Usuarios</p>
+                                    <p class="bajada">Lista de todos los usuarios registrados</p>
 
-                                <% for (let i=0; users.length > i; i++) { %>
+                                    <div class="botonedit">
+                                        <a href="/users/addUser" target="_blanc">
+                                            <label for="button">Crear usuario</label>
+                                            <button type="button" class="btn-bgstroke" id="button"
+                                                title="Crear usuario">
+                                                <i class="fas fa-plus-square"></i>
+                                            </button>
+                                        </a>
+                                    </div>
 
-                                    <% if (i%2 === 0) { %>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row"><%= users[i].id %></th>
-                                        <td><%= users[i].nombre %></td>
-                                        <td><%= users[i].apellido %></td>
-                                        <td><%= users[i].email %></td>
-                                        <td>05/02/2022</td>
-                                        <td><%= users[i].terminos %></td>
-                                        <td><%= users[i].rol %></td>
-                                        <td><a class="btn-bgstroke-delete1" title="Editar" href="/users/detailUser/<%= users[i].id %>"><i class="fas fa-user-edit"></i></a></td>
-                                        <td>
-                                            <form action="/users/<%= users[i].id %>?_method=DELETE" method="POST">
-                                                <button type="submit" class="btn-bgstroke-delete1" title="Eliminar">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
-                                            </form>
-                                        </td>
-                                    </tr>
+                                    <!--START TABLA -->
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Nombre</th>
+                                                <th scope="col">Apellido</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Fecha de creación</th>
+                                                <th scope="col">Términos</th>
+                                                <th scope="col">Rol</th>
+                                                <th scope="col">Editar</th>
+                                                <th scope="col">Borrar</th>
+                                            </tr>
+                                        </thead>
 
-                                    <% } else { %>
-            
-                                    <tr>
-                                        <th scope="row"><%= users[i].id %></th>
-                                        <td><%= users[i].nombre %></td>
-                                        <td><%= users[i].apellido %></td>
-                                        <td><%= users[i].email %></td>
-                                        <td>05/02/2022</td>
-                                        <td><%= users[i].terminos %></td>
-                                        <td><%= users[i].rol %></td>
-                                        <td><a class="btn-bgstroke-delete2" title="Editar" href="/users/detailUser/<%= users[i].id %>"><i class="fas fa-user-edit"></i></a></td>
-                                        <td>
-                                            <form action="/users/<%= users[i].id %>?_method=DELETE" method="POST">
-                                                <button type="submit" class="btn-bgstroke-delete2" title="Eliminar">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                     <% } %>
-                                 <% } %>
+                                        <% for (let i=0; users.length> i; i++) { %>
 
-                                    <!-- <tr>
+                                            <% if (i%2===0) { %>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <%= users[i].id %>
+                                                        </th>
+                                                        <td>
+                                                            <%= users[i].nombre %>
+                                                        </td>
+                                                        <td>
+                                                            <%= users[i].apellido %>
+                                                        </td>
+                                                        <td>
+                                                            <%= users[i].email %>
+                                                        </td>
+                                                        <td>05/02/2022</td>
+                                                        <td>
+                                                            <%= users[i].terminos %>
+                                                        </td>
+                                                        <td>
+                                                            <%= users[i].rol %>
+                                                        </td>
+                                                        <td><a class="btn-bgstroke-delete1" title="Editar"
+                                                                href="/users/editUser/<%= users[i].id %>"><i
+                                                                    class="fas fa-user-edit"></i></a></td>
+                                                        <td>
+                                                            <form action="/users/<%= users[i].id %>?_method=DELETE"
+                                                                method="POST">
+                                                                <button type="submit" class="btn-bgstroke-delete1"
+                                                                    title="Eliminar">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+
+                                                    <% } else { %>
+
+                                                        <tr>
+                                                            <th scope="row">
+                                                                <%= users[i].id %>
+                                                            </th>
+                                                            <td>
+                                                                <%= users[i].nombre %>
+                                                            </td>
+                                                            <td>
+                                                                <%= users[i].apellido %>
+                                                            </td>
+                                                            <td>
+                                                                <%= users[i].email %>
+                                                            </td>
+                                                            <td>05/02/2022</td>
+                                                            <td>
+                                                                <%= users[i].terminos %>
+                                                            </td>
+                                                            <td>
+                                                                <%= users[i].rol %>
+                                                            </td>
+                                                            <td><a class="btn-bgstroke-delete2" title="Editar"
+                                                                    href="/users/editUser/<%= users[i].id %>"><i
+                                                                        class="fas fa-user-edit"></i></a></td>
+                                                            <td>
+                                                                <form action="/users/<%= users[i].id %>?_method=DELETE"
+                                                                    method="POST">
+                                                                    <button type="submit" class="btn-bgstroke-delete2"
+                                                                        title="Eliminar">
+                                                                        <i class="fas fa-trash"></i>
+                                                                    </button>
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                                        <% } %>
+                                                            <% } %>
+
+                                                                <!-- <tr>
                                         <th scope="row">1</th>
                                         <td>Aline</td>
                                         <td>Gruba</td>
@@ -115,17 +158,18 @@
                                         <td>secreto</td>
                                 
                                 <!-- END TABLA USERS-->
-                                </tbody>
-                            </table>
+                                                </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-</body>
+            </section>
+    </body>
 
-<!-- START FOOTER-->
-<%- include("./partials/footer.ejs") %>    
-<!-- END FOOTER-->
+    <!-- START FOOTER-->
+    <%- include("./partials/footer.ejs") %>
+        <!-- END FOOTER-->
+
 </html>

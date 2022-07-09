@@ -42,13 +42,19 @@ router.get('/logout', usersController.logout);
 // REGISTER //
 router.get('/registro', guestRoutes, usersController.registro);
 // PROCESS REGISTER //
-router.post('/registro',upload.single("imagenusuario"),regValidation, usersController.store);
+router.post('/registro',upload.single("imagenusuario"), regValidation, usersController.store);
 // LISTA DE USERS //
 router.get('/', notLogged, adminAuth, usersController.listUsers);
-// EDITAR USER //
+// CREAR USUARIO //
+router.get('/addUser', usersController.add);
+// PROCESS CREATE USER //
+router.post('/', upload.single("imagenuser"), regValidation, usersController.create);
+// PERFIL USER //
 router.get('/detailUser/:id', usersController.detail);
+// EDITAR USER //
+router.get('/editUser/:id', usersController.edit);
 // PROCESS EDIT USER //
-router.put('/editUser/:id', usersController.update);
+router.put('/editUser/:id', notLogged, upload.single("imagenuser"), regValidation, usersController.update);
 // ELIMINAR USUARIO //
 router.delete('/:id', usersController.destroy);
 
@@ -56,7 +62,7 @@ router.delete('/:id', usersController.destroy);
 // router.get('/addUser', usersController.create);  // Para agregar usuarios admin
 
 // /*** EDITAR USUARIO ***/ 
-// router.get('/editUser/:id', usersController.edit);
+router.get('/editUser/:id', usersController.edit);
 // --- router.put('/editUser/:id', upload.single("imagen"), usersController.update);
 
 // /*** ELIMINAR USUARIO ***/ 
