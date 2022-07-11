@@ -1,8 +1,9 @@
+<!-- addUsers.ejs - CREAR USUARIO-->
 <!DOCTYPE html>
 <html lang="en">
 
 <!-- START HEAD-->
-<%- include("./partials/head.ejs", {title: "detalle de producto" , style1:'rel=stylesheet href=/css/formsproducts.css',
+<%- include("./partials/head.ejs", {title: "Crear Usuario" , style1:'rel=stylesheet href=/css/formsproducts.css',
     style2:""}) %>
     <!-- FINISH HEAD-->
 
@@ -111,27 +112,22 @@
                             </div>
                             <% if (locals && locals.terminos) { %>
                                 <label><%= terminos %></label>
-                                <span></span>
-                                <span></span>
-                                <span></span>
                             <% } %>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-
-
-                            <div class="botones">
-                                <button type="submit" class="btn-bgstroke" href="#">Crear</button>
-                            </div>
-
-                            <div class="botones">
-                                <a href="/users">
-                                    <button type="reset" class="btn-bgstroke" href="#">Borrar</button>
-                                </a>
-                            </div>
-
                         </div>
+
+                        <div class="botones">
+                            <button type="submit" class="btn-bgstroke" href="#">Crear</button>
+                        </div>
+
+                        <div class="botones">
+                            <a href="/users">
+                            <button type="reset" class="btn-bgstroke" href="#">Borrar</button>
+                            </a>
+                        </div>
+
+                        
                     </div>
+                </div>
             </form>
 
             <!-- END DETAIL USER PAGE-->

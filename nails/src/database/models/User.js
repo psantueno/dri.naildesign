@@ -17,12 +17,12 @@ module.exports = (sequelize, DataTypes) => {
         },
 
         apellido: {
-            type: DataTypes.STRING(13),
+            type: DataTypes.STRING(55),
             allowNull: false
         },
 
         email: {
-            type: DataTypes.STRING(23),
+            type: DataTypes.STRING(55),
             allowNull: false
         },
 

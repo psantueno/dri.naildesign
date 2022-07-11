@@ -121,10 +121,10 @@ p.text {
     color:rgb(95, 95, 95)
   }
 
-  input[type="checkbox" i] {
+  /*input[type="checkbox" i] {
         margin-right: 10px;
         margin-top: 10px;
-  }
+  }*/
   
   /* Overwrite default styles of hr */
   hr {
