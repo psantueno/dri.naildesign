@@ -162,6 +162,7 @@ const usersController = {
         }
     },
 
+   //************ PAGINA "/users/registro" ************//
     registro: (req, res) => {
         res.render("registro");
     },
@@ -171,7 +172,7 @@ const usersController = {
         const { errors } = validationResult(req);
 
         if (req.body.terminos === undefined) {
-            res.render("registro", { terminos: "Debe aceptar los términos y condiciones", old: req.body })
+            res.render("registro", { terminos: "123Debe aceptar los términos y condiciones", old: req.body })
         }
         else {
             if (errors.length > 0) {

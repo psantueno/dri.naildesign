@@ -59,10 +59,10 @@ router.put('/editUser/:id', notLogged, upload.single("imagenuser"), regValidatio
 router.delete('/:id', usersController.destroy);
 
 // /*** CREATE USER ***/ 
-// router.get('/addUser', usersController.create);  // Para agregar usuarios admin
+//router.get('/addUser', usersController.create);  // Para agregar usuarios admin
 
 // /*** EDITAR USUARIO ***/ 
-router.get('/editUser/:id', usersController.edit);
+//router.get('/editUser/:id', usersController.edit);
 // --- router.put('/editUser/:id', upload.single("imagen"), usersController.update);
 
 // /*** ELIMINAR USUARIO ***/ 
