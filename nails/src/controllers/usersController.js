@@ -172,10 +172,11 @@ const usersController = {
         const { errors } = validationResult(req);
 
         if (req.body.terminos === undefined) {
-            res.render("registro", { terminos: "123Debe aceptar los términos y condiciones", old: req.body })
+            res.render("registro", { terminos: "Debe aceptar los términos y condiciones", old: req.body })
         }
         else {
             if (errors.length > 0) {
+                console.log(errors)
                 return res.render("registro", { errors, old: req.body });
             }
             else {
@@ -187,7 +188,7 @@ const usersController = {
                             res.render("registro", { emailexiste: "El email ya se encuentra registrado", old: req.body })
                         }
                         else {
-                            if (req.imagenusuario != undefined) {
+                            if (req.file !== undefined) {
                                 Users.create(
                                     {
                                         nombre: req.body.nombre,
@@ -195,10 +196,11 @@ const usersController = {
                                         email: req.body.email,
                                         password: bcryptjs.hashSync(req.body.password, 10),
                                         terminos: req.body.terminos,
-                                        rol: "Cliente",
+                                        rol: req.body.rol,
                                         imagen: req.file.filename
                                     })
                                     .then(() => {
+                                        console.log(rol)
                                         return res.redirect("/users");
                                     })
                                     .catch(error => res.send(error))
@@ -211,7 +213,7 @@ const usersController = {
                                         email: req.body.email,
                                         password: bcryptjs.hashSync(req.body.password, 10),
                                         terminos: req.body.terminos,
-                                        rol: "Cliente",
+                                        rol: req.body.rol,
                                         imagen: "usuario-generico.png"
                                     })
                                     .then(() => {
