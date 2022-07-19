@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "s0375115664846",
+    "password": "Acontec3",
     "database": "nails",
     "host": "localhost",
     "dialect": "mysql"

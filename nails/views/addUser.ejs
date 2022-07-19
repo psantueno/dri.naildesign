@@ -22,17 +22,13 @@
                         <img class="rounded-circle mt-5" src="/image/users/usuario-ADD.png" width="90">
                     </div>
 
-
                     <h1>CREAR USUARIO</h1>
-
-
                     <div class="">
 
 
                         <div class="campos-form">
                             <label for="nombre-users"><b>Nombre</b></label>
                             <input type="text" placeholder="" value="" name="nombre" id="nombreusers" required>
-                        </div>
 
                         <% if (locals && locals.errors) { %>
                             <% for (let i=0; errors.length > i; i++) { %>
@@ -41,11 +37,11 @@
                                  <% } %>
                             <% } %>
                         <% } %>
+                        </div>
 
                         <div class="campos-form">
                             <label for="apellido-users"><b>Apellido</b></label>
                             <input type="text" placeholder="" value="" name="apellido" id="apellido" required>
-                        </div>
                         
                         <% if (locals && locals.errors) { %>
                             <% for (let i=0; errors.length > i; i++) { %>
@@ -54,11 +50,11 @@
                                  <% } %>
                             <% } %>
                         <% } %>
+                        </div>
 
                         <div class="campos-form">
                             <label for="email-users"><b>Email</b></label>
                             <input type="email" placeholder="" value="" name="email" id="email" required>
-                        </div>
 
                         <% if (locals && locals.errors) { %>
                             <% for (let i=0; errors.length > i; i++) { %>
@@ -70,12 +66,11 @@
                         <% if (locals && locals.emailexiste) { %>
                                   <label><%= emailexiste %></label>           
                                <% } %>
+                        </div>
 
                         <div class="campos-form">
-
                             <label for="password-users"><b>Contraseña</b></label>
                             <input type="password" placeholder="" value="" name="password" id="password" required>
-                        </div>
 
                         <% if (locals && locals.errors) { %>
                             <% for (let i=0; errors.length > i; i++) { %>
@@ -84,11 +79,11 @@
                                  <% } %>
                             <% } %>
                         <% } %>
+                     </div>
 
                         <div class="campos-form">
                             <label for="rol-users"><b>Rol</b></label>
                             <input type="text" placeholder="" value="" name="rol" id="rol" required>
-                        </div>
 
                         <% if (locals && locals.errors) { %>
                             <% for (let i=0; errors.length > i; i++) { %>
@@ -97,6 +92,7 @@
                                  <% } %>
                             <% } %>
                         <% } %>
+                     </div>
 
                         <div class="campos-form">
                             <label for="imagen-user"><b>Foto de perfil</b></label>

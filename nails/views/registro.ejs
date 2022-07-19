@@ -4,112 +4,126 @@
 <html lang="en">
 
 <!-- START HEAD-->
-<%- include("./partials/head.ejs", {title: "Regístrate", style1:"", style2:""}) %>
-<!-- END HEAD-->
+<%- include("./partials/head.ejs", {title: "Regístrate" , style1:"", style2:""}) %>
+  <!-- END HEAD-->
 
-<!-- START REGISTRO -->
-<body>
+  <!-- START REGISTRO -->
 
-  <!-- START HEADER-->
-<%- include("./partials/header.ejs") %>
-<!-- END HEADER-->
+  <body>
 
-  <section >
-    <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-lg-12 col-xl-11">
-          <div class="card text-black" style="border-radius: 25px;">
-            <div class="card-body p-md-5">
-              <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-  
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">¡Creá tu cuenta!</p>
-  
-                  <form class="mx-1 mx-md-4" action="/users/registro" method="POST" enctype="multipart/form-data">
-  
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example1c">Nombre</label>
-                        <input type="text" placeholder="" value="<%=locals.old && old.nombre%>" name="nombre" id="nombre" class="form-control"  >
-                        <!-- input type="text" id="form3Example1c" class="form-control" name="name" value="<%=locals.old && old.nombre%>" required/ -->
+    <!-- START HEADER-->
+    <%- include("./partials/header.ejs") %>
+      <!-- END HEADER-->
 
-
-                        <% if (locals && locals.errors) { %>
-                          <% for (let i=0; errors.length > i; i++) { %>
-                            <% if (errors[i].param === "nombre") { %>
-                              <label class="errorform"><%= errors[i].msg %></label>           
-                            <% } %>
-                          <% } %>
-                        <% } %>
-                </div>
-              </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="form3Example1c">Apellido</label>
-                      <input type="text" id="form3Example1c" class="form-control" name="apellido" value="<%=locals.old && old.apellido%>"/>
-
-                  <% if (locals && locals.errors) { %>
-                    <% for (let i=0; errors.length > i; i++) { %>
-                        <% if (errors[i].param === "apellido") { %>
-                            <label><%= errors[i].msg %></label>           
-                         <% } %>
-                    <% } %>
-                <% } %>
+      <section>
+        <div class="container h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+              <div class="card text-black" style="border-radius: 25px;">
+                <div class="card-body p-md-5">
+                  <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                      <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">¡Creá tu cuenta!</p>
+                      <form class="mx-1 mx-md-4" action="/users/registro" method="POST" enctype="multipart/form-data">
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="form3Example1c">Nombre</label>
+                            <input type="text" placeholder="" value="<%=locals.old && old.nombre%>" name="nombre"
+                              id="nombre" class="form-control">
+                            <!-- input type="text" id="form3Example1c" class="form-control" name="name" value="<%=locals.old && old.nombre%>" required/ -->
 
 
-                <div style="display: none" class="d-flex flex-row align-items-center mb-4">
-                  <i style="display: none" class="fas fa-user fa-lg me-3 fa-fw"></i>
-                  <div style="display: none" class="form-outline flex-fill mb-0">
-                    <label style="display: none" class="form-label" for="form3Example1c">Rol</label>
-                    <input type="hidden" id="form3Example1c" class="form-control" name="rol" value="Cliente" readonly />
-                  </div>
-                </div>
-                
-  
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example3c">Email</label>
-                        <input type="email" id="form3Example3c" class="form-control" name="email" value="<%=locals.old && old.email%>"/>
-                        
-                    <% if (locals && locals.errors) { %>
-                      <% for (let i=0; errors.length > i; i++) { %>
-                          <% if (errors[i].param === "email") { %>
-                              <label><%= errors[i].msg %></label>           
-                           <% } %>
-                      <% } %>
-                  <% } %>
-                  <% if (locals && locals.emailexiste) { %>
-                            <label><%= emailexiste %></label>           
-                         <% } %>
+                            <% if (locals && locals.errors) { %>
+                              <% for (let i=0; errors.length> i; i++) { %>
+                                <% if (errors[i].param==="nombre" ) { %>
+                                  <label class="errorform">
+                                    <%= errors[i].msg %>
+                                  </label>
+                                  <% } %>
+                                    <% } %>
+                                      <% } %>
+                          </div>
+                        </div>
 
-                      </div>
-                    </div>
-                 
-  
-  
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example4c">Password</label>
-                        <input type="password" id="form3Example4c" class="form-control" name="password"/>
-                       
-                    <% if (locals && locals.errors) { %>
-                      <% for (let i=0; errors.length > i; i++) { %>
-                          <% if (errors[i].param === "password") { %>
-                              <label><%= errors[i].msg %></label>           
-                           <% } %>
-                      <% } %>
-                  <% } %>
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="form3Example1c">Apellido</label>
+                            <input type="text" id="form3Example1c" class="form-control" name="apellido"
+                              value="<%=locals.old && old.apellido%>" />
 
-                </div>
-              </div>
-  
-  
-                  <!--  
+                            <% if (locals && locals.errors) { %>
+                              <% for (let i=0; errors.length> i; i++) { %>
+                                <% if (errors[i].param==="apellido" ) { %>
+                                  <label>
+                                    <%= errors[i].msg %>
+                                  </label>
+                                  <% } %>
+                                    <% } %>
+                                      <% } %>
+                          </div>
+                        </div>
+
+
+                        <div style="display: none" class="">
+                          <i style="display: none" class="fas fa-user fa-lg me-3 fa-fw"></i>
+                          <div style="display: none" class="">
+                            <label style="display: none" class="" for="form3Example1c">Rol</label>
+                            <input type="hidden" id="form3Example1c" class="form-control" name="rol" value="Cliente"
+                              readonly />
+                          </div>
+                        </div>
+
+
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="form3Example3c">Email</label>
+                            <input type="email" id="form3Example3c" class="form-control" name="email"
+                              value="<%=locals.old && old.email%>" />
+
+                            <% if (locals && locals.errors) { %>
+                              <% for (let i=0; errors.length> i; i++) { %>
+                                <% if (errors[i].param==="email" ) { %>
+                                  <label>
+                                    <%= errors[i].msg %>
+                                  </label>
+                                  <% } %>
+                                    <% } %>
+                                      <% } %>
+                                        <% if (locals && locals.emailexiste) { %>
+                                          <label>
+                                            <%= emailexiste %>
+                                          </label>
+                                          <% } %>
+
+                          </div>
+                        </div>
+
+
+
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="form3Example4c">Password</label>
+                            <input type="password" id="form3Example4c" class="form-control" name="password" />
+
+                            <% if (locals && locals.errors) { %>
+                              <% for (let i=0; errors.length> i; i++) { %>
+                                <% if (errors[i].param==="password" ) { %>
+                                  <label>
+                                    <%= errors[i].msg %>
+                                  </label>
+                                  <% } %>
+                                    <% } %>
+                                      <% } %>
+
+                          </div>
+                        </div>
+
+
+                        <!--  
                   <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
@@ -120,58 +134,61 @@
                     </div>
 
                     -->
-                    <!--Se agrega boton de agregar archivos para multer-->
+                        <!--Se agrega boton de agregar archivos para multer-->
 
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-camera fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example4cd">Foto de perfil </label>
-                        
-                        <input type="file" placeholder="Imagen de usuario" name="imagenusuario" id="imagenusuario">
-                      </div>
-                    </div>                
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-camera fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="form3Example4cd">Foto de perfil </label>
 
-  
-                    <div class="flex-row mb-4">
-                      <div class="d-flex2 flex-row">
-                      <label class="form-check-label" for="form2Example3" style="color: #7d7573">
-                        Acepto los &nbsp<a href="#!" style="color: #D36878"> Términos y condiciones</a>
-                        <input type="checkbox" class="input-no-shadow" name="terminos"/>
-                      </label>
+                            <input type="file" placeholder="Imagen de usuario" name="imagenusuario" id="imagenusuario">
+                          </div>
+                        </div>
+
+
+                        <div class="flex-row mb-4">
+                          <div class="d-flex2 flex-row">
+                            <label class="form-check-label" for="form2Example3" style="color: #7d7573">
+                              Acepto los &nbsp<a href="#!" style="color: #D36878"> Términos y
+                                condiciones</a>
+                              <input type="checkbox" class="input-no-shadow" name="terminos" />
+                            </label>
+                          </div>
+                          <% if (locals && locals.terminos) { %>
+                            <label class="form-check-label">
+                              <%= terminos %>
+                            </label>
+                            <% } %>
+                        </div>
+
+                        <div class="d-flex justify-content-center formbot">
+                          <button type="submit" class="btn-bgstroke">Registrarse</button>
+                        </div>
+
+                      </form>
+
                     </div>
-                      <% if (locals && locals.terminos) { %>
-                      <label class="form-check-label"><%= terminos %></label>
-                  <% } %>
-              </div>
+                    <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                    <div class="d-flex justify-content-center formbot">
-                      <button type="submit" class="btn-bgstroke">Registrarse</button>
+                      <img src="/image/logo.jpeg" class="img-fluid" alt="Sample image">
+
                     </div>
-  
-                  </form>
-  
-                </div>
-                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-  
-                  <img src="/image/logo.jpeg" class="img-fluid" alt="Sample image">
-  
-                </div>
-               
 
 
+
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- END REGISTRO -->
-</body>
+      <!-- END REGISTRO -->
+  </body>
 
-<!-- START FOOTER-->
-<%- include("./partials/footer.ejs") %>    
-<!-- END FOOTER-->
+  <!-- START FOOTER-->
+  <%- include("./partials/footer.ejs") %>
+    <!-- END FOOTER-->
 
 </html>

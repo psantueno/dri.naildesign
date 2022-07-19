@@ -1,3 +1,4 @@
+<!-- Agregar Productos addProduct.ejs -->
 <!DOCTYPE html>
 <html>
 
@@ -13,15 +14,14 @@
             <!-- END HEADER-->
 
 
-            <form class="forms" action="/products" method="POST" enctype="multipart/form-data">
+            <form class="forms mx-md-4" action="/products" method="POST" enctype="multipart/form-data">
                 <div class="container2">
                     <h1>Agregar Productos</h1>
 
 
-                    <div class="campos-form">
-                        <label for="nombre-producto"><b>Nombre del producto</b></label>
+                    <div class="align-items-center mb-4">
+                        <label for="nombre-producto" class="form-label"><b>Nombre del producto</b></label>
                         <input type="text" placeholder="Nombre de producto" name="nombre" id="nombreproducto"  value="<%= (locals && locals.old) ? old.nombre : null %>" required>
-                    </div>
 
                     <% if (locals && locals.errors) { %>
                         <% for (let i=0; errors.length > i; i++) { %>
@@ -30,11 +30,11 @@
                              <% } %>
                         <% } %>
                     <% } %>
-
-                    <div class="campos-form">
-                        <label for="descripcion-producto"><b>Descripcion del producto</b></label>
-                        <textarea type="text" placeholder="Descripcion de producto" name="descripcion" id="descripcion" required><%= (locals && locals.old) ? old.descripcion : null %></textarea>
                     </div>
+
+                    <div class="align-items-center mb-4">
+                        <label for="descripcion-producto" class="form-label"><b>Descripcion del producto</b></label>
+                        <textarea type="text" placeholder="Descripcion de producto" name="descripcion" id="descripcion" required><%= (locals && locals.old) ? old.descripcion : null %></textarea>
 
                     <% if (locals && locals.errors) { %>
                         <% for (let i=0; errors.length > i; i++) { %>
@@ -44,15 +44,16 @@
                         <% } %>
                     <% } %>
 
-                    <div class="campos-form categoria-producto">
-                        <label for="categoria-producto"><b>Categoría</b></label>
+                    </div>
+
+                    <div class="mb-4 categoria-producto">
+                        <label for="categoria-producto" class="form-label"><b>Categoría</b></label>
                         <select name="category_id" required>
                                 <option value="" disabled selected> - Seleccione la categoría - </option>
                                 <%categories.forEach( category => { %>
                                 <option value="<%= category.id %>"><%=category.nombre%></option>
                                     <%})%>
                         </select>
-                    </div>
 
                     <% if (locals && locals.errors) { %>
                         <% for (let i=0; errors.length > i; i++) { %>
@@ -61,12 +62,12 @@
                              <% } %>
                         <% } %>
                     <% } %>
+                    </div>
 
-                    <div class="campos-form">
-                        <label for="cantidad-producto"><b>Cantidad</b></label>
+                    <div class="align-items-center mb-4">
+                        <label for="cantidad-producto" class="form-label"><b>Cantidad</b></label>
                         <input type="number" placeholder="Cantidad de producto" name="cantidad" id="cantidadproducto" value="<%= (locals && locals.old) ? old.cantidad : null %>"
                             required>
-                    </div>
 
                     <% if (locals && locals.errors) { %>
                         <% for (let i=0; errors.length > i; i++) { %>
@@ -75,12 +76,12 @@
                              <% } %>
                         <% } %>
                     <% } %>
+                    </div>
 
-                    <div class="campos-form">
-                        <label for="precio-producto"><b>Precio del producto</b></label>
+                    <div class="align-items-center mb-4">
+                        <label for="precio-producto" class="form-label"><b>Precio del producto</b></label>
                         <input type="number" placeholder="Precio de producto" name="precio" id="precioproducto" value="<%= (locals && locals.old) ? old.precio : null %>"
                             required>
-                    </div>
 
                     <% if (locals && locals.errors) { %>
                         <% for (let i=0; errors.length > i; i++) { %>
@@ -89,12 +90,12 @@
                              <% } %>
                         <% } %>
                     <% } %>
+                     </div>
 
-                    <div class="campos-form">
-                        <label for="descuento-producto"><b>Descuento</b></label>
+                    <div class="align-items-center mb-4">
+                        <label for="descuento-producto" class="form-label"><b>Descuento</b></label>
                         <input type="number" placeholder="Descuento del producto" name="descuento" value="<%= (locals && locals.old) ? old.descuento : null %>"
                             id="descuento-producto" required>
-                    </div>
 
                     <% if (locals && locals.errors) { %>
                         <% for (let i=0; errors.length > i; i++) { %>
@@ -103,9 +104,10 @@
                              <% } %>
                         <% } %>
                     <% } %>
+                    </div>
 
-                    <div class="campos-form">
-                        <label for="imagen-producto"><b>Imagen del producto</b></label>
+                    <div class="align-items-center mb-4">
+                        <label for="imagen-producto" class="form-label"><b>Imagen del producto</b></label>
                         <input type="file" placeholder="Imagen de producto" name="imagenproducto" id="imagenproducto"
                             required>
                     </div>
