@@ -65,7 +65,6 @@ router.put('/editUser/:id', notLogged, upload.single("imagenuser"), regValidatio
 // ELIMINAR USUARIO //
 router.delete('/:id', usersController.destroy);
 
-
 module.exports = router;
 
 

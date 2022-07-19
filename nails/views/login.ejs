@@ -2,113 +2,129 @@
 <html lang="en">
 
 <!-- START HEAD-->
-<%- include("./partials/head.ejs", {title: "Iniciar sesión", style1:"", style2:""}) %>
-<!-- END HEAD-->
+<%- include("./partials/head.ejs", {title: "Iniciar sesión" , style1:"", style2:""}) %>
+  <!-- END HEAD-->
 
-<!-- START LOGIN-->
-<body>
+  <!-- START LOGIN-->
 
-<!-- START HEADER-->
-<%- include("./partials/header.ejs") %>
-<!-- END HEADER-->
+  <body>
 
-  <section>
-    <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-lg-12 col-xl-11">
-          <div class="card text-black" style="border-radius: 25px;">
-            <div class="card-body p-md-5">
-              <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-  
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">¡Hola de nuevo!</p>
-  
-                  <form class="mx-1 mx-md-4" action="/users/login" method="POST">
- 
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example3c">Email</label>
-                        <input type="email" id="form3Example3c" name="email" class="form-control" value="<%= (locals && locals.old) ? old.email : null %>" />
+    <!-- START HEADER-->
+    <%- include("./partials/header.ejs") %>
+      <!-- END HEADER-->
+
+      <section>
+        <div class="container h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+              <div class="card text-black" style="border-radius: 25px;">
+                <div class="card-body p-md-5">
+                  <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                      <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">¡Hola de nuevo!</p>
+
+                      <form class="mx-1 mx-md-4" action="/users/login" method="POST">
+
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="form3Example3c">Email</label>
+                            <input type="email" id="form3Example3c" name="email" class="form-control"
+                              value="<%= (locals && locals.old) ? old.email : null %>" />
+
+                            <% if (locals && locals.errors) { %>
+                              <% for (let i=0; errors.length> i; i++) { %>
+                                <% if (errors[i].param==="email" ) { %>
+                                  <label>
+                                    <%= errors[i].msg %>
+                                  </label>
+                                  <% } %>
+                                    <% } %>
+                                      <% } %>
+
+                          </div>
+                        </div>
+
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <label class="form-label" for="form3Example4c">Password</label>
+                            <input type="password" id="form3Example4c" name="password" class="form-control" />
+
+                            <% if (locals && locals.errors) { %>
+                              <% for (let i=0; errors.length> i; i++) { %>
+                                <% if (errors[i].param==="password" ) { %>
+                                  <label>
+                                    <%= errors[i].msg %>
+                                  </label>
+                                  <% } %>
+                                    <% } %>
+                                      <% } %>
+
+                          </div>
+                        </div>
+
+
+                        <div class="d-flex2 flex-row mb-4">
+                          <label class="form-check-label" for="rememberMe" style="color: #7d7573">Recordar mi usuario
+                            <input type="checkbox" class="input-no-shadow" id="form2Example3" name="rememberMe">
+                          </label>
+                        </div>
+
+                        <!-- Mensaje de error cuando el email o contraseña son incorrectas -->
+                        <div class="mensaje-error">
+                          <% if (locals && locals.errors) { %>
+                            <% for (let i=0; errors.length> i; i++) { %>
+                              <% if (errors[i].param==="credentialsInvalid" ) { %>
+                                <label>
+                                  <%= errors[i].msg %>
+                                </label>
+                                <% } %>
+                                  <% } %>
+                                    <% } %>
+                        </div>
+
+                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4 formbot">
+                          <button type="submit" class="btn-bgstroke">Iniciar sesión</button>
+                        </div>
+
+                      </form>
+
+                      <div>
+                        <label class="d-flex justify-content-center">
+                          <p style="color: #746F6F"><a href="#!" style="color: #D36878">¿Olvidaste tu contraseña?</a>
+                          </p>
+                        </label>
+                        </label>
                       </div>
-                    </div>
-                    <% if (locals && locals.errors) { %>
-                      <% for (let i=0; errors.length > i; i++) { %>
-                          <% if (errors[i].param === "email") { %>
-                              <label><%= errors[i].msg %></label>           
-                           <% } %>
-                      <% } %>
-                  <% } %>
-  
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example4c">Password</label>
-                        <input type="password" id="form3Example4c" name="password" class="form-control" />
+
+                      <div>
+                        <label class="d-flex justify-content-center">
+                          <p class="summary" style="color: #746F6F">¿No tenés cuenta?&nbsp<a href="/users/registro"
+                              style="color: #D36878">Regístrate</a></p>
+                        </label>
                       </div>
-                    </div>
-                    <% if (locals && locals.errors) { %>
-                      <% for (let i=0; errors.length > i; i++) { %>
-                          <% if (errors[i].param === "password") { %>
-                              <label><%= errors[i].msg %></label>           
-                           <% } %>
-                      <% } %>
-                  <% } %>
 
-                  <!-- Mensaje de error cuando el email o contraseña son incorrectas -->
-                  <div class="mensaje-error">
-                    <% if (locals && locals.errors) { %>
-                    <% for (let i=0; errors.length > i; i++) { %>
-                        <% if (errors[i].param === "credentialsInvalid") { %>
-                            <label><%= errors[i].msg %></label>           
-                         <% } %>
-                    <% } %>
-                <% } %>
-              </div>
-                    
-                    <div class="d-flex2 flex-row mb-4">
-                    <label class="form-check-label" for="rememberMe" style="color: #7d7573" >Recordar mi usuario
-                      <input type="checkbox" class="input-no-shadow" id="form2Example3" name="rememberMe">
-                    </label>
-                    </div>
 
-                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <button type="submit" class="btn-bgstroke">Iniciar sesión</button>
                     </div>
-  
-                  </form>
+                    <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                  <div>
-                    <label class="d-flex justify-content-center">
-                      <p style="color: #746F6F"><a href="#!" style="color: #D36878">¿Olvidaste tu contraseña?</a></p>
-                    </label>
-                    </label>
+                      <img src="/image/logo.jpeg" class="img-fluid" alt="Sample image">
+
+                    </div>
                   </div>
-
-                  <div>
-                  <label class="d-flex justify-content-center">
-                    <p class="summary" style="color: #746F6F">¿No tenés cuenta?&nbsp<a href="/users/registro" style="color: #D36878">Regístrate</a></p>
-                    </label>
-                  </div>
-
-  
-                </div>
-                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-  
-                  <img src="/image/logo.jpeg" class="img-fluid" alt="Sample image">
-  
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- END LOGIN-->
-</body>
-<!-- START FOOTER-->
-<%- include("./partials/footer.ejs") %>    
-<!-- END FOOTER-->
+      <!-- END LOGIN-->
+  </body>
+  <!-- START FOOTER-->
+  <%- include("./partials/footer.ejs") %>
+    <!-- END FOOTER-->
+
 </html>

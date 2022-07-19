@@ -162,6 +162,7 @@ const usersController = {
         }
     },
 
+   //************ PAGINA "/users/registro" ************//
     registro: (req, res) => {
         res.render("registro");
     },
@@ -175,6 +176,7 @@ const usersController = {
         }
         else {
             if (errors.length > 0) {
+                console.log(errors)
                 return res.render("registro", { errors, old: req.body });
             }
             else {
@@ -198,6 +200,7 @@ const usersController = {
                                         imagen: req.file.filename
                                     })
                                     .then(() => {
+                                        console.log(rol)
                                         return res.redirect("/users");
                                     })
                                     .catch(error => res.send(error))

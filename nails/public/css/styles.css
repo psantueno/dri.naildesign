@@ -20,7 +20,7 @@ p {
 }
 
 .input-no-shadow {
-  margin: 4px 8px 0px 14px;
+  margin: 0px 8px 0px 6px;
   background-color: #D36878 !important;
   width: 16px;
   height: 16px;
@@ -735,6 +735,12 @@ font-size: 12px;
   color: #746F6F;
 }
 
+.form-check-label{
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+
 .fa-user {
   color: #D36878
   }
@@ -765,6 +771,8 @@ font-size: 12px;
 }
 
 .mensaje-error {
+  color: white;
+  background: #D36878;
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
@@ -919,7 +927,18 @@ tbody tr td a.row-white {
 /*END TABLA USUARIOS*/
 
 
-/*END PAGINA DE LOGIN*/
+/*START ERRORES FOMR*/
+
+.formbot {
+  margin-top: 50px;
+}
+
+.formterm {
+  margin-top: 40px;
+}
+
+
+
 
 /*START MEDIAS QUERIES*/
 /* Medidas de dispositivos:
