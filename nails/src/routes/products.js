@@ -10,6 +10,7 @@ const productsController = require("../controllers/productsController");
 // ************ Middlewares Require's  ************ //
 const notLogged = require("../middlewares/notLogged");
 const adminAuth = require("../middlewares/adminAuth");
+const validAddEditProd = require("../middlewares/validAddEditProd");
 
 // ************ Configuración Multer ************
 const storage = multer.diskStorage({
@@ -36,11 +37,11 @@ router.get('/detailProduct/:id', productsController.detailProduct);
 
 // /*** CREATE ONE PRODUCT ***/ 
 router.get('/addProduct', notLogged, adminAuth, productsController.addNewProduct);
-router.post('/', upload.single("imagenproducto"), productsController.store);
+router.post('/', upload.single("imagenproducto"), validAddEditProd, productsController.store);
 
 // /*** EDITAR PRODUCTOS ***/ 
 router.get('/editProduct/:id', notLogged, adminAuth, productsController.editProduct);
-router.put('/editProduct/:id', upload.single("imagenproducto"), productsController.update);
+router.put('/editProduct/:id', upload.single("imagenproducto"), validAddEditProd, productsController.update);
 
 // /*** ELIMINAR PRODUCTOS ***/ 
 router.delete('/:id', notLogged, adminAuth, productsController.destroy);

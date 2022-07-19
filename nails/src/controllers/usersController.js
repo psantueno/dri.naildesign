@@ -186,7 +186,7 @@ const usersController = {
                             res.render("registro", { emailexiste: "El email ya se encuentra registrado", old: req.body })
                         }
                         else {
-                            if (req.imagenusuario != undefined) {
+                            if (req.file !== undefined) {
                                 Users.create(
                                     {
                                         nombre: req.body.nombre,
@@ -194,7 +194,7 @@ const usersController = {
                                         email: req.body.email,
                                         password: bcryptjs.hashSync(req.body.password, 10),
                                         terminos: req.body.terminos,
-                                        rol: "Cliente",
+                                        rol: req.body.rol,
                                         imagen: req.file.filename
                                     })
                                     .then(() => {
@@ -210,7 +210,7 @@ const usersController = {
                                         email: req.body.email,
                                         password: bcryptjs.hashSync(req.body.password, 10),
                                         terminos: req.body.terminos,
-                                        rol: "Cliente",
+                                        rol: req.body.rol,
                                         imagen: "usuario-generico.png"
                                     })
                                     .then(() => {

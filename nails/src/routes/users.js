@@ -37,35 +37,33 @@ const upload = multer({storage: storage});
 router.get('/login', guestRoutes, usersController.login);
 // PROCESS LOGIN //
 router.post('/login', usersValidation, usersController.processLogin);
+
 // LOGOUT //
 router.get('/logout', usersController.logout);
+
 // REGISTER //
 router.get('/registro', guestRoutes, usersController.registro);
 // PROCESS REGISTER //
 router.post('/registro',upload.single("imagenusuario"), regValidation, usersController.store);
+
 // LISTA DE USERS //
 router.get('/', notLogged, adminAuth, usersController.listUsers);
+
 // CREAR USUARIO //
-router.get('/addUser', usersController.add);
+router.get('/addUser', notLogged, adminAuth, usersController.add);
 // PROCESS CREATE USER //
 router.post('/', upload.single("imagenuser"), regValidation, usersController.create);
+
 // PERFIL USER //
 router.get('/detailUser/:id', usersController.detail);
+
 // EDITAR USER //
 router.get('/editUser/:id', usersController.edit);
 // PROCESS EDIT USER //
 router.put('/editUser/:id', notLogged, upload.single("imagenuser"), regValidation, usersController.update);
+
 // ELIMINAR USUARIO //
 router.delete('/:id', usersController.destroy);
-
-// /*** CREATE USER ***/ 
-// router.get('/addUser', usersController.create);  // Para agregar usuarios admin
-
-// /*** EDITAR USUARIO ***/ 
-router.get('/editUser/:id', usersController.edit);
-// --- router.put('/editUser/:id', upload.single("imagen"), usersController.update);
-
-// /*** ELIMINAR USUARIO ***/ 
 
 
 module.exports = router;

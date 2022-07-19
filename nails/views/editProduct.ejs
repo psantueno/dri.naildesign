@@ -20,20 +20,36 @@
 
                     <div class="campos-form">
                         <label for="nombre-producto"><b>Nombre de producto</b></label>
-                        <input type="text" placeholder="" value="<%=productEdited.nombre%>" name="nombreproducto"
+                        <input type="text" placeholder="" value="<%=(locals && locals.old) ? old.nombre : productEdited.nombre%>" name="nombre"
                             id="nombreproducto" required>
                     </div>
 
+                    <% if (locals && locals.errors) { %>
+                        <% for (let i=0; errors.length > i; i++) { %>
+                            <% if (errors[i].param === "nombre") { %>
+                                <label for="nombre-producto"><%= errors[i].msg %></label>           
+                             <% } %>
+                        <% } %>
+                    <% } %>
+
                     <div class="campos-form">
                         <label for="descripcion-producto"><b>Descripcion del producto </b></label>
-                        <textarea type="text" placeholder="" name="descripcionproducto" id="descripcionproducto"
-                            required><%=productEdited.descripcion%></textarea>
+                        <textarea type="text" placeholder="" name="descripcion" id="descripcionproducto"
+                            required><%=(locals && locals.old) ? old.descripcion : productEdited.descripcion%></textarea>
                     </div>
+
+                    <% if (locals && locals.errors) { %>
+                        <% for (let i=0; errors.length > i; i++) { %>
+                            <% if (errors[i].param === "descripcion") { %>
+                                <label for="descripcion-producto"><%= errors[i].msg %></label>           
+                             <% } %>
+                        <% } %>
+                    <% } %>
 
                     <div class="campos-form categoria-producto">
                         <label for="categoria-producto"><b>Categoría</b></label>
 
-                        <select name="categoriaproducto">
+                        <select name="category_id">
                             <option value="<%=productEdited.category_id%>" selected>
                                 <%=productEdited.category.nombre%>
                             </option>
@@ -48,23 +64,55 @@
                         </select>
                     </div>
 
-                    <div class="campos-form">
-                        <label for="descuento-producto"><b>Descuento</b></label>
-                        <textarea type="text" placeholder="" name="descuentoproducto" id="descuentoproducto"
-                            required><%=productEdited.descuento%></textarea>
-                    </div>
+                    <% if (locals && locals.errors) { %>
+                        <% for (let i=0; errors.length > i; i++) { %>
+                            <% if (errors[i].param === "categoria") { %>
+                                <label for="categoria-producto"><%= errors[i].msg %></label>           
+                             <% } %>
+                        <% } %>
+                    <% } %>
 
                     <div class="campos-form">
-                        <label for="cantidad-producto"><b>Cantidad</b></label><br/>
-                        <input type="number" placeholder="Cantidad de producto" name="cantidad" value="<%=productEdited.cantidad%>"
+                        <label for="descuento-producto"><b>Descuento</b></label>
+                        <textarea type="number" placeholder="" name="descuento" id="descuentoproducto"
+                            required><%=(locals && locals.old) ? old.descuento : productEdited.descuento%></textarea>
+                    </div>
+
+                    <% if (locals && locals.errors) { %>
+                        <% for (let i=0; errors.length > i; i++) { %>
+                            <% if (errors[i].param === "descuento") { %>
+                                <label for="descuento-producto"><%= errors[i].msg %></label>           
+                             <% } %>
+                        <% } %>
+                    <% } %>
+                    <br>
+                    <div class="campos-form">
+                        <label for="cantidad-producto"><b>Cantidad</b></label>
+                        <input type="number" placeholder="Cantidad de producto" name="cantidad" value="<%=(locals && locals.old) ? old.cantidad : productEdited.cantidad%>"
                             id="cantidadproducto">
                     </div>
 
+                    <% if (locals && locals.errors) { %>
+                        <% for (let i=0; errors.length > i; i++) { %>
+                            <% if (errors[i].param === "cantidad") { %>
+                                <label for="cantidad-producto"><%= errors[i].msg %></label>           
+                             <% } %>
+                        <% } %>
+                    <% } %>
+
                     <div class="campos-form">
                         <label for="precio-producto"><b>Precio del producto</b></label>
-                        <input type="number" placeholder="" value="<%=productEdited.precio%>" name="precioproducto"
+                        <input type="number" placeholder="" value="<%=(locals && locals.old) ? old.precio : productEdited.precio%>" name="precio"
                             id="precioproducto" required>
                     </div>
+
+                    <% if (locals && locals.errors) { %>
+                        <% for (let i=0; errors.length > i; i++) { %>
+                            <% if (errors[i].param === "precio") { %>
+                                <label for="precio-producto"><%= errors[i].msg %></label>           
+                             <% } %>
+                        <% } %>
+                    <% } %>
 
                     <div class="campos-form">
                         <label for="imagen-producto"><b>Imagen del producto (actual:<%=productEdited.imagen%>
