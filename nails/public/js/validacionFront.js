@@ -31,7 +31,7 @@ window.addEventListener('load', function () {
             errores.repassword = 'Este campo debe estar completo'
         }
         if (Object.keys(errores).length >= 1) {
-            erName.innerText = (errores.name) ? errores.name : ''
+            userName.innerText = (errores.name) ? errores.name : ''
         } else {
             form.submit();
         }

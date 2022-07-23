@@ -948,7 +948,7 @@ tbody tr td a.row-white {
 940 - 1078 laptops. 
 + 1079px: desktops, telas grandes.
 
-/*STAR FOOTER*/
+/*START FOOTER*/
 
 .footer-style {
   background-color: #D36878;
@@ -993,6 +993,26 @@ tbody tr td a.row-white {
 .col-md-6 {
   width: 100% !Important;
 }
+
+/*START VALIDATIONS FRONT JS*/
+.is-valid {
+  color: #198754;
+  border-color: #198754;
+  background-color:#cfeade !important;
+}
+
+.is-invalid {
+  color:#D36878 !important;
+  border-color: #D36878 !important;
+  background-color: rgb(253, 225, 229) !important;
+}
+
+.alert-warning{
+  color:#D36878 !important;
+  background-color: #F8D7DA !important;
+  border-radius: 10px;
+}
+/*FINISH VALIDATIONS FRONT JS*/
 
 @media screen /*and (min-width:320px)*/ and (max-width:480px) {
 
