@@ -31,8 +31,8 @@ const productsRoutes = require("./src/routes/products.js")
 const usersRoutes = require("./src/routes/users.js")
 
 // Levanta el servidor //
-app.listen(3000, () => {
-    console.log('Servidor corriendo en el puerto 3000');
+app.listen(3001, () => {
+    console.log('Servidor corriendo en el puerto 3001');
 });
 
 // ************ MIDDLEWARES REQUIRE'S  ************ //
