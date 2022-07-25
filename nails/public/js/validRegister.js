@@ -1,21 +1,24 @@
 window.onload = function () {
 
-    let form = document.querySelector('.forms');
-    console.log("conectado")
+    let form = document.querySelector("#formRegister");
 
     let name = document.querySelector('#nombre');
     let lastName = document.querySelector("#apellido");
     let email = document.querySelector('#email');
     let password = document.querySelector('#password');
-    let precio = document.querySelector('#precio');
-    let descuento = document.querySelector('#descuento');
 
     let spanErrName = document.querySelector(".not-empty-name");
     let spanErrLastName = document.querySelector(".not-empty-last-name");
     let spanErrEmail = document.querySelector(".not-empty-email");
     let spanErrPassword = document.querySelector(".not-empty-password");
-    let spanErrPrecio = document.querySelector(".not-empty-precio");
-    let spanErrDescuento = document.querySelector(".not-empty-descuento");
+
+    let errorName = 0;
+    let errorLast = 0;
+    let errorEmail = 0;
+    let errorPass = 0;
+
+    // VALIDACION DE EMAIL A TRAVES DE REGULAR EXPRESSION //
+    var validEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 
     let errors = [];
 
@@ -31,7 +34,7 @@ window.onload = function () {
             name.classList.remove("is-valid");
             spanErrName.innerText = "Debe escribir tu nombre."
             spanErrName.style.display = "block";
-            errors.push("name");
+            errorName = errorName + 1;
 
         }
         else if (name.value.length < 3) {
@@ -40,25 +43,26 @@ window.onload = function () {
             name.classList.remove("is-valid");
             spanErrName.innerText = "El nombre debe tener al menos 3 caracteres."
             spanErrName.style.display = "block";
-            errors.push("name");
+            errorName = errorName + 1;
         }
         else {
             name.classList.add("is-valid");
             name.classList.remove("is-invalid");
             name.classList.remove("alert-warning");
             spanErrName.style.display = "none";
+            errorName = 0;
         }
     });
 
     lastName.addEventListener("blur", function () {
 
-        if (lastName.value == "") {
+        if (lastName.value === "") {
             lastName.classList.add("is-invalid");
             lastName.classList.add("alert-warning");
             lastName.classList.remove("is-valid");
             spanErrLastName.innerText = "Debe escribir tu apellido."
             spanErrLastName.style.display = "block";
-            errors.push("lastName");
+            errorLast = errorLast + 1;
 
         }
         else if (lastName.value.length < 3) {
@@ -67,13 +71,14 @@ window.onload = function () {
             lastName.classList.remove("is-valid");
             spanErrLastName.innerText = "El apellido debe tener al menos 3 caracteres."
             spanErrLastName.style.display = "block";
-            errors.push("lastName");
+            errorLast = errorLast + 1;
         }
         else {
             lastName.classList.add("is-valid");
             lastName.classList.remove("is-invalid");
             lastName.classList.remove("alert-warning");
             spanErrLastName.style.display = "none";
+            errorLast = 0;
         }
     });
 
@@ -83,46 +88,38 @@ window.onload = function () {
             email.classList.add("is-invalid");
             email.classList.add("alert-warning");
             email.classList.remove("is-valid");
-            spanErrEmail.innerText = "Debe escribir tu email."
+            spanErrEmail.innerText = "Escriba su email."
             spanErrEmail.style.display = "block";
-            errors.push("email");
+            errorEmail = errorEmail + 1;
 
         }
-        else if (email.value.indexOf("@", 0) != 1) {
-            email.classList.add("is-invalid");
-            email.classList.add("alert-warning");
-            email.classList.remove("is-valid");
-            spanErrEmail.innerText = "Debe ser un email válido."
-            spanErrEmail.style.display = "block";
-            errors.push("email");
 
-        }
-        else if (email.value.indexOf(".", 0) < 0) {
-            email.classList.add("is-invalid");
-            email.classList.add("alert-warning");
-            email.classList.remove("is-valid");
-            spanErrEmail.innerText = "Debe ser un email válido."
-            spanErrEmail.style.display = "block";
-            errors.push("email");
-
-        }
-        else {
+        if (validEmail.test(email.value)) {
             email.classList.add("is-valid");
             email.classList.remove("is-invalid");
             email.classList.remove("alert-warning");
             spanErrEmail.style.display = "none";
+            errorEmail = 0;
+        }
+        else {
+            email.classList.add("is-invalid");
+            email.classList.add("alert-warning");
+            email.classList.remove("is-valid");
+            spanErrEmail.innerText = "Ingrese un email válido."
+            spanErrEmail.style.display = "block";
+            errorEmail = errorEmail + 1;
         }
     });
 
     password.addEventListener("blur", function () {
 
-        if (password.value === "" ) {
+        if (password.value === "") {
             password.classList.add("is-invalid");
             password.classList.add("alert-warning");
             password.classList.remove("is-valid");
             spanErrPassword.innerText = "Debe escribir un password."
             spanErrPassword.style.display = "block";
-            errors.push("password");
+            errorPass = errorPass + 1;
 
         }
         else if (password.value.length < 8) {
@@ -131,59 +128,14 @@ window.onload = function () {
             password.classList.remove("is-valid");
             spanErrPassword.innerText = "El password debe tener mínimo 8 caracteres"
             spanErrPassword.style.display = "block";
-            errors.push("cantidad");
+            errorPass = errorPass + 1;
         }
         else {
             password.classList.add("is-valid");
             password.classList.remove("is-invalid");
             password.classList.remove("alert-warning");
             spanErrPassword.style.display = "none";
-        }
-    });
-
-    precio.addEventListener("blur", function () {
-
-        if (precio.value === "" ) {
-            precio.classList.add("is-invalid");
-            precio.classList.add("alert-warning");
-            precio.classList.remove("is-valid");
-            spanErrPrecio.innerText = "Debe escribir el precio del producto."
-            spanErrPrecio.style.display = "block";
-            errors.push("precio");
-
-        }
-        else if (precio.value === "0") {
-            precio.classList.add("is-invalid");
-            precio.classList.add("alert-warning");
-            precio.classList.remove("is-valid");
-            spanErrPrecio.innerText = "El precio debe ser mayor a cero."
-            spanErrPrecio.style.display = "block";
-            errors.push("precio");
-        }
-        else {
-            precio.classList.add("is-valid");
-            precio.classList.remove("is-invalid");
-            precio.classList.remove("alert-warning");
-            spanErrPrecio.style.display = "none";
-        }
-    });
-
-    descuento.addEventListener("blur", function () {
-
-        if (descuento.value === "" ) {
-            descuento.classList.add("is-invalid");
-            descuento.classList.add("alert-warning");
-            descuento.classList.remove("is-valid");
-            spanErrDescuento.innerText = "Si el producto no tiene descuento, escriba 0.";
-            spanErrDescuento.style.display = "block";
-            errors.push("discount");
-
-        }
-        else {
-            descuento.classList.add("is-valid");
-            descuento.classList.remove("is-invalid");
-            descuento.classList.remove("alert-warning");
-            spanErrDescuento.style.display = "none";
+            errorPass = 0;
         }
     });
 
@@ -197,7 +149,7 @@ window.onload = function () {
             name.classList.remove("is-valid");
             spanErrName.innerText = "Debe escribir tu nombre."
             spanErrName.style.display = "block";
-            errors.push("name");
+            errorName = errorName + 1;
 
         }
         else if (name.value.length < 3) {
@@ -206,13 +158,14 @@ window.onload = function () {
             name.classList.remove("is-valid");
             spanErrName.innerText = "El nombre debe tener al menos 3 caracteres."
             spanErrName.style.display = "block";
-            errors.push("name");
+            errorName = errorName + 1;
         }
         else {
             name.classList.add("is-valid");
             name.classList.remove("is-invalid");
             name.classList.remove("alert-warning");
             spanErrName.style.display = "none";
+            errorName = 0;
         }
     });
 
@@ -224,7 +177,7 @@ window.onload = function () {
             lastName.classList.remove("is-valid");
             spanErrLastName.innerText = "Debe escribir tu apellido."
             spanErrLastName.style.display = "block";
-            errors.push("lastName");
+            errorLast = errorLast + 1;
 
         }
         else if (lastName.value.length < 3) {
@@ -233,13 +186,14 @@ window.onload = function () {
             lastName.classList.remove("is-valid");
             spanErrLastName.innerText = "El apellido debe tener al menos 3 caracteres."
             spanErrLastName.style.display = "block";
-            errors.push("lastName");
+            errorLast = errorLast + 1;
         }
         else {
             lastName.classList.add("is-valid");
             lastName.classList.remove("is-invalid");
             lastName.classList.remove("alert-warning");
             spanErrLastName.style.display = "none";
+            errorLast = 0;
         }
     });
 
@@ -249,46 +203,39 @@ window.onload = function () {
             email.classList.add("is-invalid");
             email.classList.add("alert-warning");
             email.classList.remove("is-valid");
-            spanErrEmail.innerText = "Debe escribir tu email."
+            spanErrEmail.innerText = "Escriba su email."
             spanErrEmail.style.display = "block";
-            errors.push("email");
+            errorEmail = errorEmail + 1;
 
         }
-        else if (email.value.indexOf("@", 0) != 1) {
-            email.classList.add("is-invalid");
-            email.classList.add("alert-warning");
-            email.classList.remove("is-valid");
-            spanErrEmail.innerText = "Debe ser un email válido."
-            spanErrEmail.style.display = "block";
-            errors.push("email");
 
-        }
-        else if (email.value.indexOf(".", 0) < 0) {
-            email.classList.add("is-invalid");
-            email.classList.add("alert-warning");
-            email.classList.remove("is-valid");
-            spanErrEmail.innerText = "Debe ser un email válido."
-            spanErrEmail.style.display = "block";
-            errors.push("email");
-
-        }
-        else {
+        if (validEmail.test(email.value)) {
             email.classList.add("is-valid");
             email.classList.remove("is-invalid");
             email.classList.remove("alert-warning");
             spanErrEmail.style.display = "none";
+            errorEmail = 0;
         }
+        else {
+            email.classList.add("is-invalid");
+            email.classList.add("alert-warning");
+            email.classList.remove("is-valid");
+            spanErrEmail.innerText = "Ingrese un email válido."
+            spanErrEmail.style.display = "block";
+            errorEmail = errorEmail + 1;
+        }
+
     });
 
     password.addEventListener("keyup", function () {
 
-        if (password.value === "" ) {
+        if (password.value === "") {
             password.classList.add("is-invalid");
             password.classList.add("alert-warning");
             password.classList.remove("is-valid");
             spanErrPassword.innerText = "Debe escribir un password."
             spanErrPassword.style.display = "block";
-            errors.push("password");
+            errorPass = errorPass + 1;
 
         }
         else if (password.value.length < 8) {
@@ -297,59 +244,14 @@ window.onload = function () {
             password.classList.remove("is-valid");
             spanErrPassword.innerText = "El password debe tener mínimo 8 caracteres"
             spanErrPassword.style.display = "block";
-            errors.push("cantidad");
+            errorPass = errorPass + 1;
         }
         else {
             password.classList.add("is-valid");
             password.classList.remove("is-invalid");
             password.classList.remove("alert-warning");
             spanErrPassword.style.display = "none";
-        }
-    });
-
-    precio.addEventListener("keyup", function () {
-
-        if (precio.value === "" ) {
-            precio.classList.add("is-invalid");
-            precio.classList.add("alert-warning");
-            precio.classList.remove("is-valid");
-            spanErrPrecio.innerText = "Debe escribir el precio del producto."
-            spanErrPrecio.style.display = "block";
-            errors.push("precio");
-
-        }
-        else if (precio.value === "0") {
-            precio.classList.add("is-invalid");
-            precio.classList.add("alert-warning");
-            precio.classList.remove("is-valid");
-            spanErrPrecio.innerText = "El precio debe ser mayor a cero."
-            spanErrPrecio.style.display = "block";
-            errors.push("precio");
-        }
-        else {
-            precio.classList.add("is-valid");
-            precio.classList.remove("is-invalid");
-            precio.classList.remove("alert-warning");
-            spanErrPrecio.style.display = "none";
-        }
-    });
-
-    descuento.addEventListener("keyup", function () {
-
-        if (descuento.value === "" ) {
-            descuento.classList.add("is-invalid");
-            descuento.classList.add("alert-warning");
-            descuento.classList.remove("is-valid");
-            spanErrDescuento.innerText = "Si el producto no tiene descuento, escriba 0.";
-            spanErrDescuento.style.display = "block";
-            errors.push("discount");
-
-        }
-        else {
-            descuento.classList.add("is-valid");
-            descuento.classList.remove("is-invalid");
-            descuento.classList.remove("alert-warning");
-            spanErrDescuento.style.display = "none";
+            errorPass = 0;
         }
     });
 
@@ -357,11 +259,24 @@ window.onload = function () {
 
     form.addEventListener("submit", function (e) {
 
-        if (errors.length > 0) {
-            e.preventDefault();
+        let errors = [errorName, errorLast, errorEmail, errorPass];
+
+        var contador = 0;
+
+        for (let i = 0; errors.length > i; i++) {
+
+            if (errors[i] !== 0) {
+                contador = contador + 1;
+            }
         }
 
-        alert("El producto ha sido creado con éxito.")
-    })
+        if (contador === 0) {
+            alert("El usuario ha sido creado con éxito.")
+        }
 
+        else {
+            console.log("no podes pasar")
+            e.preventDefault();
+        }
+    });
 }

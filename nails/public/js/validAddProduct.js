@@ -1,6 +1,6 @@
 window.onload = function () {
 
-    let form = document.querySelector('.forms mx-md-4');
+    let form = document.querySelector('#formAddProduct');
 
     let name = document.querySelector('#nombre');
     let descripcion = document.querySelector("#descripcion");
@@ -16,7 +16,12 @@ window.onload = function () {
     let spanErrPrecio = document.querySelector(".not-empty-precio");
     let spanErrDescuento = document.querySelector(".not-empty-descuento");
 
-    let errors = [];
+    let errorName = 0;
+    let errorDescript = 0;
+    let errorCateg = 0;
+    let errorCantid = 0;
+    let errorPrice = 0;
+    let errorDisc = 0;
 
     // FOCUS //
     document.querySelector('#nombre').focus();
@@ -30,8 +35,8 @@ window.onload = function () {
             name.classList.remove("is-valid");
             spanErrName.innerText = "Debe escribir un nombre para el producto."
             spanErrName.style.display = "block";
-            errors.push("name");
-            console.log(errors);
+            errorName = errorName + 1;
+            console.log(errorName)
 
         }
         else if (name.value.length < 4) {
@@ -40,15 +45,17 @@ window.onload = function () {
             name.classList.remove("is-valid");
             spanErrName.innerText = "El nombre debe tener al menos 4 caracteres."
             spanErrName.style.display = "block";
-            errors.push("El campo nombre tiene errores");
-            console.log(errors)
+            errorName = errorName + 1;
+            console.log(errorName)
         }
         else {
             name.classList.add("is-valid");
             name.classList.remove("is-invalid");
             name.classList.remove("alert-warning");
             spanErrName.style.display = "none";
+            errorName = 0;
         }
+        console.log(errorName)
     });
 
     descripcion.addEventListener("blur", function () {
@@ -59,7 +66,7 @@ window.onload = function () {
             descripcion.classList.remove("is-valid");
             spanErrDescrip.innerText = "Debe escribir una descripción para el producto."
             spanErrDescrip.style.display = "block";
-            errors.push("description");
+            errorDescript = errorDescript + 1;
 
         }
         else if (descripcion.value.length < 70) {
@@ -68,13 +75,14 @@ window.onload = function () {
             descripcion.classList.remove("is-valid");
             spanErrDescrip.innerText = "Detalle más información del producto."
             spanErrDescrip.style.display = "block";
-            errors.push("description");
+            errorDescript = errorDescript + 1;
         }
         else {
             descripcion.classList.add("is-valid");
             descripcion.classList.remove("is-invalid");
             descripcion.classList.remove("alert-warning");
             spanErrDescrip.style.display = "none";
+            errorDescript = 0;
         }
     });
 
@@ -84,9 +92,9 @@ window.onload = function () {
             categoria.classList.add("is-invalid");
             categoria.classList.add("alert-warning");
             categoria.classList.remove("is-valid");
-            spanCategory.innerText = "Debe elegir una categoría."
+            spanErrCategory.innerText = "Debe elegir una categoría."
             spanErrCategory.style.display = "block";
-            errors.push("category");
+            errorCateg = errorCateg + 1;
 
         }
         else {
@@ -94,18 +102,19 @@ window.onload = function () {
             categoria.classList.remove("is-invalid");
             categoria.classList.remove("alert-warning");
             spanErrCategory.style.display = "none";
+            errorCateg = 0;
         }
     });
 
     cantidad.addEventListener("blur", function () {
 
-        if (cantidad.value === "" ) {
+        if (cantidad.value === "") {
             cantidad.classList.add("is-invalid");
             cantidad.classList.add("alert-warning");
             cantidad.classList.remove("is-valid");
             spanErrCantidad.innerText = "Debe escribir el stock del producto."
             spanErrCantidad.style.display = "block";
-            errors.push("cantidad");
+            errorCantid = errorCantid + 1;
 
         }
         else if (cantidad.value === "0") {
@@ -114,25 +123,26 @@ window.onload = function () {
             cantidad.classList.remove("is-valid");
             spanErrCantidad.innerText = "El stock debe ser mayor a cero."
             spanErrCantidad.style.display = "block";
-            errors.push("cantidad");
+            errorCantid = errorCantid + 1;
         }
         else {
             cantidad.classList.add("is-valid");
             cantidad.classList.remove("is-invalid");
             cantidad.classList.remove("alert-warning");
             spanErrCantidad.style.display = "none";
+            errorCantid = 0;
         }
     });
 
     precio.addEventListener("blur", function () {
 
-        if (precio.value === "" ) {
+        if (precio.value === "") {
             precio.classList.add("is-invalid");
             precio.classList.add("alert-warning");
             precio.classList.remove("is-valid");
             spanErrPrecio.innerText = "Debe escribir el precio del producto."
             spanErrPrecio.style.display = "block";
-            errors.push("precio");
+            errorPrice = errorPrice + 1;
 
         }
         else if (precio.value === "0") {
@@ -141,25 +151,26 @@ window.onload = function () {
             precio.classList.remove("is-valid");
             spanErrPrecio.innerText = "El precio debe ser mayor a cero."
             spanErrPrecio.style.display = "block";
-            errors.push("precio");
+            errorPrice = errorPrice + 1;
         }
         else {
             precio.classList.add("is-valid");
             precio.classList.remove("is-invalid");
             precio.classList.remove("alert-warning");
             spanErrPrecio.style.display = "none";
+            errorPrice = 0;
         }
     });
 
     descuento.addEventListener("blur", function () {
 
-        if (descuento.value === "" ) {
+        if (descuento.value === "") {
             descuento.classList.add("is-invalid");
             descuento.classList.add("alert-warning");
             descuento.classList.remove("is-valid");
             spanErrDescuento.innerText = "Si el producto no tiene descuento, escriba 0.";
             spanErrDescuento.style.display = "block";
-            errors.push("discount");
+            errorDisc = errorDisc + 1;
 
         }
         else {
@@ -167,12 +178,13 @@ window.onload = function () {
             descuento.classList.remove("is-invalid");
             descuento.classList.remove("alert-warning");
             spanErrDescuento.style.display = "none";
+            errorDisc = 0;
         }
     });
 
     // EVENTOS KEYUP //
 
-    name.addEventListener("keyup", function () { 
+    name.addEventListener("keyup", function () {
 
         if (name.value == "") {
             name.classList.add("is-invalid");
@@ -180,8 +192,7 @@ window.onload = function () {
             name.classList.remove("is-valid");
             spanErrName.innerText = "Debe escribir un nombre para el producto."
             spanErrName.style.display = "block";
-            errors.push("name");
-            console.log(errors)
+            errorName = errorName + 1;
 
         }
         else if (name.value.length < 4) {
@@ -190,13 +201,14 @@ window.onload = function () {
             name.classList.remove("is-valid");
             spanErrName.innerText = "El nombre debe tener al menos 4 caracteres."
             spanErrName.style.display = "block";
-            errors.push("El campo nombre tiene errores");
+            errorName = errorName + 1;
         }
         else {
             name.classList.add("is-valid");
             name.classList.remove("is-invalid");
             name.classList.remove("alert-warning");
             spanErrName.style.display = "none";
+            errorName = 0;
         }
 
     });
@@ -209,7 +221,7 @@ window.onload = function () {
             descripcion.classList.remove("is-valid");
             spanErrDescrip.innerText = "Debe escribir una descripción para el producto."
             spanErrDescrip.style.display = "block";
-            errors.push("description");
+            errorDescript = errorDescript + 1;
 
         }
         else if (descripcion.value.length < 70) {
@@ -218,25 +230,26 @@ window.onload = function () {
             descripcion.classList.remove("is-valid");
             spanErrDescrip.innerText = "Detalle más información del producto."
             spanErrDescrip.style.display = "block";
-            errors.push("description");
+            errorDescript = errorDescript + 1;
         }
         else {
             descripcion.classList.add("is-valid");
             descripcion.classList.remove("is-invalid");
             descripcion.classList.remove("alert-warning");
             spanErrDescrip.style.display = "none";
+            errorDescript = 0;
         }
     });
 
     cantidad.addEventListener("keyup", function () {
 
-        if (cantidad.value === "" ) {
+        if (cantidad.value === "") {
             cantidad.classList.add("is-invalid");
             cantidad.classList.add("alert-warning");
             cantidad.classList.remove("is-valid");
             spanErrCantidad.innerText = "Debe escribir el stock del producto."
             spanErrCantidad.style.display = "block";
-            errors.push("cantidad");
+            errorCantid = errorCantid + 1;
 
         }
         else if (cantidad.value === "0") {
@@ -245,25 +258,26 @@ window.onload = function () {
             cantidad.classList.remove("is-valid");
             spanErrCantidad.innerText = "El stock debe ser mayor a cero."
             spanErrCantidad.style.display = "block";
-            errors.push("cantidad");
+            errorCantid = errorCantid + 1;
         }
         else {
             cantidad.classList.add("is-valid");
             cantidad.classList.remove("is-invalid");
             cantidad.classList.remove("alert-warning");
             spanErrCantidad.style.display = "none";
+            errorCantid = 0;
         }
     });
 
     precio.addEventListener("keyup", function () {
 
-        if (precio.value === "" ) {
+        if (precio.value === "") {
             precio.classList.add("is-invalid");
             precio.classList.add("alert-warning");
             precio.classList.remove("is-valid");
             spanErrPrecio.innerText = "Debe escribir el precio del producto."
             spanErrPrecio.style.display = "block";
-            errors.push("precio");
+            errorPrice = errorPrice + 1;
 
         }
         else if (precio.value === "0") {
@@ -272,25 +286,26 @@ window.onload = function () {
             precio.classList.remove("is-valid");
             spanErrPrecio.innerText = "El precio debe ser mayor a cero."
             spanErrPrecio.style.display = "block";
-            errors.push("precio");
+            errorPrice = errorPrice + 1;
         }
         else {
             precio.classList.add("is-valid");
             precio.classList.remove("is-invalid");
             precio.classList.remove("alert-warning");
             spanErrPrecio.style.display = "none";
+            errorPrice = 0;
         }
     });
 
     descuento.addEventListener("keyup", function () {
 
-        if (descuento.value === "" ) {
+        if (descuento.value === "") {
             descuento.classList.add("is-invalid");
             descuento.classList.add("alert-warning");
             descuento.classList.remove("is-valid");
             spanErrDescuento.innerText = "Si el producto no tiene descuento, escriba 0.";
             spanErrDescuento.style.display = "block";
-            errors.push("discount");
+            errorDisc = errorDisc + 1;
 
         }
         else {
@@ -298,20 +313,54 @@ window.onload = function () {
             descuento.classList.remove("is-invalid");
             descuento.classList.remove("alert-warning");
             spanErrDescuento.style.display = "none";
+            errorDisc = 0;
+        }
+    });
+
+    // EVENTO CHANGE //
+
+    categoria.addEventListener("change", function () {
+
+        if (categoria.value == "") {
+            categoria.classList.add("is-invalid");
+            categoria.classList.add("alert-warning");
+            categoria.classList.remove("is-valid");
+            spanCategory.innerText = "Debe elegir una categoría."
+            spanErrCategory.style.display = "block";
+            
+        }
+        else {
+            categoria.classList.add("is-valid");
+            categoria.classList.remove("is-invalid");
+            categoria.classList.remove("alert-warning");
+            spanErrCategory.style.display = "none";
+
         }
     });
 
     // EVENTO SUBMIT //
 
     form.addEventListener("submit", function (e) {
-        console.log(errors);
 
-        if (errors.length > 0) {
-            console.log(errors)
+        let errors = [errorName, errorDescript, errorCateg, errorCantid, errorPrice, errorDisc];
+
+        var contador = 0;
+
+        for (let i = 0; errors.length > i; i++) {
+
+            console.log("haciendo el for")
+            console.log(errors[i]) 
+            if (errors[i] !== 0) {
+                contador = contador + 1;
+            } 
+        }
+        console.log(contador)
+        if (contador === 0) {
+            alert("El producto ha sido creado con éxito.")
+        } else {
+            console.log("no podes pasar")
             e.preventDefault();
         }
-
-        alert("El producto ha sido creado con éxito.")
-    })
+    });
 
 }
