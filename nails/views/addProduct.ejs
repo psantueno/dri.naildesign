@@ -21,7 +21,7 @@
 
                     <div class="align-items-center mb-4">
                         <label for="nombre-producto" class="form-label"><b>Nombre del producto</b></label>
-                        <input type="text" placeholder="Nombre de producto" name="nombre" id="nombre"  value="<%= (locals && locals.old) ? old.nombre : null %>" required>
+                        <input class="form-control" type="text" placeholder="Nombre de producto" name="nombre" id="nombre"  value="<%= (locals && locals.old) ? old.nombre : null %>" required>
                         <span class="not-empty-name"></span>
 
                     <% if (locals && locals.errors) { %>
@@ -35,7 +35,7 @@
 
                     <div class="align-items-center mb-4">
                         <label for="descripcion-producto" class="form-label"><b>Descripcion del producto</b></label>
-                        <textarea type="text" placeholder="Descripcion de producto" name="descripcion" id="descripcion" required><%= (locals && locals.old) ? old.descripcion : null %></textarea>
+                        <textarea class="form-control" type="text" placeholder="Descripcion de producto" name="descripcion" id="descripcion" required><%= (locals && locals.old) ? old.descripcion : null %></textarea>
                         <span class="not-empty-descripcion"></span>
 
                     <% if (locals && locals.errors) { %>
@@ -69,7 +69,7 @@
 
                     <div class="align-items-center mb-4">
                         <label for="cantidad" class="form-label"><b>Cantidad</b></label>
-                        <input type="number" placeholder="Cantidad de producto" name="cantidad" id="cantidad" value="<%= (locals && locals.old) ? old.cantidad : null %>"
+                        <input class="form-control" type="number" placeholder="Cantidad de producto" name="cantidad" id="cantidad" value="<%= (locals && locals.old) ? old.cantidad : null %>"
                             required>
                         <span class="not-empty-cantidad"></span>
 
@@ -85,7 +85,7 @@
 
                     <div class="align-items-center mb-4">
                         <label for="precio" class="form-label"><b>Precio del producto</b></label>
-                        <input type="number" placeholder="Precio de producto" name="precio" id="precio" value="<%= (locals && locals.old) ? old.precio : null %>"
+                        <input class="form-control" type="number" placeholder="Precio de producto" name="precio" id="precio" value="<%= (locals && locals.old) ? old.precio : null %>"
                             required>
                         <span class="not-empty-precio"></span>
 
@@ -100,7 +100,7 @@
 
                     <div class="align-items-center mb-4">
                         <label for="descuento-producto" class="form-label"><b>Descuento</b></label>
-                        <input type="number" placeholder="Descuento del producto" name="descuento" value="<%= (locals && locals.old) ? old.descuento : null %>"
+                        <input class="form-control" type="number" placeholder="Descuento del producto" name="descuento" value="<%= (locals && locals.old) ? old.descuento : null %>"
                             id="descuento">
                         <span class="not-empty-descuento"></span>
 

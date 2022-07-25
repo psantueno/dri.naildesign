@@ -9,10 +9,6 @@ window.addEventListener('load', function () {
 emailError.style.display="none"
 passwordError.style.display="none"
 
-form.addEventListener("submit", (event)=>{
-    event.preventDefault()
-    console.log('hice fono envie el form sigo en front')
-})
 //email.addEventListener("click", ()=>{return console.log('hice foccus en el email')})
 let emailEscrito=""
 email.addEventListener("focus", ()=>{
@@ -60,6 +56,11 @@ password.addEventListener("focus", ()=>{
 password.addEventListener("blur", ()=>{
     passwordError.style.display="none"
     //console.log('hice foccus en el email')
+})
+
+form.addEventListener("submit", (event)=>{
+    event.preventDefault()
+    console.log('hice fono envie el form sigo en front')
 })
 
 // abajo la validacion de password que estaba funcionando

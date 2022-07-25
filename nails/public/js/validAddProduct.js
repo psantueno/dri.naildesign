@@ -31,7 +31,7 @@ window.onload = function () {
             spanErrName.innerText = "Debe escribir un nombre para el producto."
             spanErrName.style.display = "block";
             errors.push("name");
-            console.log(errors)
+            console.log(errors);
 
         }
         else if (name.value.length < 4) {
@@ -41,6 +41,7 @@ window.onload = function () {
             spanErrName.innerText = "El nombre debe tener al menos 4 caracteres."
             spanErrName.style.display = "block";
             errors.push("El campo nombre tiene errores");
+            console.log(errors)
         }
         else {
             name.classList.add("is-valid");
@@ -169,12 +170,144 @@ window.onload = function () {
         }
     });
 
+    // EVENTOS KEYUP //
+
+    name.addEventListener("keyup", function () { 
+
+        if (name.value == "") {
+            name.classList.add("is-invalid");
+            name.classList.add("alert-warning");
+            name.classList.remove("is-valid");
+            spanErrName.innerText = "Debe escribir un nombre para el producto."
+            spanErrName.style.display = "block";
+            errors.push("name");
+            console.log(errors)
+
+        }
+        else if (name.value.length < 4) {
+            name.classList.add("is-invalid");
+            name.classList.add("alert-warning");
+            name.classList.remove("is-valid");
+            spanErrName.innerText = "El nombre debe tener al menos 4 caracteres."
+            spanErrName.style.display = "block";
+            errors.push("El campo nombre tiene errores");
+        }
+        else {
+            name.classList.add("is-valid");
+            name.classList.remove("is-invalid");
+            name.classList.remove("alert-warning");
+            spanErrName.style.display = "none";
+        }
+
+    });
+
+    descripcion.addEventListener("keyup", function () {
+
+        if (descripcion.value == "") {
+            descripcion.classList.add("is-invalid");
+            descripcion.classList.add("alert-warning");
+            descripcion.classList.remove("is-valid");
+            spanErrDescrip.innerText = "Debe escribir una descripción para el producto."
+            spanErrDescrip.style.display = "block";
+            errors.push("description");
+
+        }
+        else if (descripcion.value.length < 70) {
+            descripcion.classList.add("is-invalid");
+            descripcion.classList.add("alert-warning");
+            descripcion.classList.remove("is-valid");
+            spanErrDescrip.innerText = "Detalle más información del producto."
+            spanErrDescrip.style.display = "block";
+            errors.push("description");
+        }
+        else {
+            descripcion.classList.add("is-valid");
+            descripcion.classList.remove("is-invalid");
+            descripcion.classList.remove("alert-warning");
+            spanErrDescrip.style.display = "none";
+        }
+    });
+
+    cantidad.addEventListener("keyup", function () {
+
+        if (cantidad.value === "" ) {
+            cantidad.classList.add("is-invalid");
+            cantidad.classList.add("alert-warning");
+            cantidad.classList.remove("is-valid");
+            spanErrCantidad.innerText = "Debe escribir el stock del producto."
+            spanErrCantidad.style.display = "block";
+            errors.push("cantidad");
+
+        }
+        else if (cantidad.value === "0") {
+            cantidad.classList.add("is-invalid");
+            cantidad.classList.add("alert-warning");
+            cantidad.classList.remove("is-valid");
+            spanErrCantidad.innerText = "El stock debe ser mayor a cero."
+            spanErrCantidad.style.display = "block";
+            errors.push("cantidad");
+        }
+        else {
+            cantidad.classList.add("is-valid");
+            cantidad.classList.remove("is-invalid");
+            cantidad.classList.remove("alert-warning");
+            spanErrCantidad.style.display = "none";
+        }
+    });
+
+    precio.addEventListener("keyup", function () {
+
+        if (precio.value === "" ) {
+            precio.classList.add("is-invalid");
+            precio.classList.add("alert-warning");
+            precio.classList.remove("is-valid");
+            spanErrPrecio.innerText = "Debe escribir el precio del producto."
+            spanErrPrecio.style.display = "block";
+            errors.push("precio");
+
+        }
+        else if (precio.value === "0") {
+            precio.classList.add("is-invalid");
+            precio.classList.add("alert-warning");
+            precio.classList.remove("is-valid");
+            spanErrPrecio.innerText = "El precio debe ser mayor a cero."
+            spanErrPrecio.style.display = "block";
+            errors.push("precio");
+        }
+        else {
+            precio.classList.add("is-valid");
+            precio.classList.remove("is-invalid");
+            precio.classList.remove("alert-warning");
+            spanErrPrecio.style.display = "none";
+        }
+    });
+
+    descuento.addEventListener("keyup", function () {
+
+        if (descuento.value === "" ) {
+            descuento.classList.add("is-invalid");
+            descuento.classList.add("alert-warning");
+            descuento.classList.remove("is-valid");
+            spanErrDescuento.innerText = "Si el producto no tiene descuento, escriba 0.";
+            spanErrDescuento.style.display = "block";
+            errors.push("discount");
+
+        }
+        else {
+            descuento.classList.add("is-valid");
+            descuento.classList.remove("is-invalid");
+            descuento.classList.remove("alert-warning");
+            spanErrDescuento.style.display = "none";
+        }
+    });
+
     // EVENTO SUBMIT //
 
     form.addEventListener("submit", function (e) {
-        console.log(errors)
+        console.log(errors);
 
         if (errors.length > 0) {
+            console.log(errors)
             e.preventDefault();
         }
 
