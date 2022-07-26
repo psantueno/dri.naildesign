@@ -6,16 +6,19 @@ window.onload = function () {
     let lastName = document.querySelector("#apellido");
     let email = document.querySelector('#email');
     let password = document.querySelector('#password');
+    //let tyc = document.querySelector('#tyc')
 
     let spanErrName = document.querySelector(".not-empty-name");
     let spanErrLastName = document.querySelector(".not-empty-last-name");
     let spanErrEmail = document.querySelector(".not-empty-email");
     let spanErrPassword = document.querySelector(".not-empty-password");
-
+    //let spanErrTyc = document.querySelector(".not-empty-tyc")
+    
     let errorName = 0;
     let errorLast = 0;
     let errorEmail = 0;
     let errorPass = 0;
+    //let errorTyC = 0;
 
     // VALIDACION DE EMAIL A TRAVES DE REGULAR EXPRESSION //
     var validEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
@@ -26,6 +29,27 @@ window.onload = function () {
     document.querySelector('#nombre').focus();
 
     // EVENTOS BLUR //
+//     tyc.addEventListener("blur", function () {
+
+//         if (tyc.value == "") {
+//             tyc.classList.add("is-invalid");
+//             tyc.classList.add("alert-warning");
+//             tyc.classList.remove("is-valid");
+//             spanErrTyc.innerText = "1111Debe acptar los términos y condiciones."
+//             spanErrTyc.style.display = "block";
+//             errorTyc = errorTyc + 1;
+
+//         }
+
+//     else {
+//         tyc.classList.add("is-valid");
+//         tyc.classList.remove("is-invalid");
+//         tyc.classList.remove("alert-warning");
+//         spanErrTyc.style.display = "none";
+//         errorTyc = 0;
+//     }
+// });
+
     name.addEventListener("blur", function () {
 
         if (name.value == "") {
@@ -259,7 +283,7 @@ window.onload = function () {
 
     form.addEventListener("submit", function (e) {
 
-        let errors = [errorName, errorLast, errorEmail, errorPass];
+        let errors = [errorTyC, errorName, errorLast, errorEmail, errorPass];
 
         var contador = 0;
 

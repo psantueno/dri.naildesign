@@ -156,9 +156,10 @@
                             <label class="form-check-label" for="form2Example3" style="color: #7d7573">
                               Acepto los &nbsp<a href="#!" style="color: #D36878"> Términos y
                                 condiciones</a>
-                              <input type="checkbox" class="input-no-shadow" name="terminos" />
+                              <input type="checkbox" class="input-no-shadow" name="terminos" require/>
                             </label>
                           </div>
+                          <span class="not-empty-tyc"></span>
                           <% if (locals && locals.terminos) { %>
                             <label class="form-check-label">
                               <%= terminos %>
