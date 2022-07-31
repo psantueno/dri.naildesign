@@ -106,7 +106,9 @@ const usersController = {
                 .then(user => {
                     //return res.render('detailUser', { user });
                     //res.send( users)
-                    console.log(user)                    
+                    //console.log(user)
+                    
+                    if (user!== null){
                     let usuarioApi= {}
                     usuarioApi.id = user.id
                     usuarioApi.nombre = user.nombre
@@ -117,20 +119,11 @@ const usersController = {
                     usuarioApi.created_at=user.created_at
                     usuarioApi.updated_at=user.updated_at
 
+                    return res.send(JSON.stringify(usuarioApi));
 
-                    if(Object.keys(usuarioApi).length === 0){
-                      return res.send("El usuario que intenta acceder no existe");
-                    //return res.send(JSON.stringify(usuarioApi))
-                    //return res.send((isEmpty))
                     } else {
-                        
-                        return res.send(JSON.stringify(usuarioApi));
+                        return res.send("El usuario que intenta acceder no existe");
                     }
-        
-                    
-                        
-                    
-        
                 })
                 .catch(error => res.send(error));
         
