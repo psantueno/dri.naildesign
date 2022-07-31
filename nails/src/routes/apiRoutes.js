@@ -5,7 +5,7 @@ const path = require('path');
 const multer = require("multer");
 
 // ************ Controllers Require's  ************ //
-const apiUsersController = require("../controllers/apiUsersController");
+const apiUsersController = require("../controllers/api/apiUsersController");
 
 // ************ Middlewares Require's  ************ //
 const regValidation = require("../middlewares/validacionRegistro");

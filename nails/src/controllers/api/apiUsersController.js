@@ -5,7 +5,7 @@ const bcryptjs = require("bcryptjs");
 
 
 // ************ BASE DATA USERS ************ //
-const db = require('../database/models');
+const db = require('../../database/models');
 const { Users } = db;
 
 
@@ -106,14 +106,14 @@ const usersController = {
                 .then(user => {
                     //return res.render('detailUser', { user });
                     //res.send( users)
-                    
+                    console.log(user)                    
                     let usuarioApi= {}
                     usuarioApi.id = user.id
                     usuarioApi.nombre = user.nombre
                     usuarioApi.apellido = user.apellido
                     usuarioApi.email = user.email
                     usuarioApi.terminos = user.terminos
-                    usuarioApi.imagen = user.imagen
+                    usuarioApi.imagen = `http://localhost:3001/api/imagenUser/${user.id}`
                     usuarioApi.created_at=user.created_at
                     usuarioApi.updated_at=user.updated_at
 
