@@ -122,7 +122,7 @@ password.addEventListener("focus", ()=>{
     })
 })
 password.addEventListener("blur", ()=>{
-    passwordError.style.display="flex"
+    //passwordError.style.display="flex"
     passwordEscrito =password.value
 
     if(password.value===""){
