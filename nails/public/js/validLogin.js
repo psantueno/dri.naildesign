@@ -122,8 +122,8 @@ password.addEventListener("focus", ()=>{
     })
 })
 password.addEventListener("blur", ()=>{
-    passwordError.style.display="flex"
-    passwordEscrito =password.value
+    //passwordError.style.display="flex"
+    //passwordEscrito =password.value
 
     if(password.value===""){
         passwordError.style.display="flex"
@@ -148,7 +148,7 @@ password.addEventListener("blur", ()=>{
             
     }
     
-    if(passwordEscrito.length >0&&passwordEscrito.length<8){
+    if(password.value.length>0 && password.value.length<8){
         passwordError.style.display ="flex"
         passwordError.innerText="La contraseña debe tener mínimo 8 caracteres"
         password.classList.add("is-invalid");
@@ -170,11 +170,7 @@ password.addEventListener("blur", ()=>{
         
     }  
            
-    }
-        
-    
-        
-    
+    } 
 
     //console.log('hice foccus en el email')
 })
