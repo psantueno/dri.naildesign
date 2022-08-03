@@ -4,7 +4,10 @@ Figma: https://www.figma.com/files/team/1083547914191972432/Grupo-7---dri.nailde
 
 Trello: https://trello.com/b/zhN38qvk/grupo-7-drinaildesign
 
-Sprint 7 https://github.com/psantueno/grupo_7_dri.naildesign/tree/sprint7
+Sprint 7: https://github.com/psantueno/grupo_7_dri.naildesign/tree/sprint7
+
+Dashboard React: https://github.com/psantueno/dashboard-driNails
+
 
 TEMÁTICA DEL SITIO
 
