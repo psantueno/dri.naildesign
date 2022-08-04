@@ -7,6 +7,7 @@ const session = require("express-session");
 const methodOverride =  require('method-override'); // Para usar los métodos PUT y DELETE
 const cookies = require("cookie-parser");
 const Sequelize = require("sequelize");
+const cors = require("cors");
 
 
 // ************ CONFIGURACIÓN DE CARPETA PUBLIC  ************ //
@@ -15,6 +16,7 @@ const publicPath = path.resolve(__dirname, './public');
 // ************ CONFIGURACIÓN EXPRESS ************ // Captura la información enviada desde el form.
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors());
 
 
 // ************ CONFIGURACIÓN SESSION ************ //
@@ -27,9 +29,11 @@ app.use(session({
 
 // ************ ROUTERS REQUIRE'S ************ //
 const mainRoutes = require("./src/routes/main.js");
-const productsRoutes = require("./src/routes/products.js")
-const usersRoutes = require("./src/routes/users.js")
-const apiRoutes = require("./src/routes/apiRoutes.js")
+const productsRoutes = require("./src/routes/products.js");
+const usersRoutes = require("./src/routes/users.js");
+const apiUsersRoutes = require("./src/routes/apiUsersRoutes.js");
+const apiProductsRoutes = require("./src/routes/apiProductsRoutes");
+
 // Levanta el servidor //
 app.listen(3001, () => {
     console.log('Servidor corriendo en el puerto 3001');
@@ -57,7 +61,8 @@ app.set('view engine', 'ejs');
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', usersRoutes);
-app.use('/api', apiRoutes);
+app.use('/api/users', apiUsersRoutes);
+app.use('/api/products', apiProductsRoutes);
 
 // ************ CONFIGURACIONES BOOTSTRAP ************ //
 app.get('/menu', (req, res) => {
