@@ -10,7 +10,7 @@ const apiProducts = {
     listProducts: async (req, res) => {
 
         try {
-            const allProducts = await Products.findAll({include: "category", nest: true});
+            const allProducts = await Products.findAll({include: "category", raw: true});
             const allCategories = await Categories.findAll({ include: "products", nest: true });
            
             const countByCategory = allCategories.reduce( (prev, {nombre, products}) => {
@@ -20,13 +20,26 @@ const apiProducts = {
                 }
             }, {});
 
-            let detailProduct = allProducts.map( product => {
+            const detailProduct = allProducts.map( product => {
                             let detail = {};
                             detail.link = `http://localhost:3001/api/products/${product.id}`;
                             return detail;
             });
 
-            res.json({allProducts, allCategories, count: allProducts.length, countByCategory, detailProduct})
+            const lastProduct = allProducts.sort( (a, b) => {
+                if (a.id < b.id) {
+                    return -1;
+                }
+
+                if (a.id > b.id) {
+                    return 1;
+                }
+
+                return 0;
+
+            });
+
+            res.json({allProducts, allCategories, count: allProducts.length, countByCategory, detailProduct, lastProduct})
 
         } catch (error) {
             res.send(error)
