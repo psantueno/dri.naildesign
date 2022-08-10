@@ -94,7 +94,7 @@ p.text {
     display: inline-block;
     border: none;
     background: #f1f1f1;
-    background-image: none !important;
+    background-image: none;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: 16px 18px;
